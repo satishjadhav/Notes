@@ -56,3 +56,4 @@ What are the joint Point and point cut
 	-Pointcut: a predicate that matches join points. A pointcut is something that defines what join-points an advice should be applied.
 Difference between the setter and constructor injection in Spring
 	Setter injection is more flexible than constructor injection because you must remember the type and order of constructor parameter. Also, constructor injection is generally used to inject the mandatory dependency, while setter can be used to inject optional dependency.
+

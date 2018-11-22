@@ -7,3 +7,25 @@ INVERSION OF CONTROL AND DEPENDENCY INJECTION DESIGN PATTERN WITH REAL WORLD EXA
 -Dependency Injection reduces coupling between multiple object as its dynamically injected by framework.One of the implementation of DI is Inversion Of Controll(IOC) on which framework like spring controls object's dependency.
 -Two tpyes of Dependency Injection Constructor Injection and Setter Injection.
 -Depndency Injection allows to replace actual object with mock object which improves testablility by writing simple JUnit tests which uses mock object.
+
+BEANFACTORY VS APPLICATIONCONTEXT
+-One difference between bean factory and application context is that former only instantiate bean when you call getBean() method while ApplicationContext instantiate Singleton bean when the container is started, it doesnot wait for getBean to br called.
+-Syntactically BeanFactory and ApplcationContext both are java interfaces and ApplicationContext extends BeanFactory.
+-BeanFactory doesn't provide support for internationalization i.e. i18n but ApplicationContext provides support for it.
+-Another difference between BeanFactory vs ApplicationContext is ability to publish event to beans that are registered as listener.
+-One of the popular implementation of BeanFactory interface is XMLBeanFactory while one of the popular implementation of ApplicationContext interface is ClassPathXmlApplicationContext. On Java web application we use WebApplicationContext  which extends ApplicationContext interface and adds getServletContext method.
+-If you are using auto wiring and using BeanFactory than you need to register AutoWiredBeanPostProcessor using API which you can configure in XML if you are using  ApplicationContext. In summary BeanFactory is OK for testing and non production use but ApplicationContext is more feature rich container implementation and should be favored over BeanFactory.
+-Bean Factory:
+	Bean instantiation/wiring
+-Application Context:
+	Bean instatiation/wiring
+	Automatic BeanPostProcessor registration
+	Automatic BeanFactoryPostProcessor registration
+	Convenient MessageSource access (for i18n)
+	ApplicationEvent publication
+-The only feature of the BeanFactory is really the Bean instantiation/wiring while the application context can be used for Automatic BeanPostProcessor registration, Automatic BeanFactoryPostProcessor registration, Convenient MessageSource access (for i18n), ApplicationEvent publication as well!
+
+DIFFERENCE BETWEEN @RESTCONTROLLER AND @CONTROLLER ANNOTATION IN SPRING MVC AND REST
+-The @RestController annotation in Spring MVC is nothing but a combination od @Controller and @ResponseBody annotation.
+-Fundamental difference between a web application and a REST API is that the response from a web application is generally view (HTML + CSS + JavaScript) while REST API just return data in form of JSON or XML.
+-The job of @Controller is to create a Map of model object and find a view but @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
