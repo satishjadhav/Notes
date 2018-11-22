@@ -1,0 +1,9 @@
+https://javarevisited.blogspot.com/2018/07/10-object-oriented-design-principles.html
+-------------------------------------------------------------------------------------------------------------------------------
+INVERSION OF CONTROL AND DEPENDENCY INJECTION DESIGN PATTERN WITH REAL WORLD EXAMPLE - SPRING TUTORIAL
+-Inversion of control pattern inverts responsibility of managing the life cycle of the object,setting their dependency etc from application to a framework, which makes writing Java application even more easy. 
+-Inversion of Control is a more general concept and Dependency Injection is a concrete design pattern.
+-Spring framework provides two implementations of IOC container in the form of Application Context and BeanFactory which manages life-cycle of bean used by Java application.
+-Dependency Injection reduces coupling between multiple object as its dynamically injected by framework.One of the implementation of DI is Inversion Of Controll(IOC) on which framework like spring controls object's dependency.
+-Two tpyes of Dependency Injection Constructor Injection and Setter Injection.
+-Depndency Injection allows to replace actual object with mock object which improves testablility by writing simple JUnit tests which uses mock object.

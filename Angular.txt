@@ -1,0 +1,435 @@
+https://www.youtube.com/watch?v=QoptnVCQHsU
+
+Introduction
+	-Developed in 2009 by Misko and Adam Abrons.
+	-Is open source and completely free.
+	-Licensed under Apache and maintained by Google.
+	-Very powerfull Javascript framework.
+	-Used to create SPA projects.
+Featrurs of AngularJS
+	-Used to create RIA (Riched internet application)
+	-Helps to write application using MVC architecture.
+	-Application in AngulerJS is cross-browser compliant.
+	-Automatically handles JavaScript code as per browser.
+Architectural Patterns:
+	-Provides reusable solution.
+	-Similar to software design patterns, but have broader scope.
+	-Solves & delineates vital cohesive elements of software architecture.
+	-e.g. Architectural Patterns - Event-driven architecture,MVC etc.
+	Benefits of MVC
+		-Resuability,Decoupled code,Parallel development,Multiple view support
+	
+Directives 
+	-Markers on a DOM element
+	-Tells compiler to attach a specified behavior to DOM element.
+	-AngularJS comes with set of predefined directives.
+	-Developers can create custom directives.
+Directive List
+	ng-app,
+	ng-model,
+	ng-bind,
+	ng-controller,
+	ng-value,
+	ng-show,
+	ng-hide,
+	ng-init,
+	ng-repeat,
+	ng-click,
+	ng-disabled,
+	ng-required
+------------------------------------------------------------------------------------------
+https://www.airpair.com/angularjs
+
+https://www.entrepreneur.com/article/250323
+------------------------------------------------------------------------------------------
+https://www.guru99.com/angularjs-introduction.html
+	
+What is AngularJS?Architecture & Features
+	AngularJS has the following key features which makes it one the powerful framework in the market.
+	1.MCV-This pattern is based on splitting the business logic layer,the data layer,and presentation	layer into separate sections.
+	2.Data Model Binding
+	3.Writing less code
+	4.Unit testing ready
+-The controller represents the layer that has the business logic.User events trigger the functions which are stored inside your controller.The user events are part of the controller.
+-Two way binding Angular.js keeps the data and presentation layer in sync.You just need to specify which control is bound to which part of your model.
+-It extends HTML by providing its own elements called directives.At high level,directives are markers on a DOM element(such as an attribute,element name and comment or CSS class) that tell me AngularJS's HTML compiler to attach a specified behavior to that DOM element.
+
+AngularJS Hello World Application
+	Integrated Development enviroments:
+	1.Webstorm 2.Sublime Text
+	3.AngularJS Eclipse 4.Visual Studio
+"ng-app" keyword is used to denote that this application should be consider as an angular js application.
+"ng-controller" directive is a keyword defined in AngularJS and is used to define controllers in your application.
+What is controller in AngularJS?
+	-A controllers in AJS takes data from view,processess the data, and that sends that data across to view which is displayed to the end user.
+	-Its primary responsibility is to controll the data which gets passed to the view.The scope and view have two-way communication.
+	-Properties of the view can call 'functions' on the scope.Moreever events on the view can call 'methods' on the scope.
+	-The scope is used to exposed the model to view.The model can be modified via methods defined in the scope which could be triggerd via events from the view.
+	-Controllers should not ideally be used for manipulating the DOM.This should be done by directives.Best practice is to have controller's based on funcationlity.
+	-Libraries:
+		<script>"lib/angular.js"</script>
+		<script>"lib/bootstrap.js"</script>
+		<script>"lib/jquery-1.11.3.min.js"</script>
+	
+	-You need to mention the name of the controller under the directive to ensure that you are able to access the functionality defined within the controller.
+	<script>
+		var app = angular.module('DemoApp',[]);
+		app.controller('DemoController',function($scope){
+			$scope.tutorialName = fuction(){
+				return "Angular JS";
+			};
+		});
+	</script>
+	-In javascript file:	
+		angular.module('app',[]).controller('HelloWorldCtrl',funcation($scope){
+			$scope.message = "Hello World"
+		});
+	-In HTML file:
+		<div class="container">
+			<div ng-controller="HelloWorldCtrl">{{message}}</div>
+		</div>
+	-The scope object is used to pass information from the controller to view.
+	-The controller's primary responsibility is to create a scope object which in turn gets passed to the view.
+	-
+What is $Scop in AngularJS?
+		The Scope is javascript object which basically binds the "controller" and the "view".One can define member variales in the scope within the controller which can then be accessed by the view.
+
+	-In order to react to events or execute some sort of computation/processing in the view we must provide behavior to the scope.
+	-Behaviors are added to scope objects to respond to specific events that may be triggered by view.Once the behavior is defined in the controller,it can be accessed by the view.
+	<script src="https://code.angular.js.org/1.6.9/angular.js"></script>
+	<div ng-controller="DemoController">{{fullName("Guru","99")}}
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("DemoApp",[]);
+		app.controller("DemoController",function($scope))
+		{
+			$scope.fullName=function(firstName,lastname) {
+				return firstName+lastname;
+			}
+		}
+	</script>
+	-Various member variables can be added to the scope object which can then be referenced in the view.
+	-Behavior can be added to work with events which are generated for actions performed by the user.
+-AngularJS ng-repeat
+	Angular provides a directive called "ng-repeat" whcih can be used to display repeating values defined in our controller.
+	<div ng-app="DemoApp" ng-controller="DemoController">
+		<h1>Topics</h1>
+			<ul>
+				<li ng-repeat="tpname in TopicNames">
+					{{tpname.name}}
+				</li>
+			</ul>
+	</div>
+	<script> 
+		var app = angular.module('DemoApp',[]);
+		app.controller('DemoController', function($scope){
+
+		$scope.TopicNames =[
+			{name: "What controller do from Angular's perspective"},
+			{name: "Controller Methods"},
+			{name: "Building a basic controller"}];	
+			});
+	</script>
+How to use ng-model in AJS
+	-ng-model is a directive in AJS that represents models and its primary purpose is to bind "view" to the "model".
+	-ng-model attribute is used to bind the data in your model to the view presented to the user.
+	The ng-model attribute is used for 
+		-Binding controls such as input,text ares and selects in the view into the model.
+		-Provide a validation behavior-for e.g. a validation can be added to a text box that on;y numeric characters can be entered into the text box.
+		-The ng-model attribute maintains the state of the control (By state,we mean that the control and data is bound to be always kept in sync.If the value of our data changes,it will automatically change the value in the control and vice versa)
+	-ng-model for textarea
+		<textarea rows="4" cols="50" ng-model="pDescription"></textarea>
+		.
+		.
+		<script>
+			var app = angular.module('DemoApp',[]);
+			app.controller('DemoCtrl',function($scope) {
+				$scope.pDescription="This topic looks at how Angular JS works \n Models in AJS"
+			});
+		</script>
+	-ng-model for input type
+		<input type="checkbox" ng-model="Topic.Controller">
+		<input type="checkbox" ng-model="Topic.Models">
+	-Select element form Dropdown
+		<select ng-model="Topics">
+			<option>{{TOpics.option1}}</option>
+			<option>{{TOpics.option2}}</option>
+		</select>
+		<script>
+			var app = angular.module('DemoApp',[]);
+			app.controller('DemoCtrl',function($scope) {
+				$scope.pName="Guru99";
+				$scope.Topics=
+				{
+					option1 : "Controller",
+					option2 : "Module"
+				}
+			});
+		</script>
+AngularJS ng-view 
+	-SPA's is the concept wherein when a user requests for different page,the application  will not navigate to that page but instead display the view of the new page within the existing page itself.The same can be achived ib the Angular with help of Views in conjunction with Routs.
+	-The "ng-View" is a directive that complements the $rout service by including the rendered template of the current rout into the main layout (index.html) file.
+	Add angular-rout file as a script referece -> Add href tags which will represent links to the different parts to the application -> Add the ng-view directive within your application -> Add a rout provider service to your application -> Add Controllers to your application -> Create the different 
+	<body ng-app="sampelApp">
+	..
+	<div class="container">
+		<ul>
+			<li><a href="#!NewEvent">Add New Event</a></li>
+			<li><a href="#!DisplayEvent">Display Event</a></li>
+		</ul>
+		<div ng-view></div>
+	</div>
+	<script>
+		var app = angular.module('sampleApp',["ngRoute"]);
+		app.config(function($routProvider)) {
+			$routeProvider.when("/NewEvent",{
+				templateUrl	:"add_event.html",
+				controller	:"AddEventController"
+			}).
+			when("/DisplayEvent",{
+				templateUrl	:"show_event.html",
+				controller	:"ShowDisplayController"
+			}).
+			otherwise({
+				redirectedTo	:'/DisplayEvent'
+			});
+		}
+		app.controller("AddEventController",function($scope) {
+			$scope.message  = "This is to add a new Event";
+		});
+		app.controller("ShowDisplayController",function($scope) {
+			$scope.message = "This is display an Event";
+		});
+	</script>
+AngularJS Expressions:Array,Objects,$eval,Strings
+	Expressions are variables which were defined in the double braces {{}}.They are very commonly used within AJS and you would see them in our previous tutorials.
+	AJS expressions are used to bind data to HTML the same way as the ng-bind directive.AJS displays the data exactly at the place where the expression is placed.
+	Expressions can be used to work with numbers as well.Expressions can be used to work with strings as well.
+	Expressions can be used to work with arrays as well.
+	The ng-init directive is used in angular.js to define variables and their corresponding values in the view itself.Its
+	somewhat like defining local variables to code in any programming language.
+	e.g.	<div ng-app="" ng-init="marks[1,15,19]"> 
+			Student Marks<br>
+			Subject1: {{marks[0]}} <br> &nbsp;
+			Subject2: {{marks[1]}} <br> &nbsp;
+			Subject3: {{marks[2]}} <br> &nbsp;
+		</div>
+	AJS Expressions capbilities and Limitations
+		-Angular expressions are like JavaScript expressions. Hence, it has the same power and flexibility.
+		-In JavaScript, when you try to evaluate undefined properties, it generates a ReferenceError or TypeError. In Angular, expression evaluation is forgiving and generate an undefined or null.
+		-One can use filters within expressions to format data before displaying it.
+
+		-There is currently no availability to use conditionals, loops, or exceptions in an Angular expression
+		-You cannot declare functions in an Angular expression, even inside ng-init directive.
+		-One cannot create regular expressions in an Angular expression. A regular expression is a combination of symbols and characters, which are used to find for strings such as .*\.txt$. Such expressions cannot be used within Angular JS expressions.
+		-Also, one cannot use, or void in an Angular expression.
+	Angular.js Objects
+		Expressions can be used to work with JavaScript objects as well.A javascript object consists of a name-value pair.
+	
+	<div ng-app="" ng-init="person={firstName:'Guru'lastName:'99'}">
+		First Name: {{person.firstName}}<br>
+		Last Name: {{person.lastName}}
+	</div>
+	The $eval function allows one to evaluate expressions from within the controller itself.So while expressions are used for evaluation in the view the $eval is used in the controller function.
+	<script>
+		var sampleApp = angular.module('sampleApp',[]);
+		sampleApp.controller('AngularController',function($scope){
+			$scope.a=1;
+			$scope.b=1;
+			$scope.value=$scope.$eval('a+b');
+		});
+	</script>
+AngularJS Filter: Currency,JSON,Number,Lowercase
+	A filter formats the value of an expresion to display to the user.
+	Uppercase,Number,Currency,JSON
+	Lowercase:This filter takes on a string output and formats the string and displays all the characters in the string as lowercase.
+	There are built-in filters such as 'lowercase','uppercase' which can retrive the output in lowercase accordingly.
+	<div ng-app=Demo-App" ng-controller="DemoController">
+		Tutorial Name: <input type="text" ng-model="tutorialName"><br>
+		This tutorial is {{tutorialName | lowercase}}	
+	</div>
+	-Number filter
+	<div ng-app="DemoApp" ng-controller="DemoController">
+		This tutorial is {{tutorialID | number:2}}
+	</div>
+	-JSON
+	This filter formats a JSON like input and applies the JSON filter to give the output in JSON.
+	-Filters are used to change the way the output is displayed to the user.
+	<div ng-app="DemoApp" ng-controller="DemoController">
+		This tutorial is {{tutorail | Demofilter}}
+	</div>
+	<script type="text/javascript">
+		var app=angular.module('DemoApp',[]);
+		app.filter('Demofilter',function(){
+			return function(input){
+				return input+" Tutorial" 
+			}
+		});
+		app.controller('DemoController',function($scope){
+			$scope.tutorial ="Angular";
+		});
+	</script>
+	If there is a requirement that is not met by any of the filters defined in angular then you can create your custom filter and add your custom code to determine the type of output want from the filter.
+AngularJS directive: ng-init,ng-repeat,ng-app,ng-model
+	A directive in AJS is a command that gives HTML new functionality.When anguler go through the HTML code,it will fine the directive in the page and then parse the HTML page accordingly.
+	ng-app: This is used to initialize an angularJS application.When this directive in place in an HTML page,it basically tells AJS that is HTML page is an angular.js application.
+	ng-init: This is used to initialize application data.Sometimes you may require some local data for your application,this can be done with the ng-init directive.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

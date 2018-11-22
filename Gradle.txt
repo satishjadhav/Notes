@@ -1,0 +1,109 @@
+http://www.vogella.com/tutorials/Gradle/article.html
+------------------------------------------------------------------------------------------
+What is gradle build system:
+	Gradle is an advanced general purpose build management system based on Groovy and Kotline.
+	Gradle supports automatic download and configuration of dependancies or other libraries.
+	It supports Maven and Ivy repositories for retrieving these dependencies.
+	Gradle has the notation of projects and tasks.
+Projects and gradle tasks in Gradle:
+	Each project consists of tasks.A task represent a piece of work a build performs,e.g. compile the source code or generate the Javadoc.
+The Gradle build file- build.gradle
+	This file is located in the root folder of the project.
+	The build file for Gradle builds is based on a Domain Specific Language (DSL).
+	This build file defines a project and its tasks.
+	
+	e.g. task hello {
+		doLast {
+			println 'Hello Gradle'
+		}
+	}
+
+	or task hello << {
+		println 'Hello Gradle'
+	}
+
+	exection: gradle hello	gradle -q hello
+	-You can user single and multiline comments in Gradle build files.
+	By default gradle uses the directory name as project name.You can change this by creating a settings.gradle file in the directory which specifies the project name.
+	rootProject.name='com.vogella.gradle.first'
+	You can add a description to your project via the build.gradle file.
+Gradle plug-ins
+	A plug-in is an extension to Gradle which typically addds some preconfigured tasks.
+	A plugin is included in a build.gradle file with the apply plugin: 'pluginname' statement.
+	Gradle provides also a registry for plug-ins via Gradle Plugin search.
+Installing and configuring Gradle
+	Download gradle-${version}-all.zip where ${version} is a placeholder for the current version.
+	SDKMAN is a command-line tool that allows you to install multiple Gradle versions and switch between them.
+	curl -s "https:.//get.sdkman.io" | bash
+	Installing Gradle and settings defult version
+		sdk install gradle 3.2
+		sdk default gradle 3.2
+		gradle -v
+	Switching Gradle version
+		sdk install gradle 2.13
+		# use 2.13 for current terminal session
+		sdk use gradle 2.13
+		gradle -v
+Using the Gradle daemon for improved startup time
+	Gradle allows to start Gradle as daemon to avoid starting the JVM machime for every build.Tc configure that create a file called gradle.properties in the ${HOME}/.gradle and add the following line to it:
+		org.gradle.daemon=true
+Check if Gradle installation was successful (Resumed)	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

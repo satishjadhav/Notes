@@ -1,0 +1,31 @@
+Jenkins: https://www.youtube.com/watch?v=89yWXXIOisk&t=0s&index=2&list=PLhW3qG5bs-L_ZCOA4zNPSoGbnVQ-rp_dG
+
+(ANTI-VIRUS)
+
+Jenkins
+	-Java application
+	-used for continuous integration and continuous delivery
+	-Developer --> Checks in code to repo --> Source Control (Git/SVN)-->
+		Grabs latest code --> Build Artifacts(exe,website,app)-->
+		Run Tests(Nunit,MSTest,Gradle,StyleCop,JSHint)-->Deploy-->
+		Publish output to live Server-->Report Back.
+	-Jenkins comes with its own servlet container call Jetty.
+	-Running Jenkins standalone (jetty/winstone) vs Running Jenkins on Tomcat
+	Step 1: Download Tomcat
+	Step 2: Unzip and place tomcat folder at any location
+	Step 3: Copy/Place the jenkins.war file inside tomcat/webapps folder
+	Step 4: Goto commandpromt (cmd) -windows | terminal -mac
+		-goto tomcat/bin directory
+		-make all files executable : chmod +x*.sh
+	Step 5:Start Tomcat : ./startup.sh
+		(to shutdown tomcat : ./shutdown.sh)
+How to change home directory:
+	Jenkins Home Directory contains:
+		1.All configurations
+		2.Pulgins
+		3.Jobs details
+		4.Logs
+	Why:
+	-To move jenkins home dir to a location that has enough disk space
+	-Project requirements
+	

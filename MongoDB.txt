@@ -1,0 +1,48 @@
+MongoDB
+	-Document-orirnted NoSQL database.
+	-Schema-free based on Binary JSON;BSON
+	-Organized in group of Documents->Collections
+	-Auto-Sharding in order to scale horizontally
+	-Simple query language.Rich,document-based queries.
+	-Open Source (GNU AGPL v3.0.)
+No real schema is enforced:
+	You can have different fields in every document if you want to
+	No single "key" as in other databases
+		But you can create indices on any fields you want, or even combinations of fields.
+		If you want to "shard",then you must do so on some index.
+	Results in a lot of flexibility
+		But with great power comes great responsibility
+Replication Sets:
+	Single-master
+	Maintains backups copies of your database instance.
+		Secondaries can elect a new primary within seconds if your primary goes down.
+		But make sure your operation log is long enough to give you time to recover the primary when it comes back.  
+Replica Set Quirks
+	A majority of the servers in your set must agree on the primary
+		Even numbers of servers(like 2) don't work well
+	Don't want to spend money on 3 servers? You can set up 'arbiter' node
+		But only one
+	Apps must know about enough serers in replica set to be able to reach one to learn who's primary
+	Replicas only address durability, not your ability to scale.
+		Well unless you can take advantage of reading from secondaries -which generally isn't recommended
+		And your DB will still go into read-only mode for a bit while new primary is elected.
+	Delayed secondaries can be set up as insurance against pepople doing dumb things
+Sharding Quirks
+	Auto-sharding somtimes does't work
+		Slipt storms, mongos progreess restarted too often
+	You nust have 3 config servers
+		Anf if any one goes down,your DB is down
+		THis is on top of the singe-master desing of replica sets
+	MongoDB's loose document model can be at odds with effective sharding
+------------------------------------------------------------------------------------------------------------------------------
+Tutorials Point:
+	https://www.tutorialspoint.com/mongodb/index.htm
+	MongoDB is an open-source document database and leading NoSQL database.
+	Written in C++.
+ MongoDb Overview
+	MongoDB is a cross-platform,document oriented database that provides,high performance,high availblility, and easy scalability.
+	MongoDB works on concept of collection and document.
+	A single MongoDB server typically has multiple databases.
+	Collection is a group of MongoDB documents quivalent of an RDBMS table.Collection exits within a single database.Collections do not enforce a schema.
+ Document
+	A document is a set of key-value pairs.Documents have dynamic schema.Dynamic schema means that documents in the same collection do not need to have the same set of fields or structure, and common fields in a collection's documents may hold different types of data.

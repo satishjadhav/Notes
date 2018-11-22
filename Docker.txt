@@ -1,0 +1,16 @@
+Docker
+Managing Ports:
+	In docker the containers themselves can have applications running on ports.When you run a container if you want to access the application in the container via a port number, you need to map the port number of the application in the container via a port number,you need to map the port number of container to the port number of the Docker host.
+	-sudo docker pull jenkins
+	To understand what ports are exposed by the container, you should use the Docker inspect command to inspect the image.
+	Docker inspect: This method allows to return low-level inforamtion on the container or image.
+	Syntax:	docker inspect Contianer/Image
+	e.g:	sudo docker inspect jenkins
+	
+	-sudo docker run -p 8080:8080 -p 50000:50000 jenkins
+	The left-hand side of the port number mapping is the Docker host port to map to and the right-hand side is the Docker container port number.
+Docker - Private Registries
+	You might have the need to have your own private repositories.You may not want to host the repositories on Docker Hub.For this there is a repository contianer itself from Docker.
+	Docker run command to download the private registry.
+	sudo docker run -d -p 5000:5000 --name registry registry:2
+	Registry is the container managed by Docker which can be used to host private repositories.
