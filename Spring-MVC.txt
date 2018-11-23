@@ -29,3 +29,4 @@ DIFFERENCE BETWEEN @RESTCONTROLLER AND @CONTROLLER ANNOTATION IN SPRING MVC AND 
 -The @RestController annotation in Spring MVC is nothing but a combination od @Controller and @ResponseBody annotation.
 -Fundamental difference between a web application and a REST API is that the response from a web application is generally view (HTML + CSS + JavaScript) while REST API just return data in form of JSON or XML.
 -The job of @Controller is to create a Map of model object and find a view but @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
+-A controller is a class which is responsible for preparing a model Map with data to be displayed by the view as well as choosing the right view itself.It can also directly write into response stream by using @ResponseBody annotation and complete the request.
