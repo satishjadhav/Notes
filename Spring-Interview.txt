@@ -1,3 +1,5 @@
+https://javarevisited.blogspot.com/2011/09/spring-interview-questions-answers-j2ee.html
+-----------------------------------------------------------------------------------------------------------------------------
 1) What is Spring IOC Container ?
 2) Does Singleton from Spring Container is thread safe?
 3) Why Spring MVC is better than Struts?
