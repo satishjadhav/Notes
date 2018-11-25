@@ -1,4 +1,8 @@
+https://comparisons.financesonline.com/mapr-vs-mongodb
+
 https://javarevisited.blogspot.com/2018/07/10-object-oriented-design-principles.html
+
+https://java2blog.com/spring-interview-questions-and-answers/
 -------------------------------------------------------------------------------------------------------------------------------
 INVERSION OF CONTROL AND DEPENDENCY INJECTION DESIGN PATTERN WITH REAL WORLD EXAMPLE - SPRING TUTORIAL
 -Inversion of control pattern inverts responsibility of managing the life cycle of the object,setting their dependency etc from application to a framework, which makes writing Java application even more easy. 
@@ -30,3 +34,121 @@ DIFFERENCE BETWEEN @RESTCONTROLLER AND @CONTROLLER ANNOTATION IN SPRING MVC AND 
 -Fundamental difference between a web application and a REST API is that the response from a web application is generally view (HTML + CSS + JavaScript) while REST API just return data in form of JSON or XML.
 -The job of @Controller is to create a Map of model object and find a view but @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
 -A controller is a class which is responsible for preparing a model Map with data to be displayed by the view as well as choosing the right view itself.It can also directly write into response stream by using @ResponseBody annotation and complete the request.
+-The @Controller is a common annotation wich is used to mark a class as spring MVC Controller while @RestController is a special controller used in RESTFul web services and the equivalent of @Controller + @ResponseBody.
+-The @RestController is relatively new,added only on Spring 4.0 but @Controller is an old annotation,exits since Spring started supporting annotation,officially it was added on Spring 2.5 version.
+-One of the key difference between @Controller and @RestController in SpringMVC is that once you mark a class @RestController then every method is written a domain object instead of a view.
+-If you are creating a RESTful Web Services it's better to use @RestController than combining @Controller to @ResponseBody.
+How Spring MVC Framework works? How HTTP Request is processed?
+-Tomcat is responsible for creating Servlet and Filter instances and invoking their various life-cycle methods e.g init(),service(),destroy().
+-To enable Spring MVC we need to declare the DispatcherServlet from Spring MVC jar into web.xml.This Servlet listens for a URL pattern * as shown in below web.xml,which means all request is mapped to DispacherServlet.
+-Its not mandatory you can have other sevlet mapped to other URL if want to,but if you are using Spring MVC to develop web application or RESTful web service,it make sense to pass through all request via DispatcherServlet.
+<servlet>
+	<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/config/web-application-config.xml</param-value>
+		</init-param>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>example</servlet-name>
+	<url-pattern>*</url-pattern>
+</servlet-mapping>
+-Spring uses the @RequestMapping annoatation or Spring MVC configuration file to find out mapping of request URL to different contollers.It can also use specific request processing annotations e.g. $GetMapping or @PostMapping.
+-After processing the request, Controller returns a logical view name and model to DispatcherServlet and it consults view resolvers until an actual View is determined to render the output.
+-DispatcherServlet from Spring MVC framework is an implementation of Front Controller Pattern and its also a single point of entry-handle all incoming request,but that depends upon your URL pattern mapping and your application.
+-It delegates requests for further processing to additional components e.g. Controllers, Views,View Resolvers,handler mappers,execution handlers etc.
+What is the use of DispatcherServlet in Spring MVC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
