@@ -1,0 +1,3 @@
+Angular
+	Data binding framework and client side framework,which is used for create data bindings in web pages.
+	Langauage Framework Architecture Design Pattern
