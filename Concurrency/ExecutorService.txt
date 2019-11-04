@@ -1,1 +1,146 @@
 https://www.youtube.com/watch?v=6Oo-9Can3H8&list=PLhfHPmPYPPRl0LntrCBnQD5ln6lnqqoms
+
+=>Java ExecutorService - Part 1 - Introduction
+	public static void main(String []args){
+		int coreCount = Runtime.getRuntime().availableProcessors();
+		ExecutorService service = Executors.newFixedThreadPool(coreCount);
+		for(int i=0;i<100;i++) {
+			service.execute(new Task());
+		}
+		System.out.println("THread name: "+Thread.currentThread().getName());
+	}
+	static class Task implements Runnable {
+		public void run(){
+			System.out.println("Thread Name: "+Thread.currentThread().getName());
+		}
+	}
+
+=>Java ExecutorService - Part 2 - Type of Pools
+	FixedThreadPool		
+			-LinkedBlockingQueue
+			-ExecutorService service = Executors.newFixedThreadPool(coreCount);
+				
+	CachedThreadPool	
+			-SynchronusQueue
+			-ExecutorService service = Executors.newCachedThradPool();
+				
+	ScheduledThreadPool
+			-DelayedWorkQueue
+			-Scheduled the tasks to run based on time delay (and retrigger for fixedRate / fixedDelay)
+			-Service.schedule,service.scheduledAtFixedRate,service.scheduledAtFixedDelay
+			-More threads are created if required
+		
+			ScheduledExecutorService service = Executors.newScheduledThreadPool(corePoolSize:10);
+			service.schedule(new Task(),delay:10,SECONDS);
+			service.scheduleAtFixedRate(new Task(),initialDelay:15,period:10,SECONDS);
+			service.scheduleWithFixedDelay(new Task(),initialDelay:15,delay:10,TimeUnit.SECONDS);
+	SingleThreadedExecutor
+			-LinkedBlockingQueue
+			ExecutorService service = Executors.newSingleThreadedExecutor();
+
+=>Java ExecutorService - Part 3 - Constructor & LifeCycle methods
+	
+Parameter			Type				Meaning
+corePoolSize			int				Minimum/Base size of the pool
+maxPoolSize			int				Maximum size of the pool
+keepAliveTime+unit		long				Time to keep an idle thread alive (after which its killed)
+workQueue			BlockingQueue			Queue to store the tasks from which threads fetch them
+threadFactory			ThreadFactory			The factory to use to create new threads
+handler				RejectedExecutionHandler	Callback to use when tasks submitted are rejected
+
+Policy			What it means?
+AbortPolicy		Submitting new tasks throws RejectedExecutionException(Runtime exception)
+DiscardPolicy		Submitting new taks silently discards it.
+DiscardOldestPolicy	Submitting new tasks drops existing oldest taks and new task is added to the queue.
+CalleRunsPolicy		Submitting new tasks will execute the task on the caller thread itself.This can create feedback loop				where caller thread is busy executing the task and cannot submmit new tasks at fast pace.
+
+private static class CustomRejectionHandler implements RejectedExecutionHandler {
+	@Override
+	public void rejectedExecution(Runnable r,ThreadPoolExecution executor){
+		// logging opreations to perform on rejections
+	}
+}
+
+//initiate shutdown
+service.shutdown();
+
+//Will throw RejectionExecutionException
+service.execute(new Task());
+
+//will return true, since shutdown has begun
+service.isShutdown();
+
+//will return true if all tasks are completed including queued ones
+service.isTerminated();
+
+//block until all tasks are completed of if timeout occurs
+service.awaitTermination(timeout:10,TimeUnit.SECONDS);
+
+//will initiate shutdown and return all queued tasks
+Lis<Runnable> runables = service.shutDownNow();
+
+=>Java ExecutorService - Part 4 - Callable / Future
+//Cancel the task
+future.cancel(mayInterruptedRunning:false);
+
+//Returns true if task was cancelled
+future.isCancelled();
+
+/Returns true is task is completed (sucessfully or otherwise)
+future.isDone();
+
+
+Future<Integer> future = service.submit(new Task());
+try {
+}catch(InterruptedException e) {
+	e.printStackTrace();
+}catch(ExecutionException e) {
+	e.printStackTrace();
+}catch(TimeoutException e) {
+	System.out.println("Couldn't complete tasl before timeout");
+}
+
+static class Task implements Callable<Integer> {
+	@Override
+	public Integer call() throws Exception {
+		Thread.sleep(millis:3000);
+		return new Random().nextInt();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

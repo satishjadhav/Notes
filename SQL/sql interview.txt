@@ -1,7 +1,27 @@
 https://www.guru99.com/sql-interview-questions-answers.html
 
 What are tables and fields?
-A table is a set of data that are organized in a model with Columns and Rows.Table has specified number of column called fields but can have any number of rows which is called record.
+	A table is a set of data that are organized in a model with Columns and Rows.Table has specified number of column called fields but can have any number of rows which is called record.
 -There can be many unique constraint defined per table, but only one Primary key constraint defined per table.
--Inner join:Inner jion return rows when there is at least one match of rows between tables.
--Right join:Right join return rows which are common between the tables and all rows of Right hand side table. Simply, it returns all the rows from the right hand side table even though there are no matches in the left hand side table.
+-Inner join:
+	Inner jion return rows when there is at least one match of rows between tables.
+-Right join:
+	Right join return rows which are common between the tables and all rows of Right hand side table. Simply, it returns all the rows from the right hand side table even though there are no matches in the left hand side table.
+-Left jion:
+	Left jion return rows which are common between the tables and all rows of left hand side table.Simply it returns all the rows from left hand side table even though there are no matches in the Right hand side table.
+-Full jion:
+	Full join return when there are maching rows in any one of the tables.This means it returns all the rows from the left hand side table and all rows from the right hand side table.
+What is normalization?
+	Normalization is the process of minimizing redundancy and dependency by organizing fields and table of a database. The main aim of Normalization is to add, delete or modify field that can be made in a single table. 
+
+=>Part 2 SQL query to get organization hierarchy
+	with employeecte as (
+		select employeeid,employeename,managerid
+		from employees
+		where employeeid= @id
+
+		union all
+		select employees.employeeid,empoyees.employeename,employees.managerid
+		from employees jion employeecte on employees.employeeid = employeecte.managerid
+	)
+	

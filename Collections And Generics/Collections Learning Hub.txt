@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=CRaHEbdILcg&list=PLxWzQv_1I_AC6Nqb66UEHoguwCBxNi2js
+
+What is the difference between ArrayList and Vector?
