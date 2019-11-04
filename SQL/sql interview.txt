@@ -1,0 +1,7 @@
+https://www.guru99.com/sql-interview-questions-answers.html
+
+What are tables and fields?
+A table is a set of data that are organized in a model with Columns and Rows.Table has specified number of column called fields but can have any number of rows which is called record.
+-There can be many unique constraint defined per table, but only one Primary key constraint defined per table.
+-Inner join:Inner jion return rows when there is at least one match of rows between tables.
+-Right join:Right join return rows which are common between the tables and all rows of Right hand side table. Simply, it returns all the rows from the right hand side table even though there are no matches in the left hand side table.

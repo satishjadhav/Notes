@@ -1,0 +1,214 @@
+https://www.youtube.com/playlist?list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6
+----------------------------------------------------------------------------------------------------
+=>Concurrency Vs Parallelism
+	
+-Schedular of OS schedules the thread execution.
+-Parallelism is about doing lot of things at once.
+-Parallelism using java threadpool:
+	public static void main(String args[]){
+		ExecutorService es = Executors.newFixedThreadPool(nThreads:4);
+		es.submit(()->processTx(user1));
+		es.submit(()->processTax(user2));
+		heavyCalculations();
+	}
+-Threads
+-Threads
+	-ExecutorService
+	-ForlJoinPool
+	-Custom ThreadPools (e.g Web Servers)
+-Requires > 1 CPU cores
+-Scheduler interleaves threads.
+-How much time each thread gets is non deterministic.
+-Concurrency is about dealing with lot of things at once.
+-Tools to deal with concurrency
+	-Locks/synchronized
+	-Atomic classes
+	-Concurrent data structures (e.g ConcurrentHashMap,BlockingQueue)
+	-CompletableFuture
+	-CountdownLatch/Phaser/CyclicBarrier/Semaphore etc
+
+=>Java memory Model
+-Out of order execution
+-Field visibility
+	CPU core -> registers -> L1 cache -> L2 cache -> L3 cache -> RAM
+-Java memory model is a specification which guarantees visibility of fields (aka happenda before amidst reordering of instructions).
+-Volatile -> synchronized -> Lock (ReentrantLock)
+
+=>Using volatile vs AtomicInteger in Java concurrency
+-AtomicInterger
+	incrementAndGet
+	decrementAndGet
+	addAndGet(int delta)
+	compareAndSet(int expectedValue,int newValue)
+-Visibility problem use Volatile
+-Compound Operations use Atomic Variables
+
+Type				UseCase
+----------------------------------------
+Volatile			Flags
+
+AtomicInteger			Counters
+AtomicLong			
+
+AtomicReference			Caches (building new cache in background and replacing atomically)
+				Used by some internal classes
+				Non-blocking algorithms
+
+=>Adder and Accumulator classes in Java 8
+public static void main(String []args) throws InterruptedException {
+
+	//AtomicLong counter = new AtomicLong(initialValue:0);
+
+	//LongAdder counter = new LongAdder();
+
+	//LongAccumulator counter = new LongAccumulator((x,y) -> x+y, identity:0s);
+
+	ExecutorService service = Executors.newFixedThreadPool(nThreads: 16);
+
+	for(int i=0; i<100; i++) {
+		service.submit(new Task(counter));
+	}
+	Thread.sleep(100);
+	//System.out.println(counter.get());
+	System.out.println(counter.sum()); //All thread-local variables added
+}
+private static class Task implements Runnable {
+	private final AtomicLong counter;
+	public Tak(AtomicLong counter) {
+		this.counter = counter;
+	}
+
+	@Override
+	public void run(){
+		//counter.incementAndGet();
+		//counter.increment(); //Thread-local variable incremented
+		counter.accumulate(x:1);
+	}
+}
+
+Accumulator : More generic version of Adder
+
+LongAccumulator counter = new LongAccumulator((x,y) -> x+y, identity:0);
+LongAccumulator result = new LongAccumulator((x,y) -> x*y, identity:0);
+LongAccumulator min = new LongAccumulator((x,y) -> Math.min(x,y), identity:0);
+LongAccumulator max = new LongAccumulator((x,y) -> Math.min(x,y), identity:0);
+
+Best suited for write heavy operations
+Order of operations is not deterministic
+Accumulation function mat not be applied repeatedly
+
+=>Understanding how ForkJoinPool works
+
+public Result solve(Task t){
+	split t into smaller tasks
+
+	for each if these tasks
+		solve(t)
+	wait for all tasks to complete
+
+	jion all indivisual results
+
+	return results
+}
+
+In fork jion framework threads storing all task into its own double ended queue (dequeue)
+	Execute Runnable		execute(Runnable)
+	Submit Runnable			submit(Runnable)
+	Submit Runnable			submit(Callable)
+
+
+					Call from non-fork-join clients			Call from within fork/jion computations
+Arrange async execution			execute(ForkJoinTask)				fork()
+Await and obtain result			invoke(ForkJoinTask)				invoke()
+Arrange exec and obtain Future		submit(ForkJoinTask)				fork()(ForkJoinTasks are Futures)
+
+
+Used for Sorting,Matrix multiplication,Best move finder for a game,Tree traversal
+
+https://www.youtube.com/watch?v=QCMt324j64U&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
