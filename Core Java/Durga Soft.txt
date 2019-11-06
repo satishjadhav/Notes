@@ -1,1 +1,14 @@
 https://www.youtube.com/watch?v=Dxpdo9BUGss&list=PLYPjPMiw3_YsVockWfuuhoP86YPDUXp4f
+Difference between final,finally,finalize
+final:
+	1.final is a modifier applicable for class,methods and variables.If a class declared as	final then we can't extend that class.i.e we can't create child class for that class.
+	2.If a method declared as final then we can't override that method in the child class.
+	3.IF a variable declred as final then it will become constant and we can't perform re-assignment for that variable.
+finally:
+	finally is a block always associated with try catch to maintain cleanup code.
+finalize:
+	finalize() is a method which is always invoked by garbage collector just before destroying an object to perform cleanup activities.
+finally meant for cleanup activities related to try block.where as finalize() meant for cleanup activities related to object.
+
+What is difference between String and StringBuffer?
+	

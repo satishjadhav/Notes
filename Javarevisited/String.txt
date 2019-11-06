@@ -1,0 +1,33 @@
+https://javarevisited.blogspot.com/2010/10/why-string-is-immutable-or-final-in-java.html
+
+The String is immutable in Java because String objects are cached in String pool.Since cached String literals are shared between multiple clients there is always a risk, where one client's
+action would affect all another client.
+At the same time, String was made final so that no one can compromise invariant of String class e.g. Immutability, Caching, hashcode calculation etc by extending and overriding behaviors.
+String literals are created in heap memory and String literal pool.
+Important and popularity of String as data type,transfer object and mediator has also made it popular in Java interviews.
+
+Why String is final in java ?
+	String to cache its hashCode, being immutable Srting in java caches its hashcode and do not calculate every time we call hashcode method of String, which makes it very fast as hashmap key to be used in hashmap in java.
+	String is immutable is that it is used by the class loding mechanism and thus profound and fundamental security aspects.Had String been mutable a request to hold 'java.io.Write' could have been changed to load 'mil.vogoon.DiskErsingWriter'.
+
+Sting pool gets created in PERM area of java heap, so if there are too many String there is good chance of OutOfMemoryError becouse garbage collection doesn't happen in PERM area of java heap.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

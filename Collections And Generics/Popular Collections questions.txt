@@ -1,1 +1,21 @@
 https://www.youtube.com/watch?v=v9zg9g_FbJY&list=PLUuwHwzYrYKzvyGoa4ZvZzBnhDckS_j_g
+Sorting 
+	Comparable(I)
+	Comparator(I)
+Cursors
+	Enumeration
+	Iterator
+	ListIterator
+Utility
+	Collections
+	Arrays
+List
+	ArrayList,LinkedList,Vector,Stack
+Set	
+	HashSet,LinkedHashSet
+Queue	
+	PriorityQueue,BlockingQueue,PriorityBlockingQueue,LinkedBlockingQueue
+Map
+	HashMap,LinkedHashMap,WeakHashMap,IdentityHashMap
+	SortedMap,NavigableMap,TreeMap
+	Hashtable,Properties

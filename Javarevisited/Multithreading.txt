@@ -1,0 +1,62 @@
+https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-questions-answers.html
+What is thread in java?
+Thread is a independant path of execution.Its way to take advantage of multiple CPU available in a machine.
+During its life time thread remains on various Thread states like NEW,RUNNABLE,BLOCKED,WAITING,TIME_WAITING which describe what thread is doing.NEW means thread is just created but not yet stated RUNNABLE menas thread is started but waiting for CPU to be assigned by thread scheduler.BLOCKED,WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished,class or object lock or any other thread etc.
+Java will give your Thrad default name like "Thread-bumber" if Thread id created using java.lang.Thread or "pool-number-thread-number" if Thread is created using ThreadFactory.In java higher priority thread get preference in execution over lower priority thread.
+In web application server manages this thread pool because each request is processed in its own thread.
+Thread.sleep() method is used to pause thread for specifed duration.Thread..jion() is used to wait for another thread to complete its task before running and yield() method is used to relinquish CPU so other thread can acquire it.
+wait() and notify() methods are used to communicate between two threads i.e. for inter thread communication in java.
+Always check condition of wait() method in loop and call them from synchronized context.wait() is method which is defined in object class, and puts the current thread on hold and also releases the monitor (lock) held by this thread, while notify() and notifyAll() methods notifies all thread waiting on that monitor.
+Thread scheduling is done by Thread Scheduler which is platform dependent and stays inside JVM.
+Thread.isActive() method is used to check whether a thread is active or not.
+Thread.holdLock() method is used to check if a thread holds a lock or not.
+Every thread in java has its own stack, which is used to store local variables and method calls.Size of this stack can be controlled using -XX:ThradStackSize JVM option e.g. -XX:ThreadStackSize=512.
+Java provides interrupt() method to interrupt a thread in java.You can interrupt a running thread,waiting thread or sleep thread.This is the control java provides to prevent a blocked or hanged thread.Once you interrupt a thread, it will also throw InterruptedException which is a cheched exception to ensure that your code should take handle interrupts.
+Java provides two ways to achieve mutual exclusion in your code, either by using synchronized keyword or by using java.util.concurrent.lock implementations.You can use synchronized keyword to either make an entire method mutual exclusive or only critical section by declaring a synchronized block.
+Any thread needs to hold monitor or lock,required by that critical section in order to enter into synchronized block or method,they release that lock, once they exit, either normally or abruptly due to any error.
+In fact thread is started when you call start() method of java.lang.Thread class e.g. t.start() will start the thread.It puts your thread in RUNNABLE state and when thread scheduler assign CPU to this thread,it executes run() method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,2 +1,118 @@
 https://javarevisited.blogspot.com/2011/11/collection-interview-questions-answers.html#more
+-How HashMap or Hashtable works internally in java?
+At least you should know that :
+	1) Two unequal objects may return the same hashcode.
+	2) When two objects are equal by equals(), they must have the same hashcode.
+Overriding Equals, HashCode and CompareTo in Java
+	A simple implementation of compareTo must return negative number if current object is lesser than provided object, positive if current object is greater in order than provided and zero if both objects are equal.
+	Another worth noting point is that, compareTo() and equals() must be consistent with each other, otherwise your object will not behave properly on Collection classes, which uses compareTo() for sorting
+	Rules to Remember :
+		1) Always override hashcode if you are overriding equals and vice-versa.
+		2) Make sure your equals() method is consistent with compare() and compareTo() method, if you intend to use your object with either SortedSet or SortedMap.
+		3) Always use getClass() to check type of object instead of using instanceof operator. Using instanceof, breaks symmetry property of equals method.
+		4) A correct implementation of Equals method must satisfy following condition :
+			a) Don't throw NullPointerException if compared with null.
+			b) Must be symmetric i.e. if x.equals(y) is true and y.equals(x) must be true.
+			c) Must be transitive i.e. if x.equals(y) is true and y.equals(z) is true than x.equals(z) must be true.
+@Override
+public boolean equals(Object other){
+	if(this==other) return true;
+	if(other == null || (this.getClass()!=other.getClass())){
+		return false;
+	}
+	Person guest = (Person)other;
+	return (this.id == guest.id) &&
+		(this.name != null && name.equals(guest.name)) &&
+		(this.dob != null && dob.equals(guest.dbo));
+}
+
+@Override
+public int hashCode(){
+	int result = 0;
+	result = 31*result + id;
+	result = 31*result + (name !=null ? name.hashCode() : 0);
+	result = 31*result + (dob !=null ? dob.hashCode() : 0);
+	return result;
+}
+
+@Override
+public int compareTo(Person o){
+	retrun this.id - o.id;
+}
+ 1) How does get(Key key) method works internally in HashMap, and Hashtable in Java?
+	 a) Key.hashCode() method is used to find the bucket location in backing array. (Remember HashMap is backed by array in Java) Though hashcode() is not used directly, but they are passed to internal hash() function.
+
+	b) In backing array or better known as the bucket, key and values are stored in the form of a nested class called Entry.  If there is only one Entry at bucket location, then the value from that entry is returned. Pretty straightforward right?
+	
+	If multiple keys have the same hashCode, then during put() operation collision had occurred, which means multiple Entry objects stored in a bucket location. Each Entry keeps track of another Entry, forming a linked list data structure there.
+
+	This has also changed from Java 8, where after a threshold is crossed then a binary tree is used instead of linked list to lift the worst case performance from O(n) to O(logN).
+
+What is the difference between poll() and remove() method of Queue interface? (answer)
+	Though both poll() and remove() method from Queue is used to remove the object and returns the head of the queue, there is a subtle difference between them. If Queue is empty() then a call to remove() method will throw Exception, while a call to poll() method returns null. By the way, exactly which element is removed from the queue depends upon queue's ordering policy and varies between different implementation, for example, PriorityQueue keeps the lowest element as per Comparator or Comparable at head position.
+
+What is fail safe and fail fast Iterator in Java?
+	The main distinction between a fail-fast and fail-safe Iterator is whether or not the underlying collection can be modified while its begin iterated.
+	If Iterator detects any structural change after iteration has begun e.g adding or removing a new element then it throws ConcurrentModificationException,  this is known as fail-fast behavior and these iterators are called fail-fast iterator because they fail as soon as they detect any modification .
+	Most of the Collection classes from Java 1.4 e.g. Vector, ArrayList, HashMap, HashSet has fail-fast iterators.
+	The other type of iterator was introduced in Java 1.5 when concurrent collection classes e.g. ConcurrentHashMap, CopyOnWriteArrayList and CopyOnWriteArraySet was introduced.
+	Fail-fast Iterator throws ConcurrentModfiicationException as soon as they detect any structural change in collection during iteration, basically which changes the modCount variable hold by Iterator. While fail-safe iterator doesn't throw CME.
+	 Fail-fast iterator traverse over original collection class while fail-safe iterator traverse over a copy or view of original collection. That's why they don't detect any change on original collection classes and this also means that you could operate with stale value.
+	 Iterator returned by synchronized Collection are fail-fast while iterator returned by concurrent collections are fail-safe in Java.
+
+How do you remove an entry from a Collection? and subsequently what is the difference between the remove() method of Collection and remove() method of Iterator, which one you will use while removing elements during iteration?
+	Collection intrface defines remove(Object obj) method to remove objects from Collection.
+
+What is the difference between Synchronized Collection and Concurrent Collection
+Difference between ConcurrentHashMap, Hashtable and Synchronized Map in Java
+	All methods of Hashtable are synchronized which makes them quite slow due to contention if a number of thread increases. Synchronized Map is also not very different than Hashtable and provides similar performance in concurrent Java programs. The only difference between Hashtable and Synchronized Map is that later is not a legacy and you can wrap any Map to create it's synchronized version by using Collections.synchronizedMap() method.
+	On the other hand, ConcurrentHashMap is specially designed for concurrent use i.e. more than one thread. By default it simultaneously allows 16 threads to read and write from Map without any external synchronization.
+	It is also very scalable because of stripped locking technique used in the internal implementation of ConcurrentHashMap class. Unlike Hashtable and Synchronized Map, it never locks whole Map, instead, it divides the map into segments and locking is done on those.
+	ConcurrentHashMap and CopyOnWriteArrayList implementations provide much higher concurrency while preserving thread safty with some minor compromises in their promises to callers.
+What is the difference between Iterator and Enumeration?
+	Iterator also allows you to remove elements from collection during traversal but Enumeration doesn't allow that.
+	Enumeration is also a legacy class and not all Collection supports it Vector supports Enumeration but ArrayList doesn't.
+How does HashSet is implemented in java how does it use Hashing?
+	HashSet is built on top of HashMap  if you look at source code of java.util.HashSet class you will find that it uses a HashMap with same values for all keys
+	public HashSet(){
+		map = new HashMap<>();
+	}
+	private transient HashMap<E,Object> map;
+	private static Obect PRESENT = new Object();
+
+	public boolean add(E e){
+		return map.put(e,PRESENT) == null;
+	}
+
+What do you need to do to use a custom object as a key in Collection classes like Map or Set?
+identity equality (==) and logical equality (equals())
+equals-hashcode contract according to which you must override hashcode if you are overriding equals and vice versa.
+The difference between HashMap and Hashtable?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

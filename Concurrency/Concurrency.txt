@@ -125,28 +125,234 @@ Arrange exec and obtain Future		submit(ForkJoinTask)				fork()(ForkJoinTasks are
 
 Used for Sorting,Matrix multiplication,Best move finder for a game,Tree traversal
 
-https://www.youtube.com/watch?v=QCMt324j64U&list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6&index=6
+SynchronousQueue:
+SynchronousQueue is same as BlockingQueue but with size of 1
+SQ has no size at all there is a direct handoff between Producer and Consumer thread.
+No peek method,no iterate method,perfect for handoffs.
+
+ThradLocal:
+Per thread instances for memory efficiency and thread-safety.
+Per Thread context
+class ThreadSafeFormatter {
+	public static ThreadLocal<SimpleDateFormat> dateFormat = new ThreadLocal<SimpleDateFormat>(){
+		@Override
+		protected SimpleDateFormat initialValue(){
+			return new SimpleDateFormat("yyyy-MM-dd");
+		}
+
+		@Override
+		public SimpleDateFormat get(){
+			return super.get();
+		}
+	}
+}
+
+public class UserService {
+	public satic void main(String []args){
+		//...
+	}
+	public String birthDate(int userId){
+		Date birthDate = birthDateFromDb(userId);
+		final SimpleDateFormat df = ThreadSafeFormatter.dateFormatter.get();
+		return df.format(birthDate);
+	}
+}
+
+java-8
+class ThreadSafeFormatter {
+	public static ThradLocal<SimpleDateFormat> df = ThreadLocal.withInitial(()-> new SimpleDateFormat("yyyy-MM-dd"));
+}
+
+public class UserService {
+	
+	public static void main(String []args){
+		//...
+	}
+
+	public String birthDate(int userId){
+		Date birthDate = birthDateForDB(userId);
+		final SimpleDateFormat df = ThradLocalFormatter.df.get();
+		return df.format(birthDate);
+	}
+}
+Spring framework uses lot of Context holders:
+	LocalContextHolder
+	TransactionContextHolder
+	RequestContextHolder
+	DateTimeContextHolder
+	SecurityContextHolder
+Thread confinement
+Per thread object for perf
+per thread context
+
+Phaser Vs CountDownLatch Vs CyclicBarrier:
+
+public static void main(String []args) thorws InterruptedException {
+
+	ExecutorService executor = Executor.newFixedThreadPool(nThreads:4);
+	CountDownLatch latch = new CountDownLatch(3);
+
+	executor.submit(new DependentService(latch));
+	executor.submit(new DependentService(latch));
+	executor.submit(new DependentService(latch));
+
+	latch.wait();
+
+	System.out.println("All dependant services initialized");
+}
+
+public static class DependentService impelements Runnable {
+	private CountDownLatch latch;
+
+	public DependentService(CountDownLatch latch) {
+		this.latch  = latch;
+	}
+
+	@Override
+	public void run(){
+		latch.countDown();
+	}
+}
+Phaser:
+	CountDownLatch,CyclicBarrier,Plus more flexibility
+public static void main(String []args){
+
+	ExecutorService executor = Executors.newFixedThreadPool(4);
+
+	Phaser phaser = new Phaser(1); //self-register
+
+	executor.submit(new Service(phaser));
+	executor.submit(new Service(phaser));
+
+	phaser.bulkRegister(4); //bulk register later
+}
+public static class Service implements Runnable {
+	private Phaser phaser;
+	public Service(Phaser phaser) {
+		this.phaser = phaser;
+	}
+
+	@Override
+	public void run(){
+		phaser.register();//allow threads to register themselves
+		//some operations
+
+		phaser.arrive();
+		//other opreations
+	}
+}
 
 
+Java Asynchronous Programming
+Non-blocking IO and Asyschronous API 
+	for(Integer id: employeeIds) {
+		CompletableFuture.supplyAsync(() -> fecthEmployee(id)
+			.thenApplyAsync(employee -> fetchTaxRate(employee))
+			.thenApplyAsync(taxRate -> calculateTax(taxRate))
+			.thenAcceptAsync(taxValue -> sendEmail(taxValue)));
+	}
+Servlets 3.0 Allows more concurrent requests
+	@WebServlet(urlPatterns={"/user"}, asyncSupported=true)
+	public class UserAsyncService extends HttpServlet {
+		
+		@Override
+		public void doGet(HttpServletRequest request,HttpServletResponse response){
+			final AsyncContext context = request.StartAsync();
+			context.start(new Runnable() {
+				public void run(){
+					ServletResponse response = context.getResponse();
+					context.complete();
+				}
+			});
+		}
+	}
+
+Spring 5.0 Webflux
+Java Fibers (lightweight threads)
+
+=>Lock's condition class in java
+private Lock lock = new ReentrantLoack();
+private Condition conditionMet = lock.newCondition();
+
+public void method1() thorws InterruptedException {
+	lock.lock();
+	try{
+		conditionMet.await();
+	}finally {
+		lock.unlock();
+	}
+}
+
+public void method2(){
+	lock.lock();
+	try{
+		conditionMet.signal();
+	}finally {
+		lock.unloc(); 
+	}
+
+}
+--------------------------------------------------------
+public synchronized void execute(){
+	try{
+		monitor.wait();
+	}catch(InterruptedException e){
+		System.err.println("Interrupted");
+	}
+	//notify thread waiting on the monitor
+	monitor.notify();
+
+	//notify all threads
+	monitor.notifyAll();
+}
+
+lock.lock();
+
+try{
+	condition.wait();
+}catch(interruptedException e){
+	System.err.println("Interrupted");
+}
+
+//notify thread waiting on the monitor
+condition.signal();
+
+//notify all threads
+condition.signalAll();
+
+lock.unlock();
+
+-----------------------------------------
+private Lock lock = new ReentrantLock();
+private Condition added = lock.newCondition();
+private Condition removed = lock.newCondition();
+
+public void produce() throws InterruptedException {
+
+	lock.lock();
+	try{
+		while(count == MAX_COUNT)
+			removed.await();
+		
+		addData();
+		added.signal();
+	}finally {
+		lock.unlock();
+	}
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public String consume() throws InterruptedException {
+	lock.lock();
+	try {
+		while(count ==0)
+			added.await();
+		String data = getData();
+		removed.signal();
+	} finally {
+		lock.unlock();
+	}
+}
 
 
 

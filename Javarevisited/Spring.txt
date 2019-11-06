@@ -1,0 +1,19 @@
+https://javarevisited.blogspot.com/2011/09/spring-interview-questions-answers-j2ee.html
+
+What is IOC or inversion of control?
+	As the name implies Inversion of the control means now we jave inverted the control of creating the object the object from our own using new operator to container or framework.
+	Now its the responsibility of the container to create an object as required.
+Explain the Spring Bean-LifeCycle.
+	If the bean implements the BeanNameAware interface, the factory calls setBeanName() passing the bean’s ID.
+	If the bean implements the BeanFactoryAware interface, the factory calls setBeanFactory(), passing an instance of itself.
+	If there are BeanPostProcessors associated with the bean, their post- ProcessBeforeInitialization() methods will be called before the properties for the Bean are set.
+	If an init() method is specified for the bean it will be called.
+	If the Bean class impelements the DisposableBean interface then destroy() method will be called when the Applcation no loger needs the bean reference.
+What is Bean Factory, have you used XMLBeanFactory?
+	BeanFactory is factory Pattern which is based on IOC desing principles it is used to make a clear separation between application configuration and dependency from actual code.
+	The org.springframework.beans.factory.xml.XmlBeanFactory is used to create bean instance defined in our XML file.
+	BeanFactory factory = new XmlBeanFactory(new FileInputStream("beans.xml")); OR
+	ClassPathResource resource = new ClassPathResource("beans.xml");
+	XmlBeanFactory factory = new XmlBeanFactory(resource);
+What id APO?
+	The core construct of AOP is the aspect, which encapsulates behaviors affecting multiple classes into reusable modules. AOP is a programming technique that allows a developer to modularize crosscutting concerns, that cuts across the typical divisions of responsibility, such as logging and transaction management.
