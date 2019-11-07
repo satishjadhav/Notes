@@ -24,4 +24,68 @@ What is normalization?
 		select employees.employeeid,empoyees.employeename,employees.managerid
 		from employees jion employeecte on employees.employeeid = employeecte.managerid
 	)
-	
+select * from table_name where empname like 'A%';
+
+Third highest salary of an employee?
+	select top 1 salary from (select top 3 salary from employee_table
+	order by salary desc) as emp
+	order by salary asc;
+Group fucntions work on the set of rows and retunrs one result per group.
+AVG,COUNT,MAX,MIN,SUM,VARIANCE
+MERGE statement:
+Allows conditional update or insertion of data into a table.If performs an UPDATE if a row exits, or an ISERT if the row does not exist.
+
+What is CLAUSE in SQL?
+SQL clause helps to limit the result set by providing a condition to the query.A clause helps to filter the rows from the entire set of records.e.g WHERE & HAVING clause.
+
+HAVING CLAUSE can be used only with SELECT statement it is usually used in a GROUP BY clause.
+WHERE CLAUSE is applied to each row before they are a part of the GORUP BY function in a query.
+LIKE operator is used for pattern matching % it matches zero or more characters.
+	select * from students where studentname LIKE 'a%';
+_ It matches exactly one character
+	select * from student where studentname LIKE 'abc_';
+A view is a virtual table which consists of a subset of data contained in a table.Since views are not present,it takes less space to store.View can have data of one or more tables combined and it depends on the relationship.
+A stored procedure is a function consists of many SQL statements to access the database system.
+AUTO INCEMENT keyword can be used in Oracle and IDENTITY keyword can be used in SQL SERVER.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

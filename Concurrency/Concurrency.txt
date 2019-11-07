@@ -354,20 +354,128 @@ public String consume() throws InterruptedException {
 	}
 }
 
+=>Semaphore in java concurrency:
+public static void main(String []args){
+	Semaphore semaphore = new Semaphore(3);
+
+	ExecutorService service = Executors.newFixedThreadPool(50);
+	IntStream.of(1000).forEach(i->service.execute(new Task(semaphore)));
+
+	service.shutdown();
+	service.awaitTermination(1,TimeUnit.MINUTES);
+}
+static class Task implements Runnable {
+
+	@Override
+	public void run(){
+		semaphore.acquireUninterruptibly();
+		//semaphore.acquireUninterruptibly(2);
+
+		semaphore.release();
+		//semaphore.release(2);
+	}
+}
+Restrict or Manage the use of limited resources	
+Method					Meaning
+tryAcquire				Try to acquire if no premit avilable do not block.
+					Continue doing someting else.
+tryAcquire(timeout)			Same as above but with timeout
+availablePermits			Return count of permits available
+new Semaphore(count,fairness)		FIFO Fairness guarantee for threads waiting the longest.
 
 
+=>Java ReentrantLock - fairness,tryLock and more
+Locks are explicit
+Locks allow locking/unlocking in any scopes and in any order
+Ability to tryLock and tryLock(timeout)
 
+private static ReentrantLock lock = new ReentrantLock();
+private static void accessResource(){
+	lock.lock();
+	try{
+		//access the resource
+	} finally {
+		lock.unlock();
+	}
+}
 
+private void accessResource() {
+	synchronized(this){	//lock.lock();
+	}			//lock.unlock(); 
+}
+Number of times lock called without calling unlock.
 
+private static void accessResource(){
+	lock.lock();
+	lock.lock();
 
+	int number = lock.getHoldCount();
 
+	lock.unlock();
+	lock.unlock();
+}
 
+private static ReentrantLock lock = new ReentrantLock();
 
+private static void accessResource(){
+	lock.lock();
 
+	if(someCondition()){
+		accessResource();		//recursive call Reentrant
+	}
+	lock.unlock();
+}
 
+Lock fairness:
+	ReentrantLock lock = new ReentrantLock(true); //used for lock fairness
+	Equal chance for all threads and slower
+Unfair Barge-in
+	ReentrantLock lockBargeIn = new ReentrantLock();
+	ReentrantLock lockBargeIn = new ReentrantLock(false);
+	Faster (more throughput) and possible thread starvation
+Try lock
+private static ReentrantLock lock = new ReentrantLock();
+private static void accessResource() throws InterruptedException {
+	boolean lockAcquired = lock.tryLock(timeout:5,TimeUnit.SECONDS);
+	if(lockAcquired){
+		try{
+			//access resource
+		}finally {
+			lock.unlock();
+		}
+	} else {
+		//do alternate thing
+	}
+}
+Method used for debugging :
+	isHeldByCurrentThread
+	getQueueLength
+	newCondition
 
+=>Basic Lock funtion
+ReadWriteLock Vs ReentrantLock
+ReentrantLock - one thread at a time
+ReadWriteLock - one writer thread at a time or multiple reader threads at a time
 
+private ReentrantReadWriteLock lock = new ReentrantReadWriteLcok();
 
+private ReentrantReadWriteLock.ReadLock readLock = lock.readLock();
+private ReentrantwriteLock.WriteLock writeLock = lock.writeLock();
+
+private void readResource(){
+	readLock.lock();
+	//view the resource
+	readLock.unlock();
+}
+
+private void writeResource(){
+	writeLock.lock();
+	//update the resource
+	writeLock.unlock();
+}
+ReadLock and WriteLock though are 2 sepaate instances only 1 will be allowed at a time either ReadLock is being used (by n threads) OR WriteLock is being used (by 1 thread) but never both at same time.
+
+=>Exchanger class in java
 
 
 
