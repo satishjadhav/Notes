@@ -1,1 +1,247 @@
 https://www.youtube.com/playlist?list=PLTyWtrsGknYfiybyI_6R7KvHSql0DW-2v
+-------------------------------------------------------------------------------
+DESIGN PATTERNS:
+	STRUCTURAL
+	CREATIONAL
+	BEHAVIOURAL
+
+STRUCTURAL
+	Adapter
+	Bridge
+	Composit
+	Decorator
+	Facade
+	Flyweight
+	Proxy
+CREATIONAL
+	Singleton
+	Builder
+	Prototype
+	Factory
+	Abstractfactory
+BEHAVIOURAL
+	Chain of responsibility
+	Command
+	Interpreter
+	Iterator
+	Mediator
+	Memento
+	Observer
+	State
+	Strategy
+	Templatemethod
+	Visitor
+
+
+=>Sigleton Design Pattern 
+	-Static in nature
+	-Thread safe
+	-Private Constructor
+	-Private instance of the Class
+	-No parameters to the Constructor
+
+	public static Singleton getInstance(){
+		if(instance == null){
+			synchronized(Singleton.class){
+				if(instance == null){
+					instance = new Singleton();
+				}
+			}
+		}
+	}
+
+=>Factory design pattern
+	-Doesn't expose instantiation or the creation logic
+	-Subclasses create the objects
+	-Common Abstract/Interface
+	-Framework the client the implementation uses the factories
+	
+=>Abstract Factory Design Pattern
+	OSFactory factory = AbstractPhoneFactory.getFactory(OSType.ANDROID);
+	Phone pixelPhone = factory.create(ManufacturerType.GOOGLE);
+	pixelPhone.display();
+
+	OSFactory wfactory = AbastractPhoneFactory.getFactory(OSType.WINDOWS);
+	Phone nokiaPhone = wfactory.create(ManufacturerType.MICROSOFT);
+	nokiaPhone.display();
+
+	-Factory of factories/ related object / colections of factories
+	-Common Abstract/Interface
+	-Subclasses create the objects
+
+=>Builder design pattern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

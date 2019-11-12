@@ -1,0 +1,348 @@
+https://www.youtube.com/watch?v=12uFYsZrick
+-------------------------------------------------------------------------------
+	Open source and ORM,database independant.
+	High performance
+	HQL,HCQL
+	No expertise required on SQL to work with hibernate
+	Automatic table creation,update,saving with less code
+	Provides statics
+Hibernate Classes:
+SessionFactory
+Session
+Trasaction
+ConnectionProvider
+TrasactionFactory,Query,Criteria,HQL Hibernate Query Language,HCQL Hibernate Criteria Query Language
+Hibernate.cfg.xml
+POJO.hbm.xml
+
+
+public static void main(String []args){
+	SessionFactory sessionFactory = new Configuration().config("hibernate.cfg.xml").
+	buildSessionFactory();
+	Session session = sessionFactory.openSession();
+	Trasaction trasaction = session.beginTrasaction();
+	Company company = new Company(101, "Test records");
+	session.save(company);
+	transaction.commit();
+	session.close();
+
+	System.out.println("Saved object successfully");
+	Session session1 = sessoinFactory.openSession();
+	company = (company) session1.get(Comapany.class,101);
+	System.out.println(company);
+	System.out.println("Retrived Successfully");
+}
+
+database dialects:
+	DB2		org.hibernate.dialect.DB2Dialect
+	MySQl5		org.hibernate.dialect.MySQL5Dialect
+	Oracle		org.hibernate.dialect.OracleDialect
+	MSSQL2008	org.hibernate.dialect.SQLServer2008Dialect
+	H2DB		org.hibernate.dialect.H2Dialect
+Explain steps involved in working with hibernate using hbm.xml file?
+	Create POJO class
+	Create hibernate.hbm.cml file correcponding to POJO class and map the attributes.
+	Create the hibernate.cfg.xml file.
+	Create the class to store or retrive the database using Hibernate classes
+	Load required hibernate libraries before running the program
+Explain steps involved in working with hibernate using Annotations?
+	Create the POJO class and annotate class and instance variables e.g. :@Entity,@Id
+	Create the hibernate.cfg.xml file
+	Create the class to store or retrive the object into the database
+	Load required hibernate libraries before running the program.
+ 
+	public static void main(String []args){
+		SessionFactory seesionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSeession();
+		Trasaction trasaction = session.beginTrasaction();
+		Employee emp = new Employee(101,'Siva');
+		session.save(emp);
+		trasaction.commit();
+		session.close();
+		System.out.println("Saved Object Successfully");
+	}
+Hibernate inheritance mapping?
+	Table per class Hierarchi
+	Table for concreate class
+	Table for subclass class
+
+What is Generator class in Hibernate?
+	GeneratedValue(strategy=IDENTITY) uses IDENTITY strategy
+	AUTO - Indicates that the persistance provider should pcik an appropriate strategy for the particular database.
+	IDENTITY - Indicates that the persistance provider must assign primary keys for the entity using database column.
+	SEQUENCE - Indicates that the persistance provider must assign primary keys for entity using database sequence column.
+	TABLE - Indicates that the persistance provider must assign primary keys for the entity using an underlying database table to ensure uniquness.
+What is lazy loading in Hibernate?
+	When hibernate loads the parent class then by default it will not fetch the results associated to its subclass.In hibernate lazy loading is true by default.
+What is HQL and its advantage?
+	Hibernate Query Language is used to perform database operations.
+	HQL is database independant query language
+	Query query = seesion.createQuery("from Employee");
+	List<Empoyee> list = query.list();
+	for(Employee e: list){
+		System.out.println(e);
+	}
+What is HCQL and its advantage?
+	Hibernate Criteria query language this is used to add the criteria to the queries to filter the results.
+	Criteria criteria = session.createCriteria(Employee.class);
+	criteria.add(Restrictions.gt("empId",100);
+	criteria.addOrder(Order,asc("empId"));
+	List<Employee> empList = criteria.list();
+	for(Employee e: list) {
+		System.out.println(e);
+	}
+Named SQL query:
+	@NamedQueries({
+		@NamedQuery(
+			name = "getEmpList",
+			query = "from Employee"
+		)
+	})
+	Query query2 = seesion1.getNamedQuery("getEmpList");
+	List<Employee> empList = query2.list();
+	for(Employee e : empList){
+		System.out.println(e);
+	}
+What are different states of an object in Hibernate?
+	Transient
+	Persistence
+	Detached
+What is differnece between get() and load()?
+	get() --->directly fetch from datbase
+	load()--->first check in cache and then fetch from database (prcxy object is created)
+What is difference between update and merge?
+Automatic dirty checking in hibernate?
+What is procy object in Hibernate?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

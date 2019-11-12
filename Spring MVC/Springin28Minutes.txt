@@ -1,0 +1,122 @@
+ https://www.youtube.com/watch?v=2prdt2byiTs&list=PLZCG5-ZfZNS8hD0af37ENg_YT1WtvaByk&index=3&t=0s
+ Data Access/Integration
+	JDBC,ORM,OXM,JMS,Transactions
+Web
+	Websocket,Servlet,Web,Portlet
+APO,Aspects,Instrumentation,Messaging
+Core Container
+	Beans,Core,Context,SpEL
+Test
+
+-Major features in different versions of Spring?
+	Spring 2.5 made annotation-driven configuration possible.
+	Spring 3.0 made great use of java 5 improvements in language.
+	Spring 4.9 is the dfirest version to fully support java8 features.Minimum version of java to use spring 4 is Java SE 6.
+Following are some of the new features in Spring 4.0 and Spring 4.1
+	Spring-websocket module provides supoort for WebSocket communication in web applications.
+	Spring Framework 4.0 is focused on Servlet 3.0+ environments
+	@RestController annotation is introduced for use with Spring MVC applications
+	Spring 4.1 introduces @JmsListener annotations to easily register JMS listener endpoints.
+	Spring 4.1 supports JCache (JSR-107) annotations using Spring's existing cache configuration.
+	Jackson's @JsomViewsspporteddirectlyon.
+-Spring singleton is defined as one instance per container.
+-Spring validator can be used both in web and business layers to validate objects.Its based on the org.springframework.validation.Validator interface having two important methods.
+-Logger.logMsg(Logger.INFO,"methodname"+<arguments>+<custommessage>);
+
+PointCut
+	*.save*
+	*.get*
+	*.BOIImpl.get*
+Aspect:
+	Logger.logMsg(Logger.INFO,"methodname"+<methodParams>+<custommessage>);
+	
+	@Aspect
+	public class LoggingAspect {
+		@Before("execution(*com.rithus.service.*.get*())")
+		public void getAllAdvice(){
+			System.out.println("Service method");
+		}
+	}
+
+Before		advice:		Executed bofore executing the actual method.
+After returning advice:		Executed after executing the actual method.
+After throwing	advice:		Executed if the actual method call thorws an axception.
+After (finally) advice:		Executed in all scenarios after actual method call.
+Around advice:			Most powerful advice which can perform custom behavior before and					after the method invocation.
+Setup Session Factory to integrate Spring and Hibernate?
+<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<property name="dataSource" ref="specificDataSource"/>
+	<property name="mappingResources">
+		<list><value>tablename.hbm.xml</value></list>
+	</property>
+	<property name="hibernateProperties">
+		<value>hibernate.dialect=org.hibernate.dialect.HSQLDialect</value>
+	</property>
+</bean>
+Spring Batch:
+	Restartability:easy to restart a batch program from where it failed.
+	Different Readers and Writers:Provides great support to read from JMS,JDBC,Hibernate,iBatis etc. It can write to JMS,JDBC,Hibernate and more.
+	Chunk Processing: If we have 1 Million records to process these can be processed in configurable chunks.
+	Easy to implement proper trasaction management even when using chunk processing.
+	Easy to implement parallel processing with simple configuration different steps can be run in parallel.
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
