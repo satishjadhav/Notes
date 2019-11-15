@@ -1,3 +1,99 @@
 https://www.youtube.com/channel/UCVPASNJQ98XbpQM8Oy3qZJg/videos
 --------------------------------------------------------------------------------
 Java Mpas:https://www.youtube.com/watch?v=APL28XpFP0c
+
+	ConcurrentHashMap
+	Collections.synchronizedMap
+	HashMap
+	HashTable
+	IndentityHashMap
+	EnumMap
+	WeakHashMap
+	LinkedHashMap
+	ConcurrentSkipListMap
+	TreeMap
+java.util.HashTable
+	Legacy associative array implementation inducted to collection family by implementing Map interface later.
+	All methods are "thread-safe".
+	There is "synchronized" keyword on each public method such as (put,get,remove etc).T
+	Overhead in an enviornment where Map is initialized once and the read by multiple threads.
+java.util.LinkedHashMap
+	Very similar to HashMap
+	Iteratoin is guaranteed in insertion order.
+	Maintains separate doubly linked list of all entries that is kept in entry insertion order.
+	Can be used in uses-cases where hash map like behavior is needed at the same time order of insertion has to be preserved.
+java.util.TreeMap
+	Implementation of SortedMap and NavigableMap interface.
+	Iteration is guarenteed in 'natural sorted' order of keys.
+	Either the keys should implement Comparable interface (if not exception will be thrown:ClassCastException);If not we need to provide an explicit Comparator in the constructor.
+	Red-black tree based implementation NavigableMap interface provides methods that can return closes match to the key(floorEntry()...)
+java.util.IdentityHashMap
+	Uses identity to stor and retrive key values.
+	Used reference equality meaning r1==r2 rather than r1.equals(r2).
+	For hashing System.identityHashCode(givenKay) is invoked rather than givenKay.hashCode().
+	Used in serialization/deep copying or your key is "Class" object or interned strings-memory footprint comparatively smaller than a hashmap as therr are no Entry/Node created
+java.util.EnumMap
+	EnumMap<K extends Enum<K>,V>
+	For use with enum type keys,All of the keys in an enum msap must come from a single enum type that is specified,exlicitly or implicitly when the map is created.
+	Iterator does not fail-fast
+	Null keys not permited and not synchronized.
+java.util.WeakHashMap
+	Elements in a weak hashmap can be reclaimed by the garbage collector if there are no other strong reference to the objects, this makes them useful for cache/lookup storage.
+	Keys inserted warapped in java.lang.ref.WeakReference.
+	Useful only if the desired lifetime of cache entries is determined by external refernces to the key,not the value.
+Collections.synchronizedMap(map)
+	A convinient 'decorator' to create fully synchronized map.
+	Return type is Collections.synchronizedMap instance.It wraps around passed map intance and marks all APIa as synchronized effectively making it similar to HashTable.
+java.util.concurrent.ConcurrentHashMap
+	Reads can happen fast while writes require a lock.Write lock is acquired at granular level,whole table is not locked only segments are locked.So very rare chance of read waiting on write to complete.
+	Iterations do not throw concurrent modification exception(with the same thread)
+	Can be used in cases where a lot of concurrent addition happens followed by or concurrent reads later on.
+	Null key not allowed, if map.get(null) returns null,it is not sure if null is not mapped or if null mapped to a null value.In a non-concurrent map, we could use contains() call,but in concurrent map,values can change between API calls.
+	Operations not atomic.
+java.util.concurrent.ConcurrentSkipListMap
+	A scalable concurrent ConcurrentNaviableMap/SoretedMap implementation.
+	Guarntees average O(log(n)) performance on a wide variety of operations.
+-------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=IwUwIrz9Ge8
+equals and hashCode contract:
+	Always override hashCode when you override equals.A common source of bugs is the failuer to override hashCode method.You must override hashCode in every clas that overrides equals failuer to do so will prevent your class from functioning properly in conjuntion with all hash-based collections. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

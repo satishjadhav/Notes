@@ -12,7 +12,126 @@ Why String is final in java ?
 
 Sting pool gets created in PERM area of java heap, so if there are too many String there is good chance of OutOfMemoryError becouse garbage collection doesn't happen in PERM area of java heap.
 
-
+https://javarevisited.blogspot.com/2012/10/10-java-string-interview-question-answers-top.html
+-What is String in Java? Is String is data type?
+	String in Java is not a primitive data type like int, long or double. The string is a class or in more simple term a user defined type.
+	String provides equals() methods to compare two strings and provides various other methods to operate on String like toUppercase() to convert String into uppper case,relace() toreplace ,string contents,substring() to get substring,split() to split to split long String into multiple String.
+-Why String is immutable or final in java?
+	The string is Immutable in Java because String objects are cached in String pool. Since cached String literals are shared between multiple clients there is always a risk, where one client's action would affect all another client.
+	String was made final so that no one can compromise invariant of String class e.g. immutability,caching,hashcode calculation etc by extending and overriding behaviors.
+	Since String is immutable it can safely share between many threads which is very important for multithreaded programming and to avoid any synchronization issues in Java, Immutability also makes String instance thread-safe in Java, means you don't need to synchronize String operation externally. Another important point to note about String is the memory leak caused by SubString, which is not a thread related issues but something to be aware of.
+	Another reason of Why String is immutable in java is to allow String to cache its hashcode,being immutable String in java caches its hashcode and do not calculate every time we call hashcode method of String,which makes it very fast as hashmap key to be used in hashmap in JAVA.
+-String,StringBuilder,StringBuffer outof these String class is final class.
+-String is object(derived) type in java.
+-We can use String in switch statement in java 7.Prior to java 7 you had to use if-else statements to achieve the task.
+-StringBuffer has the same method as the StringBuilder but each method in StringBuffer is synchronized that is StringBuffer is thread-safe.
+-What is String intern() method?
+	When the intern method is invoked,  if the String constant pool already contains a string equal to the String object as determined by the equals(Object) method, then the string from the pool is returned.Otherwise the String object is added to the pool and a reference to the String object is returned.
+	The task of intern() method is to put String (which is passed to the intern method) into string constant pool.
+-In c and java both programming language treat String object as char Array.Java String is an object while C String is NULL terminated character array.
+-Use equals() method to compare two Strings.Avoid using "==" operator.The main reason to use equals() method is that it always compare String values i.e. contant. '==' operator compares the reference in the memory.
+-String contant pool is the memory space allocated in the heap memory area to stor the objects which are created using String literals.String conatant pool is uniqur, there are no two String objects which has the same value(content).
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 

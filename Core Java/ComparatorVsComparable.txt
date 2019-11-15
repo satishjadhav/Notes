@@ -1,0 +1,5 @@
+Comparable<T>
+	public int compareTo(Obejct t){
+		return 1,-1,0;
+	}
+Comparator

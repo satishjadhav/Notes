@@ -1,0 +1,141 @@
+https://career.guru99.com/top-50-oracle-interview-questions-and-answers/
+--------------------------------------------------------------------------------
+-Varchar can store upto 2000 bytes and Varchar2 can store upto 4000 bytes.
+varchar will occupy space for NULL values and varchar2 will not occupy any space.Both are differed with respect to space.
+-Oracle has been devloped using C language.
+-RAW datatype is used to store values in binary data format.The maximum size for a raw in a table in 32767 bytes.
+-The NVL function is used to replace NULL values with another or given value.
+e.g. NVL(value,replace value)
+-In oracle 'months_between' function is used to find number of months between the given dates.
+months_between(Date date_1,Date date_2);
+-Nested table is a data type in oracle which is used to support columns containing multi valued attributes.It also hold entire sub table.
+COALESCE funtion is used to return the value which is set to be not null in the list.If all values in the list are null then the coalesce funtion will return NULL.
+coalesce(value_1,value_2,value_3,...);
+-A BLOB data type is a varying length binary string which is used to store two gigabytes memory.Length should be specified in Bytes for BLOB.
+-Data Manipulation Language (DML) is ued to access and manipulate data in the existing objects.DML statements are insert,select,update and delete and it won't implicitly commit the current transaction.
+-Translate is used for character by character substitution and Replace is used substitute a single character with a word.
+-Duplicate rows can be removed by using the keyword DISTINCT in the select statement.
+-Merge statement is used to select rows from one or more data source for updating and insertion into a table or a view. It is used to combine multiple operations.
+-NULL value represents missing or unknown data. This is used as a place holder or represented it in as default entry to indicate that there is no actual data present.
+-The USING clause is used to specify with the column to test equality when two tables are joined.
+-A table is set to be key preserved table if every key of the table can also be the key of the result of the join.It guarantees to return only one copy of each row from the base table.
+-The WITH CHECK option clause specifies check level to be done in DML statements. It is used to prevent changes to a view that would produce results that are not included in the sub query.
+-Aggregate function is a function where values of multiple rows or records are jioned together to get a single value output.e.g. average,count,sum
+-Group by clause can be used in select statement where it will collect data across multiple records and group the results by one or more columns.
+-Sub query is also called as Nested Query or Inner Query which is used to get data from multiple tables.A sub query is added in the where clause of the main query.
+There are two different types of subqueries:
+	Correlated sub query:cannot be as independent query but can reference column in a table listed in the outer query.
+	Non-correlated sub query:This can be evaluated as if it were an independant query.Results of the sub query are submmited to the main query or parent query.
+-Cross join is defined as the Cartesian product of records from the tables present in the join. Cross join will produce result which combines each row from the first table with the each row from the second table.
+-Oracle provides following temporal data types:
+    Date Data Type – Different formats of Dates
+    TimeStamp Data Type – Different formats of Time Stamp
+    Interval Data Type – Interval between dates and time
+-VArray is an oracle data type used to have columns containing multivalued attributes and it can hold bounded array of values.
+-describe <table_name> is used to get the field details of a specified table.
+-Rename is a permanent name given to a table or a column whereas alise is a temporary name given to a table or column.Rename is nothing but replacement of name and Alise is an alternate name of the table or column.
+-View is a logical table based on one or more tables or views.The tables upon which the view is based are called Base tables and it doesn't contain data.
+-A cursor variable is associated with different statements which can hold different values at run time. A cursor variable is a kind of reference type.
+-Each cursor in Oracle has set of attributes which enables an application program to test the state of the cursor. The attributes can be used to check whether cursor is opened or closed, found or not found and also find row count.
+-SET operators are used with two or more queries and those operators are Union, Union All, Intersect and Minus.
+-Duplicate rows in the table can be deleted by using ROWID.
+-Attributes of Cursor are
+    %FOUND
+		Returns NULL if cursor is open and fetch has not been executed
+		Returns TRUE if the fetch of cursor is executed successfully.
+		Returns False if no rows are returned.
+    %NOTFOUND
+		Returns NULL if cursor is open and fetch has not been executed
+		Returns False if fetch has been executed
+		Returns True if no row was returned
+	%ISOPEN
+		Returns true if the cursor is open
+		Returns false if the cursor is closed
+	%ROWCOUNT
+		Returns the number of rows fetched.It has to be iterated through entire cursor to give exact real count.
+-Yes, we can store pictures in the database by Long Raw Data type. This datatype is used to store binary data for 2 gigabytes of length. But the table can have only on Long Raw data type.
+-Integrity constraint is a declaration defined a business rule for a table column.Integrity constraints are used to ensure accuracy and consistency of data in a database.There are types:
+	Domain Integirty
+	Referential Integrity
+-Hash Cluster is a technique used to store the table for faster retrieval. Apply hash value on the table to retrieve the rows from the table.
+-Following are constraints used:
+    NULL		– It is to indicate that particular column can contain NULL values
+    NOT NULL	– It is to indicate that particular column cannot contain NULL values
+    CHECK		– Validate that values in the given column to meet the specific criteria
+    DEFAULT		– It is to indicate the value is assigned to default value
+-SUBSTR returns specific portion of a string and INSTR provides character position in which a pattern is found in a string.
+SUBSTR returns string whereas INSTR returns numeric.
+-In,OUT and INOUT are the modes of parameters that can be passed to a procedure.
+-There are different data objects in Oracle –
+    Tables		– set of elements organized in vertical and horizontal
+    Views		– Virtual table derived from one or more tables
+    Indexes		– Performance tuning method for processing the records
+    Synonyms	– Alias name for tables
+    Sequences	– Multiple users generate unique numbers
+    Tablespaces – Logical storage unit in Oracle
+-LOV is property whereas list items are considered as single item.List of items is set to be a collection of list of items.A list item can have only one column,LOV can have one or more columns.
+-Privileges are the rights to execute SQL statements means right to connect and excute.Grants are given to the object so that objects can be accessed accordingly.Grants can be provided by the owner or creator of an object.
+-$ORACLE_BASE is the main or root directory of an oracle whereas, $ORACLE_HOME is located beneath base folder in which all oracle products reside.
+-Row can be fetched from table by using ROWID.Using ROWID is the fastest query method to fetch data from the table.
+-12 is the maximum number of triggers that can be applied to a single table.
+-Display row numbers with the records numbers –
+	Select rownum, <fieldnames> from table;
+This query will display row numbers and the field values from the given table.
+-How can we view last record added to a table?
+	Last record can be added to a table and this can be done by
+	Select * from (select * from employees order by rownum desc) where rownum<2;
+-The DUAL table is a one-column table present in oracle database.  The table has a single VARCHAR2(1) column called DUMMY which has a value of ‘X’.
+-There are no differences between the join. Cartesian and Cross joins are same. Cross join gives cartesian product of two tables – Rows from first table is multiplied with another table which is called cartesian product.
+Cross join without where clause gives Cartesian product.
+- How to display employee records who gets more salary than the average salary in the department?
+	select * from employee where salary > (select avg(salary) from dept,employee where dept.deptno = employee.deptno;
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
