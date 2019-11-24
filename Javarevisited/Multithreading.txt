@@ -1,45 +1,43 @@
 https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-questions-answers.html
-What is thread in java?
-Thread is a independant path of execution.Its way to take advantage of multiple CPU available in a machine.
-During its life time thread remains on various Thread states like NEW,RUNNABLE,BLOCKED,WAITING,TIME_WAITING which describe what thread is doing.NEW means thread is just created but not yet stated RUNNABLE menas thread is started but waiting for CPU to be assigned by thread scheduler.BLOCKED,WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished,class or object lock or any other thread etc.
-Java will give your Thrad default name like "Thread-bumber" if Thread id created using java.lang.Thread or "pool-number-thread-number" if Thread is created using ThreadFactory.In java higher priority thread get preference in execution over lower priority thread.
-In web application server manages this thread pool because each request is processed in its own thread.
-Thread.sleep() method is used to pause thread for specifed duration.Thread..jion() is used to wait for another thread to complete its task before running and yield() method is used to relinquish CPU so other thread can acquire it.
-wait() and notify() methods are used to communicate between two threads i.e. for inter thread communication in java.
-Always check condition of wait() method in loop and call them from synchronized context.wait() is method which is defined in object class, and puts the current thread on hold and also releases the monitor (lock) held by this thread, while notify() and notifyAll() methods notifies all thread waiting on that monitor.
-Thread scheduling is done by Thread Scheduler which is platform dependent and stays inside JVM.
-Thread.isActive() method is used to check whether a thread is active or not.
-Thread.holdLock() method is used to check if a thread holds a lock or not.
-Every thread in java has its own stack, which is used to store local variables and method calls.Size of this stack can be controlled using -XX:ThradStackSize JVM option e.g. -XX:ThreadStackSize=512.
-Java provides interrupt() method to interrupt a thread in java.You can interrupt a running thread,waiting thread or sleep thread.This is the control java provides to prevent a blocked or hanged thread.Once you interrupt a thread, it will also throw InterruptedException which is a cheched exception to ensure that your code should take handle interrupts.
-Java provides two ways to achieve mutual exclusion in your code, either by using synchronized keyword or by using java.util.concurrent.lock implementations.You can use synchronized keyword to either make an entire method mutual exclusive or only critical section by declaring a synchronized block.
-Any thread needs to hold monitor or lock,required by that critical section in order to enter into synchronized block or method,they release that lock, once they exit, either normally or abruptly due to any error.
-In fact thread is started when you call start() method of java.lang.Thread class e.g. t.start() will start the thread.It puts your thread in RUNNABLE state and when thread scheduler assign CPU to this thread,it executes run() method.
-
-What is difference between Thread and Process in java?
-The Thread is a subset of process in other words one process can contain multiple threads.
- If you run a Java program in UNIX based system e.g. Linux and if that program creates 10 Threads, it still one process and you can find that by using 'ps -ef | grep identifier' command which is one of most popular use of grep command in UNIX, Where 'identifier' is unix text which can be used as regular expression to find that Java process.
-Every process has its own memory space,executable code and a unique process identifier (PID) while  every thread has its own stack in java but it uses process main memory and share it with other threads.
-What is Thread in Java?
-Thread is an independant path of execution.
-Main problem with using multiple threads and writing multi-threaded code is issues related to concurrency e.g. deadlock,livelock,race conditions etc.
-thread1.start();
-thread1.start(); //IllegalThreadStateException
-Thread will be said to go on dead state once execution of run() method finished and you can not start that thread again.
-What is the difference between start() and run() method of Thread class?
-When program calls start() method a new Thread is created and code inside run() method is executed in new Thread while if you call run() method directly no new Thread is created and code inside run() will execute on current Thread.
-Another difference between start vs run in Java thread is that you can not call start() method twice on thread object. once started, second call of start() will throw IllegalStateException in Java while you can call run() method twice.
-What is the difference between Runnable and Callable in Java?
-The major difference between Callable and Runnable interface is that Callable can return the result of an operation performed inside call() method, which was one of the limitations with Runnable interface.
-Another significant difference between Runnable and Callable interface is the ability to throw checked exception. The Callable interface can throw checked exception because it's call method throws Exception.
-Commonly FutureTask is used along with Callable to get the result of asynchronous computation task performed in call() method.
-The Callable interface is a generic parameterized interface and Type of value is provided when an instance of Callable implementation is created.
-What is the difference between CyclicBarrier and CountDownLatch in Java?
-All threads which wait for each other to reach barrier are called parties, CyclicBarrier is initialized with a number of parties to wait and threads wait for each other by calling CyclicBarrier.await() method which is a blocking method in Java and  blocks until all Thread or parties call await().In general calling await() is shout out that Thread is waiting on the barrier. await() is a blocking call but can be timed out or Interrupted by other thread.
-What it implies that CountDownLatch is a good for one-time events like application start-up time and CyclicBarrier can be used to in case of the recurrent event e.g. concurrently calculating a solution of the big problem etc.
-What is Java Memory model?
-Java memory model is set of rules and guidelines which allows java programs to behave deterministically across multiple memory architecture,CPU, and operating systems.It's particularly important in case of multi-threading.
-
+-1)What is thread in java?
+	Thread is a independant path of execution.Its way to take advantage of multiple CPU available in a machine.
+	During its life time thread remains on various Thread states like NEW,RUNNABLE,BLOCKED,WAITING,TIME_WAITING which describe what thread is doing.NEW means thread is just created but not yet stated RUNNABLE menas thread is started but waiting for CPU to be assigned by thread scheduler.BLOCKED,WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished,class or object lock or any other thread etc.
+	Java will give your Thrad default name like "Thread-bumber" if Thread id created using java.lang.Thread or "pool-number-thread-number" if Thread is created using ThreadFactory.In java higher priority thread get preference in execution over lower priority thread.
+	In web application server manages this thread pool because each request is processed in its own thread.
+	Thread.sleep() method is used to pause thread for specifed duration.Thread..jion() is used to wait for another thread to complete its task before running and yield() method is used to relinquish CPU so other thread can acquire it.
+	wait() and notify() methods are used to communicate between two threads i.e. for inter thread communication in java.
+	Always check condition of wait() method in loop and call them from synchronized context.wait() is method which is defined in object class, and puts the current thread on hold and also releases the monitor (lock) held by this thread, while notify() and notifyAll() methods notifies all thread waiting on that monitor.
+	Thread scheduling is done by Thread Scheduler which is platform dependent and stays inside JVM.
+	Thread.isActive() method is used to check whether a thread is active or not.
+	Thread.holdLock() method is used to check if a thread holds a lock or not.
+	Every thread in java has its own stack, which is used to store local variables and method calls.Size of this stack can be controlled using -XX:ThradStackSize JVM option e.g. -XX:ThreadStackSize=512.
+	Java provides interrupt() method to interrupt a thread in java.You can interrupt a running thread,waiting thread or sleep thread.This is the control java provides to prevent a blocked or hanged thread.Once you interrupt a thread, it will also throw InterruptedException which is a cheched exception to ensure that your code should take handle interrupts.
+	Java provides two ways to achieve mutual exclusion in your code, either by using synchronized keyword or by using java.util.concurrent.lock implementations.You can use synchronized keyword to either make an entire method mutual exclusive or only critical section by declaring a synchronized block.
+	Any thread needs to hold monitor or lock,required by that critical section in order to enter into synchronized block or method,they release that lock, once they exit, either normally or abruptly due to any error.
+	In fact thread is started when you call start() method of java.lang.Thread class e.g. t.start() will start the thread.It puts your thread in RUNNABLE state and when thread scheduler assign CPU to this thread,it executes run() method.
+-2)What is difference between Thread and Process in java?
+	The Thread is a subset of process in other words one process can contain multiple threads.
+	If you run a Java program in UNIX based system e.g. Linux and if that program creates 10 Threads, it still one process and you can find that by using 'ps -ef | grep identifier' command which is one of most popular use of grep command in UNIX, Where 'identifier' is unix text which can be used as regular expression to find that Java process.
+	Every process has its own memory space,executable code and a unique process identifier (PID) while  every thread has its own stack in java but it uses process main memory and share it with other threads.
+-3)What is Thread in Java?
+	Thread is an independant path of execution.
+	Main problem with using multiple threads and writing multi-threaded code is issues related to concurrency e.g. deadlock,livelock,race conditions etc.
+	thread1.start();
+	thread1.start(); //IllegalThreadStateException
+	Thread will be said to go on dead state once execution of run() method finished and you can not start that thread again.
+-4)What is the difference between start() and run() method of Thread class?
+	When program calls start() method a new Thread is created and code inside run() method is executed in new Thread while if you call run() method directly no new Thread is created and code inside run() will execute on current Thread.
+	Another difference between start vs run in Java thread is that you can not call start() method twice on thread object. once started, second call of start() will throw IllegalStateException in Java while you can call run() method twice.
+-5)What is the difference between Runnable and Callable in Java?
+	The major difference between Callable and Runnable interface is that Callable can return the result of an operation performed inside call() method, which was one of the limitations with Runnable interface.
+	Another significant difference between Runnable and Callable interface is the ability to throw checked exception. The Callable interface can throw checked exception because it's call method throws Exception.
+	Commonly FutureTask is used along with Callable to get the result of asynchronous computation task performed in call() method.
+	The Callable interface is a generic parameterized interface and Type of value is provided when an instance of Callable implementation is created.
+-6)What is the difference between CyclicBarrier and CountDownLatch in Java?
+	All threads which wait for each other to reach barrier are called parties, CyclicBarrier is initialized with a number of parties to wait and threads wait for each other by calling CyclicBarrier.await() method which is a blocking method in Java and  blocks until all Thread or parties call await().In general calling await() is shout out that Thread is waiting on the barrier. await() is a blocking call but can be timed out or Interrupted by other thread.
+	What it implies that CountDownLatch is a good for one-time events like application start-up time and CyclicBarrier can be used to in case of the recurrent event e.g. concurrently calculating a solution of the big problem etc.
+-7)What is Java Memory model?
+	Java memory model is set of rules and guidelines which allows java programs to behave deterministically across multiple memory architecture,CPU, and operating systems.It's particularly important in case of multi-threading.
     Each action in a thread happens-before every action in that thread that comes later in the program order, this is known as program order rule.
     An unlock on a monitor lock happens-before every subsequent lock on that same monitor lock, also known as Monitor lock rule.
     A write to a volatile field happens-before every subsequent read of that same field, known as Volatile variable rule.
@@ -47,10 +45,616 @@ Java memory model is set of rules and guidelines which allows java programs to b
     A thread calling interrupt on another thread happens-before the interrupted thread detects the interrupt( either by having InterruptedException thrown, or invoking isInterrupted or interrupted), popularly known as Thread Interruption rule.
     If A happens-before B, and B happens-before C, then A happens-before C, which means happens-before guarantees Transitivity.
     The end of a constructor for an object happens-before the start of the finalizer for that object, known as Finalizer rule.
-What is volatile variable in Java?
-
-
-
+-8)What is volatile variable in Java?
+	A write to a volatile field happens-before every subsequent read of that same field,known as Volatile variable rule.
+	A write to a volatile field happens-before every subsquent read of that same field,known as Volatile variable rule.
+	A call to Thread.start on a thread happens-before any other thread detects that thread has terminated, either by successfully retrun from Thread.join() or by Thread.isAlive() returning false, also known as Thread start rule.
+	Volatile variable in java is a special variable which is used to signal threads, a compiler that this particular variable values are going to be updated by multiple threads inside java application.
+	By making a variable volatile using the Volatile keyword in java,application programmer ensures that its value should always be read from main memory and thread should not use cached value of that variable from their own stack.
+	volatile variable also guarantees "happens-before" relationship, which means not only another thread has visibility of latest value of volatile variable but also all the variable is seen by the thread which has updated value of volatile variable before these threads sees it.
+	Any variable which is shared between multiple threads should be made variable, in order to ensure that all thread must see latest value of the volatile variable.
+	A signal to complier and JIT to ensure that compiler does not change ordering or volatile variable and moves them out of synchronized context.
+	You want to save the cost of synchronized as volatile variable are less expensive than synchronized.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 

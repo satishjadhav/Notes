@@ -1,0 +1,138 @@
+https://www.youtube.com/watch?v=Z4hMFBvCDV4
+-------------------------------------------------------------------------------
+-CPU Core -> registers -> L1 Cache -> (Common)
+						L2 Cache ->
+						L3 Cache
+						RAM
+-JMM java memory model is a specification which guarantees visibility of fields (aka happens before) amidst reordering of instructions.
+-Not only synchronized also
+		Synchronized
+		Locks
+		Concurrent collections
+		Thread operations (join,start)
+		final fields
+-------------------------------------------------------------------------------
+-https://www.youtube.com/watch?v=aAjkJW08BGQ
+-Heap memory
+	->Young Generation			//Minor GC will be performed	
+		->Eden memory			//New objects stored
+		->Survivor memory S0	
+		->Survivor memory S1
+	->Old Generation
+		//Major GC will be performed
+		//takes longer time
+	-Memory Pool
+		Is used to store immutable objects
+		String class,String pools
+		Run time by JVM memory managers
+-Permanant Generation
+	Metadate of classes/Methods
+	Not part of heap memory
+	Will be generated at the run time
+		Method area,Class Structure,Static variables,Constants
+-Heap memory
+	Stores objects
+	JRE classes
+	GC runs on heap memory only to free some memory by destroying some objects which don't have any references.
+-Stack memory
+	Used to execute threads
+	Method specific values
+	Local variables
+	Obejct refernces which are refering some objects on heap memory
+	Test t = new Test();
+	LIFO Last In First Out
+	Stack memory size is very less as compared to heap memory
+------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=2AZ0KKeXJSo
+Best Garbage Collector in JAVA
+-Trade Offs
+	Memory:		Amount of memory assigned to the program.
+	Throughput:	Average time spent running code vs running GC.
+	Latency:	Amount of time code paused for GC to run.
+	 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+										

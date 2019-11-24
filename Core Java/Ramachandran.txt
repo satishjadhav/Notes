@@ -57,7 +57,22 @@ java.util.concurrent.ConcurrentSkipListMap
 https://www.youtube.com/watch?v=IwUwIrz9Ge8
 equals and hashCode contract:
 	Always override hashCode when you override equals.A common source of bugs is the failuer to override hashCode method.You must override hashCode in every clas that overrides equals failuer to do so will prevent your class from functioning properly in conjuntion with all hash-based collections. 
-
+	A Map is an associative array data structure.
+	Hashing transformation of a string of characters (Text) to a shorted fixed-length value that represents original string.A shorter value hepls in indexing and fater seaches.
+	In java every object has a method public int hashCode() that will return a hash value for given object.
+	If two objects are equal then they may have same hashcode.
+	Map
+		AbstractMap,Clonable,Serilizable
+		HashMap
+	Node<K,V> [] value.
+	Node<K,V>
+			int hash;
+			K key;
+			V value;
+			Node<K,V> next;
+	Java hashmap allows null key,which always goes to index 0 as hash of null is '0'.
+	In java 8 when we have too many unequal keys which gives same hashcode(index) -when the number of items in a hash bucket grows beyond certain threshold(TREEIFY_THRESHOLD = 8),content of the bucket switches from using a linked list of Entry objects to a balanced tree.This theoretically improves the worst-case performance O(n) to O(log n).
+	Balanced search tree where left nodes have lesser weight (Hashcode or Comparable result) for the Keys involved.
 
 
 
