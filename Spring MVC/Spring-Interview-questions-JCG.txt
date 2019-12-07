@@ -1,0 +1,877 @@
+-What is Spring?
+	Spring is an open source development framework for Enterprise Java. The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make Java EE development easier to use and promote good programming practice by enabling a POJObased programming model.
+-What are benefits of Spring framework?
+	Lightweight,Inversion Of Control (IoC),Aspect oriented programming,Container,MVC Framework,Transaction Management,Exception Handling.
+-Which are the Spring framework modules?
+	Core module,Bean module,Context module,Expression Language module,JDBC module,ORM module,OXM module,Java Messaging Service (JMS) module,Transaction module,Web module,Web-Servlet module,Web-Struts module,Web-Portlet module.
+-BeanFactory is the heart of any spring-based application, Spring framework was built on the top of this module,which makes the Spring container.
+-A BeanFactory is an implementation of the factory pattern that applies Inversion Of Control to separate the application's configuration and dependencies from the actual application code.
+The most commonly used BeanFactory implementation is the XmlBeanFactory class.
+-org.springframawork.beans.factory.xml.XmlBeanFactory
+-The AOP module is used for developing aspects for our Spring-enabled application. Much of the support has been provided by the AOP Alliance in order to ensure the interoperability between Spring and other AOP frameworks. This module also introduces meta data programming to Spring.
+-With the JDBC abstraction and DAO module we can be sure that we keep up the database code clean and simple, and prevent problems that result from a failure to close database resources. It provides a layer of meaningful exceptions on top of the error messages given by several database servers. It also makes use of Spring’s AOP module to provide transaction management services for objects in a Spring application.
+-The Spring Web module is built on the application context module,providing a context that is appropriate for web-base applications.
+-Spring configuration file is an XML file.This file contains the classes information and describes how these classes are configured and introduced to each other.
+-The Spring IoC is responsible for creating the objects,managing them (with dependency injection (DI)),wiring them together,configuring them,as also managing their complete life cycle.
+-FileSystemXmlApplicationContext,ClassPathXmlApplicationContext,WebXmlApplicationContext
+-Dependency Injection, an aspect of Inversion of Control (IoC) is a general concept and it can be expressed in many different ways.
+-Constructor-based dependency injection
+	Setter-based dependency injection
+-A spring bean definition contains all configuration meta data which is needed for the container to know how to create a bean,its life cycle details and its dependencies.
+-Three important methods to provide configuration meta data to the Spring Container
+	XML base configuration file
+	Annotation based configuration
+	Java-based configuration
+-Beans scopes supported by Spring
+	• In singleton scope, Spring scopes the bean definition to a single instance per Spring IoC container.
+	• In prototype scope, a single bean definition has any number of object instances.
+	• In request scope, a bean is defined to an HTTP request. This scope is valid only in a web-aware Spring ApplicationContext.
+	• In session scope, a bean definition is scoped to an HTTP session. This scope is also valid only in a web-aware Spring ApplicationContext.
+	• In global-session scope, a bean definition is scoped to a global HTTP session. This is also a case used in a web-aware Spring ApplicationContext.The default scope of a Spring Bean is Singleton.
+-Spring framework
+	• The spring container finds the bean’s definition from the XML file and instantiates the bean.
+	• Spring populates all of the properties as specified in the bean definition (DI).
+	• If the bean implements BeanNameAware interface, spring passes the bean’s id to setBeanName() method.
+	• If Bean implements BeanFactoryAware interface, spring passes the bean factory to setBeanFactory() method.
+	• If there are any bean BeanPostProcessors associated with the bean, Spring calls postProcesserBeforeInitialization() method.
+	• If the bean implements IntializingBean, its afterPropertySet() method is called. If the bean has init method declaration, the specified initialization method is called.
+	• If there are any BeanPostProcessors associated with the bean, their postProcessAfterInitialization() methods
+	will be called.
+	• If the bean implements DisposableBean, it will call the destroy() method.
+-There are two important bean life cycle methods. The first one is 'setup' which is called when the bean is loaded in to the container. The second method is the 'teardown' method which is called when the bean is unloaded from the container. The bean tag has two important attributes (init-method and destroy-method) with which you can define your own custom initialization and destroy methods. There are also the correspondive annotations(@PostConstruct and @PreDestroy).
+-Inner beans are always anonymous and they are always scoped as prototypes.
+-Spring offers the following types of collection configuration elements:
+	• The <list> type is used for injecting a list of values, in the case that duplicates are allowed.
+	• The <set> type is used for wiring a set of values but without any duplicates.
+	• The <map> type is used to inject a collection of name-value pairs where name and value can be of any type.
+	• The <props> type can be used to inject a collection of name-value pairs where the name and value are both Strings.
+-Spring Annotations
+-Java based configuration option enables you to write most of your Spring configuration without XML but with the help of few java-based annotations.
+-@Configuration annotation that indicates that the class can be used by the Spring IoC container as a source of bean definitions.
+-@Bean annotated method that will return an object that should be registered as bean in the Spring application context.
+-An alternative to XML setups is provided by annotation-based configuration which relies on the bytecode meta data for wiring up components instead of angle-bracket declarations.Instead of using XML to describe a bean wiring, the developer moves the configuration into the components class itself by using annotations on the relevent class,method, or field declaration. 
+-Annotation wiring is not turned on in the Spring container by default.In order to use annotation based wiring we must enable it in our Spring configuration file by configuring <conetext:annotation-config> element.
+-@Required 
+	This annotation simply indicates that the affected bean property must be populated at configuration time,through an explicit property value in a bean definition or through auto wiring.The container throws BeanInitializationException if the affected bean property has not been populated.
+-@Autowired
+	The @Autowired annotation provides more fine-grained control over where and how auto wiring should be accomplished. It can be used to auto wire bean on the setter method just like @Required annotation, on the constructor, on a property or methods with arbitrary names and/or multiple arguments.
+-@Qualifier
+	When there are more than one beans of the same type and only one is needed to be wired with a property, the @Qualifier annotation is used along with @Autowired annotation to remove the confusion by specifying which exact bean will be wired.
+-Spring Date Access
+-JdbcTemplate class provides many convenience methods for doing things such as converting database data into primitives or objects, executing prepared and callable statements, and providing custom database error handling.
+-The Data Access Object (DAO) support in Spring is aimed at making it easy to work with data access technologies like JDBC,
+Hibernate or JDO in a consistent way. This allows us to switch between the persistence technologies fairly easily and to code without worrying about catching exceptions that are specific to each technology.
+-How can we integrate Spring and Hibernate using HibernateDaoSupport?
+	Use Spring’s SessionFactory called LocalSessionFactory. The integration process is of 3 steps:
+	• Configure the Hibernate SessionFactory
+	• Extend a DAO Implementation from HibernateDaoSupport
+	• Wire in Transaction Support with AOP
+-Spring supports two types of transaction management:
+	• Programmatic transaction management: This means that you have managed the transaction with the help of programming.That gives you extreme flexibility, but it is difficult to maintain.
+	• Declarative transaction management: This means you separate transaction management from the business code. You only use annotations or XML based configuration to manage the transactions.
+-Spring Aspect Oriented Programming (AOP)
+-Aspect oriented programming is an programming techniques that allows programmers to 		modularise cross cutting concerns or behaviour that cuts across the typical divisions of responsibility such as logging and transaction management.
+-The core construct of AOP is the aspect,which encapsulates behaviours affecting multiple classes into reusable modules. 
+-The Concern is behaviour we want to have in a module of an application. A Concern may be defined as a functionality we want to implement. The cross-cutting concern is a concern which is applicable throughout the application and it affects the entire application. For example, logging, security and data transfer are the concerns which are needed in almost every module of an application, hence they are cross-cutting concerns.
+-The join point represents a point in an application where we can plug-in an APO aspect.It is the actual place in the application where an action will be taken using Spring APO framework.
+-The advice is the actual action that will be taken either before or after method execution.This is actual piece of code that is invoked during the program execution by the spring APO framework.
+	• before: Run advice before the a method execution.
+	• after: Run advice after the a method execution regardless of its outcome.
+	• after-returning: Run advice after the a method execution only if method completes successfully.
+	• after-throwing: Run advice after the a method execution only if method exits by throwing an exception.
+	• around: Run advice before and after the advised method is invoked.
+-The pointcut is set of one or more joinpoints where an advice should be executed.You can specify pointcut using expressions or patterns.
+-An Introduction allows us to add new methods or attributes to existing classes.
+-The target object is an object being advised by one or more aspects. It will always be a proxy object. It is also referred to as the advised object.
+-A proxy is an object that is created after applying advice to a target object. When you think of client objects the target object and the proxy object are the same.
+-Different types of AutoProxying
+	• BeanNameAutoProxyCreator
+	• DefaultAdvisorAutoProxyCreator
+	• Metadata autoproxying
+-WebApplicationContext is an extension of the plain ApplicationContext that has some extra features necessary for web applications.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-

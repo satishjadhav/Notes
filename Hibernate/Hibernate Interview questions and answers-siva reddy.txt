@@ -7,31 +7,33 @@ https://www.youtube.com/watch?v=12uFYsZrick
 	Automatic table creation,update,saving with less code
 	Provides statics
 Hibernate Classes:
-SessionFactory
-Session
-Trasaction
-ConnectionProvider
-TrasactionFactory,Query,Criteria,HQL Hibernate Query Language,HCQL Hibernate Criteria Query Language
-Hibernate.cfg.xml
-POJO.hbm.xml
+	SessionFactory
+	Session
+	Transaction
+	ConnectionProvider
+	TrasactionFactory,Query,Criteria,HQL Hibernate Query Language,HCQL Hibernate Criteria Query Language
+	Hibernate.cfg.xml
+	POJO.hbm.xml
 
 
-public static void main(String []args){
-	SessionFactory sessionFactory = new Configuration().config("hibernate.cfg.xml").
-	buildSessionFactory();
-	Session session = sessionFactory.openSession();
-	Trasaction trasaction = session.beginTrasaction();
-	Company company = new Company(101, "Test records");
-	session.save(company);
-	transaction.commit();
-	session.close();
+	public static void main(String []args){
+		SessionFactory sessionFactory = new Configuration().config("hibernate.cfg.xml").
+		buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Trasaction trasaction = session.beginTrasaction();
+		Company company = new Company(101, "Test records");
+		
+		session.save(company);
+		transaction.commit();
+		session.close();
 
-	System.out.println("Saved object successfully");
-	Session session1 = sessoinFactory.openSession();
-	company = (company) session1.get(Comapany.class,101);
-	System.out.println(company);
-	System.out.println("Retrived Successfully");
-}
+		System.out.println("Saved object successfully");
+		Session session1 = sessoinFactory.openSession();
+		company = (company) session1.get(Comapany.class,101);
+		System.out.println(company);
+		System.out.println("Retrived Successfully");
+	}
 
 database dialects:
 	DB2		org.hibernate.dialect.DB2Dialect

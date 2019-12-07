@@ -57,8 +57,8 @@ What is fail safe and fail fast Iterator in Java?
 	Most of the Collection classes from Java 1.4 e.g. Vector, ArrayList, HashMap, HashSet has fail-fast iterators.
 	The other type of iterator was introduced in Java 1.5 when concurrent collection classes e.g. ConcurrentHashMap, CopyOnWriteArrayList and CopyOnWriteArraySet was introduced.
 	Fail-fast Iterator throws ConcurrentModfiicationException as soon as they detect any structural change in collection during iteration, basically which changes the modCount variable hold by Iterator. While fail-safe iterator doesn't throw CME.
-	 Fail-fast iterator traverse over original collection class while fail-safe iterator traverse over a copy or view of original collection. That's why they don't detect any change on original collection classes and this also means that you could operate with stale value.
-	 Iterator returned by synchronized Collection are fail-fast while iterator returned by concurrent collections are fail-safe in Java.
+	Fail-fast iterator traverse over original collection class while fail-safe iterator traverse over a copy or view of original collection. That's why they don't detect any change on original collection classes and this also means that you could operate with stale value.
+	Iterator returned by synchronized Collection are fail-fast while iterator returned by concurrent collections are fail-safe in Java.
 
 How do you remove an entry from a Collection? and subsequently what is the difference between the remove() method of Collection and remove() method of Iterator, which one you will use while removing elements during iteration?
 	Collection intrface defines remove(Object obj) method to remove objects from Collection.
@@ -89,18 +89,30 @@ identity equality (==) and logical equality (equals())
 	Equals-hash code contract according to which you must override hash code if you are overriding equals and vice versa.
 	If you are storing a cutom object in Sorted Collection e.g. SortedMap or SortedSet you also need to make sure that your equals() method is consistent to compareTo() method,otherwise that collection will not follow there contacts.	
 -The difference between HashMap and Hashtable?
-		TreeMap: is a Red-Black based NavigableMap implementation provides you sorting on top of hashing offered by Map interface.This means that you can only retrieve elements in guaranteed log(n) time but also iterate through those mapping in a predefined sorted order,but you need to pay a heavy price to keep mappings in sorted order.
-		LinkedHashMap: it provides ordering e.g. maintaining mappings in an order they are inserted into Map, known as insertion order or order on which they are accessed,called access order.
-		WeakHashMap: for creating a Garbage Collection friendly Cache, where values become eligible for garbage collection as soon as there is no other reference to them apart from keys in WeakHashMap.
-		IdentityHashMap: for creating a Map which uses identity instanceof equality for comparing keys since identity equality is rare you get less number of collisions on this Map.
-		LinkedHashMap is subclass of HashMap it also allows null keys and values.
-		TreeMap which sorts elements in natural order does not allow null keys because compareTo() method throws NullPointerException if compared with null.
-		Itrators returned by all these Map's collection view methods e.g values() or keySet() is fail-fast iterators means they will throw ConcurrentModfiicationException if Collection is modified structurally once Iteration begins, except remove() method of Iterator.
-		By the way, looping over Map in the case of LinkedHashMap is slightly faster than HashMap because the time required is proportional to size only. So if you need insertion order or access order, consider using LinkedHashMap over TreeMap in Java.
-		LinkedHashMap extends HashMap and uses linked list to provide insertion order guarantee. It uses doubly-linked list running through all of its entries, which can also be used to maintain access-order. Remember, insertion order is not affected if a key is re-inserted into LinkedHashMap, but access order is affected if LinkedHashMap is created to maintain access-order.
--
--
--
+	TreeMap: is a Red-Black based NavigableMap implementation provides you sorting on top of hashing offered by Map interface.This means that you can only retrieve elements in guaranteed log(n) time but also iterate through those mapping in a predefined sorted order,but you need to pay a heavy price to keep mappings in sorted order.
+	LinkedHashMap: it provides ordering e.g. maintaining mappings in an order they are inserted into Map, known as insertion order or order on which they are accessed,called access order.
+	WeakHashMap: for creating a Garbage Collection friendly Cache, where values become eligible for garbage collection as soon as there is no other reference to them apart from keys in WeakHashMap.
+	IdentityHashMap: for creating a Map which uses identity instanceof equality for comparing keys since identity equality is rare you get less number of collisions on this Map.
+	LinkedHashMap is subclass of HashMap it also allows null keys and values.
+	TreeMap which sorts elements in natural order does not allow null keys because compareTo() method throws NullPointerException if compared with null.
+	Itrators returned by all these Map's collection view methods e.g values() or keySet() is fail-fast iterators means they will throw ConcurrentModfiicationException if Collection is modified structurally once Iteration begins, except remove() method of Iterator.
+	By the way, looping over Map in the case of LinkedHashMap is slightly faster than HashMap because the time required is proportional to size only. So if you need insertion order or access order, consider using LinkedHashMap over TreeMap in Java.
+	LinkedHashMap extends HashMap and uses linked list to provide insertion order guarantee. It uses doubly-linked list running through all of its entries, which can also be used to maintain access-order. Remember, insertion order is not affected if a key is re-inserted into LinkedHashMap, but access order is affected if LinkedHashMap is created to maintain access-order.
+-10.When do you use ConcurrentHashMap in Java?
+	All methods of Hashtable are synchronized which make them quit slow due to contention if a number of thread increases.
+	ConcurrentHashMap and CopyOnWriteArrayList implementations provide much higher concurrency while preserving thread safety, with some minor compromises in their promises to callers.
+	CHM introduced the concept of segmentation how large it becomes only certain part of it get locked to provide thread safety so many other readers can still access map without waiting for iteration to complete.
+	ConcurrentHashMap allows multiple readers to read concurrently without any blocking.
+	Default concurrency level is 16, and accordingly Map is divided into 16 part and each part is governed with a different lock. This means, 16 thread can operate on Map simultaneously until they are operating on different part of Map.
+	Iterator of ConcurrentHashMap's keySet area also fail-safe and doesn’t throw ConcurrentModificationExceptoin
+	Default concurrency level is 16 and can be changed, by providing a number which make sense and work for you while creating ConcurrentHashMap. Since concurrency level is used for internal sizing and indicate number of concurrent update without contention, so, if you just have few writers or thread to update Map keeping it low is much better. ConcurrentHashMap also uses ReentrantLock to internally lock its segments.
+-11.Difference between List and Set in Java
+	Main difference between Set and List is that List is an ordered Collection which means List preserves the order on which an element is inserted into List.
+	SortedSet which offers to sort functionality on top of Set interface and you can impose either natural order or Object or any custom order by using Comparator and Comparable while storing object inside Set.
+	List allows you to store duplicates in the collection while Set doesn't allow any duplicates.
+	If two objects are equal using equals method, the later object will replace the former in Set if added using add() method, due to this reason only one null element is allowed inside Set.
+-12. How do you Sort objects on the collection?
+	
 -
 -
 -

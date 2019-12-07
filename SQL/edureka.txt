@@ -18,14 +18,14 @@ NOT NULL,UNIQUE,CHECK,DEFAULT,INDEX
 Foreign key maintains referential integrity by enforcing a link between the data in two tables.
 
 Cluster Index:
-Cluster index is used for easy retrival of data from the database and is faster.
-Clustered index alters the way records are stored in a database as it sorts out rows by the column which is set to be clustered index.
-One table can only have one clustered index.
+	Cluster index is used for easy retrieval of data from the database and is faster.
+	Clustered index alters the way records are stored in a database as it sorts out rows by the column which is set to be clustered index.
+	One table can only have one clustered index.
 
 Non clustered index:
-Is used for easy retrieval of data from the database and is slower.
-Non clustered index does not alter the way it was stored but it creates a separate object within a  table which points back to the original table rows after searching.
-One table can have many non-clustered indexes
+	Is used for easy retrieval of data from the database and is slower.
+	Non clustered index does not alter the way it was stored but it creates a separate object within a  table which points back to the original table rows after searching.
+	One table can have many non-clustered indexes
 
 Display current date: select GETDATE()
 

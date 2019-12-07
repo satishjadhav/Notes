@@ -102,32 +102,172 @@ e.g FI ==> Functional Interface
 	}
 	
 =>Java8 ||Lambda Expressions Multithreading & Collections||Session - 3 || On 01-08-2018 by Durga Sir
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-java.util.function
+-No separate .class will be generated for lambda expression.
+-class ThreadLambdaTest {
+	public static void main(String[] args) {
+		Runnable r = () -> {
+			for(int i=0;i<10;i++){
+				System.out.println("Child Thread-1");
+			}
+		};
+		Thread t= new Thread(r);
+		t.start();
+		for(int i=0;i<10;i++) {
+			System.out.println("Main Thread-1");
+		}
+	}
+}
+-Comparator	
+	int compare(Object obj1,Object obj2)
+		returns -ve if obj1 has to come before obj2
+		returns +ve if obj1 has to come after obj2
+		returns 0 if obj1 and obj2 are equal
+-class MyComparator implements Comparator<Integer> {
+	public int compare(Integer i1,Integer i2){
+		return (i1<i2)?-1:(i1>i2)?1:0;
+	}
+}
+	Comparator<Integer> c= (i1,i2) -> (i1<i2)?-1:(i1>i2)?1:0;
+	Collections.sort(arrayList,c);
+	arrayList.stream().forEach(System.out::println);
+	List<Integer> evenNumList = arrayList.stream().filter(i->i%2==0).collect(Collections.toList());
+=>Java8 ||Anonymous Inner Class vs Lambda Expressions || Session - 4 ||
+-Comparator ->
+	comapre(Object obj1,Object obj2)
+		return -ve if obj1 has to come before obj2
+		return +ve if obj1 has to come after obj2
+		return 0 if obj1 and obj2 are equal
+	based on ascending order of employee numbers
+		(e1,e2) -> (e1.eno < e2.eno) ? -1 :(e1.eno>e2.eno) ? 1:0;  
+-	Collections.sort(arrayList,(e1,e2)->e1.name.compareTo(e2.name));
+-If employee class has employee id and salary then how to find second highest salary based on employees id 	
+-Anonymous inner class != Lambda Expressions
+-If anonymous inner class implements an interface that contains 'SINGLE ABSTRACT METHOD' then only we can replace that anonymous inner class with lambda expressions.
+-Points
+	If lambda expression contains multiple parameters, then these parameters are separated with comma.
+	A lambda expression can have any number of arguments including zero number.
+	Lambda expression body can contain multiple statements and we should enclose within curly braces.
+	If lambda expression contains only one argument then parenthesis are optional.
+	Functional interface should contains only one abstract method.
+	The main objective of lambda expression is to enable functional programming in java.
+	With lambda expressions we can write very concise code so that readability of the application will be improved.
+	Functional interface reference can be used to hold lambda expressions.
+	Only for functional interfaces we can write lambda expression implementation.
+	If any interface contains single abstract method then it is always functional interface whether we are using @FunctionalInterface annotation or not.
+=>Java 8 || Default method() & Static method() inside Interface
+-Anonymous inner class can extends a normal class.
+-Anonymous inner class can extends an abstract class.
+-Anonymous inner class can implement an interface which contains any number of abstract methods.
+-Lambda expression can implement an interface which contains a single abstract method(FI)
+-Default methods
+	Java 1.7
+	Every method present inside interface is always : public and abstract
+		void m1();
+		public void m1();
+		abstract void m1();
+		public abstract void m1();
+	Java 1.8
+	Default method + static methods.
+	Java 1.9
+	private methods
+	
+	Variables
+		public static final
+-Default method | Virtual Extension method | Defender method
+	Default method
+	Without effecting implementation classes if we want to add method to the
+	interface ==> default methods
+-e.g.
+	interface Interf {
+		default void m1() {
+			System.out.println("Default method");
+		}
+	}
+	class Test implements Interf {
+		public void m1(){
+			System.out.println("Overriding version of default method.");
+		}
+		public static void main(String []args){
+			Test t = new Test();
+			t.m1();
+		}
+	}
+-e.g.
+	interface Left {
+		default void m1(){
+			System.out.println("Left interface m1 method");
+		}
+	}
+	interface Right {
+		default void m1() {
+			System.out.println("Right interface m1 method");
+		}
+	}
+	class Test implements Left,Right {
+		public void m1(){
+			//System.out.println("Oue own method");
+			//Left.super.m1();
+			Right.super.m1();
+		}
+		public static void main(String []args){
+			Test t = new Test();
+			t.m1();
+		}
+	}
+-Static methods
+	interface Interf {
+		public static void main(String []args){
+			System.out.println("Interface main method");
+			//java 1.8 allows static methods also main method declaration.
+		}
+	}
+-Without effecting implementation classed if we want to add new methods to the interface(extending interface functionality) ==>default methods.
+-To define general utility methods should be declared inside interface.
+=>Java 8 New Features || Predefined Functional Interface: Predicate
+-Predicate
+	import java.util.function.*;
+	class Test {
+		public static void main(String []args){
+			Predicate<Integer> p1 = i->i%2==0;
+			System.out.println(p1.test(10));
+			System.out.println(p1.test(15));
+			
+			Predicate<Employee> p2 = e->e.salary>10000 && e.isHavingGf==true;
+			System.out.println(p2.test(e));
+			
+			String [] s= {"Nag", "Chiranjeevi", "Venkatesh", "Balaiah", "Sunny", "Katrina"};
+			Predicate<String> p3 = s1->s1.length()%2==0;
+			for(String s1 : s) {
+				if(p3.test(s1)){
+					System.out.println(s1);
+				}
+			}
+			
+			ArrayList<Employee> list = new ArrayList<Employee>();
+			l.add(new Employee("Durga",1000));
+			
+			Predicate<Employee> p4 = e->e.salary>3000 & 10 conditions;
+			for(Employee e1:list) {
+				if(p.test(e1)) {
+					System.out.println(e1.name+" : "+e1.salary);
+				}
+			}
+			
+			//Find numbers which are even and > 10 are
+			int [] x= {0,5,6,7,8,3,4,7,4,7,23,54,56,67,78};
+			Predicate<Integer> p5 = i->i%2==0;
+			Predicate<Integer> p6 = i->i>10;
+			//and(), or(), negate()
+			System.out.println("The numbers which are even and  > 10 are: ");
+			for(int x1 : x){
+				if(p1.and(p2).test(x1)) {
+					System.out.println(x1);
+				}
+			}
+		}
+	}
+=>Java 8 || Predefined Functional Interface: Predicate, Function & Consumar
 -
 -
 -
