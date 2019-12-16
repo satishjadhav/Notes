@@ -101,6 +101,7 @@ Literals are source code representations of primitive data types, or String.
 	It must not declare any checked exceptions that are broader than the exceptions declared in the interface method.
 	It may declare runtime exceptions on any interface method implementation regardless of the interface declaration.
 	It must maintain the exact signature and return type of the methods it implements (but does not have to declare the exceptions of the interface).
+
 -> 3 Operators and Assignments
 -The left shift (<<) shifts all bits to the left, filling the right side with zeroes, and the right shift (>>) shifts all bits right,filling in the left side with whatever the sign bit was.
 -The logical operators (&& and ||) can be used only to evaluate two boolean
@@ -110,43 +111,76 @@ expressions.
 that object will notice the change. Both the caller and called methods have identical
 copies of reference variables; therefore, they both refer to the exact same object
 in memory.
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-A reference variable's bits represent a way to get to an object.
+-An unassigned reference variable's bits represents null.
+-There are 12 assignment operators: =, *=, /=, %=, +=, -=, <<=, >>=, >>>=,
+&=, ^=, |=.
+-Floating point numbers are implicitly doubles (64 bits).
+-Two's complement means: flip all the bits then add 1.
+-Compound assignments (e.g.+=) perform an automatic cast.
+-When comparing characters,Java uses the ASCII or Unicode value of the number as the numerical value.
+-instanceof is for reference variables only, and checks for whether this object if of a particular type.
+-The remainder operator returns the remainder of a division.
+-When floating-point numbers are divided by zero, they return positive or
+negative infinity.
+-When the remainder operator performs a floating-point divide by zero, it will
+not cause a runtime exception.
+-When integers are divided by zero, a runtime ArithmeticException is thrown.
+-When the remainder operator performs an integer divide by zero, a runtime
+ArithmeticException is thrown.
+-If either operand is a String, the + operator concatenates the operands and if both operands are numeric the + operator adds the operands.
+-Prefix operator runs before the value is used in the expression.Postfix operator runs after the value is used in the expression.
+-Final variables cannot be incremented or decremented.
+-There are three shift operators: >>, <<, >>>; the first two are signed, the last
+is unsigned.
+-<< fills the right bits with zeros.
+->> fills the left bits with whatever value the original sign bit (leftmost
+bit) held.
+->>> fills the left bits with zeros (negative numbers will become positive).
+-There are three bitwise operators—&, ^, |—and a bitwise complement,
+operator ~.
+-	The & operator sets a bit to 1 if both operand’s bits are set to 1.
+	The ^ operator sets a bit to 1 if exactly one operand’s bit is set to 1.
+	The | operator sets a bit to 1 if at least one operand’s bit is set to 1.
+	The ~ operator reverses the value of every bit in the single operand.
+-Implicit casting (you write no code) happens when a widening conversion
+occurs.Explicit casting (you write the cast) happens when a narrowing conversion
+occurs.
+-Casting a floating point to an integer type causes all digits to the right of the decimal point to be lost.
+-Narrowing conversion can cause loss of data- the most significant bits (leftmost) can be lost.
+-Method arguments are always copies—of either primitive variables or
+reference variables.
+-Method arguments are never actual objects (they can be references to
+objects).
+-In practice, a primitive argument is a completely detached copy of the
+original primitive.
+-In practice, a reference argument is another copy of a reference to the
+original object.
+
+->4 Flow Control,Exceptions, and Assertions
+-the for loop is used when you know how many times you need to go through the
+loop. The while loop is used when you do not know how many times you want to
+go through, whereas the do-while is used when you need to go through at least once.
+-In the for loop and the while loop, the expression will have to evaluate to true to
+get inside the block and will check after every iteration of the loop. The do-while
+loop does not check the condition until after it has gone through the loop once.
+-The break and continue statements can be used in either a labeled or
+unlabelled fashion.
+-Java
+also provides the finally keyword. This is used to define a block of code that is
+always executed, either immediately after a catch clause completes or immediately
+after the associated try block in the case that no exception was thrown (or there
+was a try but no catch).
+-An exception object is an instance of class Exception or one of its subclasses. The
+catch clause takes, as a parameter, an instance of an object of a type derived from
+the Exception class. Java requires that each method either catch any checked exception
+it can throw or else declare that it throws the exception.
+-Runtime exceptions are of type RuntimeException (or one of its subclasses). These
+exceptions are a special case because they do not need to be handled or declared, and
+thus are known as “unchecked” exceptions.
+-Errors are of type java.lang.Error or its
+subclasses, and like runtime exceptions, they do not need to be handled or declared.
+-two minutes drill
 -
 -
 -

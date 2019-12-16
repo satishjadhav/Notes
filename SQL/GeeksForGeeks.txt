@@ -1,0 +1,321 @@
+https://www.youtube.com/watch?v=-6v7ctxC7yk&list=PLqM7alHXFySGweLxxAdBDK1CcDEgF-Kwx
+https://www.youtube.com/watch?v=tm0fQKlJtHc&list=PLmhoQ1nd8VnT7KBSTmgEPNh82GQPXstU3
+-----------------------------------------------------------------------------------
+-Find second highest salary of an employee?
+	select max(sal) from emp
+	where sal<(select max(sal) from emp);
+-Display the highest payed employees in each department?
+select 
+    "EMPNO",
+    "ENAME",
+    "JOB",
+    "MGR",
+    "HIREDATE",
+    "SAL",
+    "COMM",
+    "DEPTNO"
+from SCOTT."EMP";
+
+select * from SCOTT.dept;
+
+select e.empno,e.ename,e.deptno,d.dname,max(e.sal)
+from SCOTT.emp e inner join SCOTT.dept d on e.deptno = d.deptno
+group by e.deptno,d.dname,e.empno,e.ename;
+
+select count(*),deptno
+from SCOTT.emp
+group by deptno;
+
+select rownum,empno,sal,ename
+from SCOTT.emp
+order by sal desc;
+
+select * from (
+    select empno,sal,rownum rn
+    from SCOTT.emp
+    order by rn)
+where mod(rn,2) <> 0;
+
+select * from (
+    select empno,sal,rownum rn
+    from SCOTT.emp
+    order by rn)
+where mod(rn,2) = 0;
+
+select ename,count(*)
+from SCOTT.emp
+group by ename
+having count(*)>1;
+
+select ename from SCOTT.emp
+where ename like '%M%'
+
+select ename from SCOTT.emp
+where ename like '%N'
+
+select ename from SCOTT.emp
+where ename like '_L%'
+
+select ename from SCOTT.emp
+where ename like '___M%'
+
+select ename from SCOTT.emp
+where ename like '%LL%'
+
+https://www.youtube.com/watch?v=k7rg4CARxD8&list=PLqM7alHXFySGweLxxAdBDK1CcDEgF-Kwx&index=7
+-Display nth row in SQL
+-select * from 
+(select rownum r,ename,sal from emp)
+where r = 4;
+-UNION in DBMS
+	UNION clause used to combine the result-set of two or more select queries.
+	The columns used in all the select statements must have the following
+		the same number of columns
+		similar or compatible data types
+		same logical order
+	Whenever more than one column is specified in the select clause then the combination of all the columns considered that is if both the values in the row are same then only this considered as a duplicate value.
+	UNION ALL removes duplicate values while comparing where UNION ALL allows duplicate values while combining.
+-Inner Join
+	Based on the equality condition data is retrieved from multiple tables
+	We must have a common column in both the tables with the same data type
+	Right table row is joined with left table row only if there is a matching for the left table row in right table.
+-e.g
+	select dname,max(sal)
+	where e.deptno = d.deptno
+	group by dname;
+-	select empno,ename,job,deptno,sal 
+	from scott.emp
+	where sal in (select max(sal) 
+	from scott.emp e,scott.dept d 
+	where e.deptno=d.deptno 
+	having max(sal)>0 
+	group by d.deptno)
+-	select ename,sal,d.deptno,dname,loc
+	from emp e,dept d
+	where e.deptno=d.deptno and LOC='CHICAGO'
+-	select dname,sum(sal) 
+	from emp e,dept d
+	where e.deptno=d.deptno
+	group by dname
+-Self Join
+	Joining a table with itself is called self join.
+	Comparing values of a values with the values of same column itself or different column values of the same table.
+	Display employee details who are getting more salary than their manager salary
+		select e1.ename "employes",e2.ename "manager",e2.sal
+		from emp e1,emp e2
+		where e2.empno = e1.mgr and e1.sal>e2.sal;
+	Display the employee details who joined before their manager
+		select e1.ename "employes",e2.ename "manager",e2.sal,e2.hiredate
+		from emp e1,emp e2
+		where e1.mgr=e2.empno and e1.hiredate<e2.hiredate;
+-Left Join
+	All rows from left side table
+	Matching value rows from right side table
+	Null values in place of Non matching rows in other table
+	select rownum,empno,ename,emp.deptno,dname,loc,job
+	from emp left join dept on emp.deptno=dept.deptno and dname='SALES'
+-Right Join
+	All rows from right side table are displayed
+	Matching value rows from left side table
+	Null values in place of Non matching rows in other table
+	select ename,job,sal,loc,dname,dept.deptno
+	from emp right join dept on dept.deptno=emp.deptno and dept.deptno=20;
+-Full Join
+	Full join is viewed as a result of union operation of an inner join, left join and right join.
+	This join returns null values in place of non matching tuples in another table.
+-Cross join
+	In this type of join data in each and , every row in once table is added to all the rows in another table.
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-

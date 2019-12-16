@@ -47,17 +47,24 @@ https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-
     The end of a constructor for an object happens-before the start of the finalizer for that object, known as Finalizer rule.
 -8)What is volatile variable in Java?
 	A write to a volatile field happens-before every subsequent read of that same field,known as Volatile variable rule.
-	A write to a volatile field happens-before every subsquent read of that same field,known as Volatile variable rule.
-	A call to Thread.start on a thread happens-before any other thread detects that thread has terminated, either by successfully retrun from Thread.join() or by Thread.isAlive() returning false, also known as Thread start rule.
-	Volatile variable in java is a special variable which is used to signal threads, a compiler that this particular variable values are going to be updated by multiple threads inside java application.
-	By making a variable volatile using the Volatile keyword in java,application programmer ensures that its value should always be read from main memory and thread should not use cached value of that variable from their own stack.
+	A call to Thread.start on a thread happens-before any other thread detects that thread has terminated, either by successfully return from Thread.join() or by Thread.isAlive() returning false, also known as Thread start rule.
+	Volatile variable in Java is a special variable which is used to signal threads, a compiler that this particular variable values are going to be updated by multiple threads inside Java application.
+	By making a variable volatile using the Volatile keyword in Java,application programmer ensures that its value should always be read from main memory and thread should not use cached value of that variable from their own stack.
 	volatile variable also guarantees "happens-before" relationship, which means not only another thread has visibility of latest value of volatile variable but also all the variable is seen by the thread which has updated value of volatile variable before these threads sees it.
 	Any variable which is shared between multiple threads should be made variable, in order to ensure that all thread must see latest value of the volatile variable.
 	A signal to complier and JIT to ensure that compiler does not change ordering or volatile variable and moves them out of synchronized context.
 	You want to save the cost of synchronized as volatile variable are less expensive than synchronized.
--
--
--
+-11) What is thread-safety? is Vector a thread-safe class?
+	Thread-safety is a property of an object or code which guarantees that if executed or used by multiple threads in any manner e.g. read vs write it will behaves as expected.
+	First and foremost difference between Vector and ArrayList is that Vector is synchronized and ArrayList is not, what it means is that all the method which structurally modifies Vector e.g. add () or remove () are synchronized which makes it thread-safe and allows it to be used safely in a multi-threaded and concurrent environment.
+	Vector can return enumeration of items it hold by calling elements() method which is not fail-fast as opposed to Iterator and ListIterator returned by ArrayList.
+-12) What is race condition in Java? Given one example?
+	A race condition occurs due to race between multiple threads, if a thread which is supposed to execute first lost the race and executed second, behaviour of code changes, which surface as non-deterministic bugs.
+	Race conditions occurs when two thread operate on same object without proper synchronization and there operation interleaves on each other.
+	Namely "check and act" and "read modify write" can suffer race condition if not synchronized properly. both cases rely on natural assumption that a single line of code will be atomic and execute in one shot which is wrong e.g. ++ is not atomic.
+	Read-modify-update pattern also comes due to improper synchronization of non-atomic operations or combination of two individual atomic operations which is not atomic together e.g. put if absent scenario. 
+-13) How to stop a thread in Java?
+	Programmers mainly rely on the fact that thread stops automatically as soon as they finish execution of run() or call() method. To manually stop, programmers either take advantage of volatile boolean variable and check in every iteration if run method has loops or interrupt threads to abruptly cancel tasks.
 -
 -
 -

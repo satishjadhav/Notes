@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=fvPddKyHxpQ&list=PL6n9fhu94yhXcztdLO7i6mdyaegC8CJwR
-----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 =>Part 1 How to find nth highest salary in sql
 	select salary from employee where salary < (select max(salary) from employees);
 ----------------------------------	  
@@ -25,4 +25,3 @@ https://www.youtube.com/watch?v=fvPddKyHxpQ&list=PL6n9fhu94yhXcztdLO7i6mdyaegC8C
 	select top 1 salary
 	from RESULT
 	where RESULT.ROWNUMBER = 3;
-

@@ -268,68 +268,300 @@ e.g FI ==> Functional Interface
 		}
 	}
 =>Java 8 || Predefined Functional Interface: Predicate, Function & Consumar
+-input --> perform operation -->output
+	4 ---> square operation --> 16
+-Function functional interface
+	interface Function<T,R> {
+		public R apply(T t);
+	}
+-e.g.
+	import java.util.function.*;
+	class Test {
+		public static void main(String []args) {
+			Function<String,String> f1 = s->s.legnth();
+			System.out.println(f1.apply("durgasoftwaresolutions"));
+			
+			Function<String,String> f2 = s->s.toUpperCase();
+			System.out.println(f2.apply("durgasoftwaresolutions"));
+		}
+	}
+-Function Chaining
+	f1.andThen(f2).apply(i);
+	f1.andThen(f2).andThen(f3).apply(10);
+	import java.util.function.*;
+	class Test {
+		public static void main(String []args) {
+			Function<Integer,Integer> f1 = i->i;
+			Function<Integer,Integer> f2 = i->i*i*i;
+			System.out.println(f1.andThen(f2).apply(2));
+			System.out.println(f1.compose(f2).apply(2));
+		}
+	}
+-Predicate<T>  --->boolean
+-Function<T,R> --->R type
+-Consumer<T,R> --->R type	
+-Consumer<Student> c = s1 -> {
+		System.out.println("Student Name: "+s1.name);
+		System.out.println("Student Marks: "+s1.marks);
+		System.out.println("Student Name: "+f.apply(s1));
+		System.out.println();
+	} 
+=>Java 8 || Supplier,by Function,by Predicate
+-Supplier
+	Take some input and perform some conditional check and returns boolean value -->Predicate
+	Take some input and perform some operation and return the result which is need not be boolean type -->Function
+	Accept some input and perform required operation and not required to return anything -->Consumer
+-e.g.
+	class Test {
+		public static void main() {
+			Consumer<Movie> c1 = m->System.out.println(m.name+" ready to release");
+			Consumer<Movie> c2 = m->System.out.println(m.name+" released but its bigger flop");
+			Consumer<Movie> c3 = m->System.out.println(m.name+" strong information in database");
+			Consumar<M ovie> cc = c1.andThen(c2).andThen(c3);
+			Movie m = new Movie("Spider");
+			cc.accept(m);		
+		}
+	}
+-Just supply my required objects and won't take any input --->Supplier
+	interface Supplier<R> {
+		public R get();
+	}
+-e.g.
+	import java.util.function.*;
+	import java.util.Date;
+	class Test {
+		public static void main(String []args){
+			Supplier<Date> s = ()-> new Date();
+			System.out.println(s.get());
+			
+			//generate opt number
+			Supplier<String> s = ()-> {
+				String otp = "";
+				for(int i=0;i<6;i++){	
+					opt=opt+(int)(Math.random()*10);
+				}
+				return otp;
+			};
+			System.out.println(s.get());
+		}
+	}
+-Predicate--->test()
+-Function---->apply()
+-Consumer---->accept()
+-Supplier---->get()
+-Bipredicate
+	public static void main(String []args) {
+		Bipredicate<Integer,Integer> p=(a,b)->(a+b) %2 ==0;
+		System.out.println(p.test(10,20));
+		System.out.println(p.test(15,20));
+	}
+-Normal Predicate can take only one input argument and perform some conditional check.Sometimes our programming requirement is we have to take 2 input arguments and perform some conditional check,for this requirement we should go for Bi predicate. 
+-Bi predicate is exactly same as Predicate except that it will take 2 input argument.
+-interface BiPredicate<T1,T2> {
+	public boolean test(T1 t1,T2 t2);
+	//remaining default and static methods are same.
+}
+-BiFunction
+-e.g
+	class Employee {
+		int eno;
+		String name;
+		Employee(int eno,String name){
+			this.eno = eno;
+			this.name = name;
+		}
+	}
+	class Test {
+		public static void main(String []args){
+			ArrayList<Employee> l =new ArrayList<Employee>();
+			BiFunction<Integer,String,Employee> f= (eno,name)->new Employee(eno,name);
+			l.add(f.apply(100,"Durga"));
+			l.add(f.apply(200,"Ravi"));
+			l.add(f.apply(300,"Shiva"));
+			l.add(f.apply(400,"Pavan"));
+			for(Employee e : l){
+				System.out.println("Employee Number: "+e.eno);
+				System.out.println("Employee Name: "+e.name);
+			}
+		}
+	}
+-interface BiFunction<T,U,R> {
+		public R apply(T t,U u);
+		//default methods andThen()
+	}
+=>Java 8 New Features || Additional Functional Interface
 -
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+	import java.util.function.*;
+	class Test {
+		public static void main(String []args) {
+			int[] x= {0,5,10,15,20,25,30};
+			Predicate<Integer> p = i->2==0;
+			for(int x1 : x1) {
+				if(int x1 : x1) {
+					System.out.println(x1);
+				}
+			}
+		}
+	}
+-Primitive version of functional interfaces
+	Predicate<Integer>
+	IntPredicate
+	DoublePredicate
+	LongPredicate
+-Primitive Function Types:
+	DoubleFunction 			can take input type as double
+							return type can be any type
+	IntFunction				can take int type as input
+	LongFunction			can take long type as input
+	
+	DoubleToIntFunction		input type: double
+							return type:int
+	
+	DoubleToLongFunction	input type:double
+							return type:long
+							applyAsLong(double)
+
+	IntToDoubleFunction		applyAsDouble()
+	IntToLongFunction		applyAsLong()
+	
+	LongToIntFunction		applyAsInt()
+	LongToDoubleFunction	applyAsInt()
+	
+	ToIntFunction			return type is int
+							input can be anything
+							int applyAsInt(T value)
+							
+	ToLongFunction
+	ToDoubleFunction
+	
+	ToIntBiFunction			return type must be int type but input can be anytype
+		int applyAsInt(T t,U u)
+	ToLongBiFunction
+		long applyAsLong(T t,U u)
+	Applies this function to the given arguments.
+	ToDoubleBiFunction
+		double applyAsDouble(T t,U u)
+	Applies this function to the given arguments.
+-e.g.
+	import java.util.function.;
+	class Test {
+		public static void main(String []args) {
+			IntFunction<Integer,Integr> f = i->i*i;
+			System.out.println(f.apply(4));
+			
+			Function<String,Integer> f = s->s.legnth();
+			System.out.println(f.apply("durga"));
+		
+			ToIntFunction<String> f = s->s.legnth();
+			System.out.println(f.applyAsInt("durga"));
+			
+			IntToDoubleFunction f = i->Math.sqrt(i);
+			System.out.println(f.applyAsDouble(9));
+		}
+	}
+-PrimitiveTypes of Consumer
+-IntConsumer
+	void accept(int value)
+	Performs this operation on the given argument.
+-LongConsumer
+-DoubleConsumer
+-ObjDoubleConsumer<T>
+	void accept(T t,double value);
+	ObjIntConsumer<T>
+	ObjLongConsumer<T>
+-Primitive Types for Supplier
+-BooleanSupplier
+	boolean getAsBoolean()
+-IntSupplier
+	int getAsInt()
+-LongSupplier
+	long getAsLong()
+-DoubleSupplier
+	double getAsDouble()
+-UnaryOperator<T>
+-e.g.
+	import java.util.function.*;
+	class Test {
+		public static void main(String []args) {
+			Function<Integer,Integer> f= i->i*i;
+			System.out.println(f.apply(5));
+		}
+	}
+-The primitive type of UnaryOperator
+-IntUnaryOperator:
+	public int applyAsLong(int)
+-LongUnaryOperator:
+	public long applyAsDouble(long)
+-DoubleUnaryOperator:
+	public double applyAsDouble(duble)
+-IntBinaryOperator
+-LongBinaryOperator
+-DoubleBinaryOperator
+-If we increment the value of i like i = i+1 and we do square of i then how to do by using binaryoperator
+-IntUnaryOperator f = i->i+1;
+System.out.println(f.applyAsInt(4));
+-IntUnaryOperator f = i->i*i;
+System.out.println(f.applyAsInt(4));
+-e.g.
+	class Test {
+		public static void main(String []args) {
+			IntUnaryOperator f1 = i->i+1;
+			System.out.println(f1.applyAsInt(4));
+		}
+	}
+=>Java 8 New Features || Method() and Constructor Reference
+-Predefined Functional Interfaces
+	Predicate
+	Function
+	Consumer
+	Supplier
+-Argument Functional Inerfaces
+	BiPredicate
+	BiFunction
+	BiConsumer
+-Primitive Type Functional Interfaces
+	IntPredicate
+	LongPredicate
+	DoublePredicate
+	UnaryOperator
+	BinaryOperator
+-Lambda Expression --->Method and constructor reference
+-e.g.
+	class Test {
+		public static void m1() {
+			for(int i=0;i<10;i++){
+				System.out.pritln("Child Thread");
+			}
+		}
+		
+		public static void main(String []args) {
+			Runnable r = Test::m1; //:: used for method reference or constructor reference
+			Thread t = new Thread(r);
+			t.start();
+			for(int i=0;i<10;i++) {
+				System.out.println("Main Thread");
+			}
+		}
+	}
+-classname::method name
+-Object reference::methos name
+-In case of method reference difference return types are allowed.But only restriction argument types must be matched.
+-e.g.
+	interface Inerf {
+		public void add(int a,int b);
+	}
+	class Test {
+		public static void sum(int x,int y) {
+			System.out.pritln("The sum: "+(x+y));
+		}
+		public static void main(String []args) {
+			Inerf i = (a,b) ->System.out.pritln("The sum: "+(a+b));
+			i.add(10,20);
+			
+			Inerf i1= Test::sum;
+			i1.add(100,200);
+		}
+	}
 -
 -
 -
