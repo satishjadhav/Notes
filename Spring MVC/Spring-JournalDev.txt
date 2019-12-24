@@ -38,12 +38,38 @@ https://www.journaldev.com/16922/spring-framework
 	Join Point: A join point is a specific point in the application such as method execution, exception handling, changing object variable values etc. In Spring AOP a join point is always the execution of a method.
 	Advice Arguments: We can pass arguments in the advice methods. We can use args() expression in the pointcut to be applied to any method that matches the argument pattern. If we use this, then we need to use the same name in the advice method from where the argument type is determined. 
 -What is the difference between Spring AOP and AspectJ AOP?
--
--
--
--
--
--
+	AspectJ is the industry-standard implementation for Aspect Oriented Programming whereas Spring implements APO for some cases.
+	Spring APO supports only proxy-based AOP,so it can be applied only to method execution join points.AspectJ supports all kinds of pointcuts.
+	One of the shortcomings of Spring AOP is that it can be applied only to the beans created through Spring Context.
+-What is Spring IoC Container?
+	Inversion Of Control is the mechanism to achieve loose coupling between Objects dependencies.
+	AnnotationConfigApplicationContext:For standalone java applications using annotations based configuration.
+	ClassPathXmlApplicationContext: For standalone java applications using XML based configuration.
+	FileSystemXmlApplicationContext : Similar to ClassPathXmlApplicationContext except that xml configuration file can be loaded from anywhere in the file system.
+	AnnoationConfigWebApplicationContext and XmlWebApplicationContext for web applications.
+-What is a Spring Bean?
+	Any normal java class that is initialized by Spring IoC container is called Spring Bean. We use Spring ApplicationContext to get the Spring Bean instance.
+-What is the importance of Spring bean configuration file?
+	We use Spring Bean configuration file to define all the beans that will be initialized by Spring Context. When we create the instance of Spring ApplicationContext, it reads the spring bean XML file and initializes all of them. Once the context is initialized, we can use it to get different bean instances.
+-What are different ways to configure a class as Spring Bean?
+	XML Configuration : This is most popular configuration and we can use bean element in context file to configure a Spring Bean.
+	Java Based Configuration: If you are using only annotations, you can configure a Spring bean using @Bean annotation. This annotation is used with @Configuration classes to configure a spring bean.
+	Annotation Based Configuration: We can also use @Component, @Service, @Repository and @Controller annotations with classes to configure them to be as spring bean. For these, we would need to provide base package location to scan for these classes.
+-What are different scopes of Spring Bean?
+	singleton : Only one instance of the bean will be created for each container.This is the default scope for the spring beans.
+	prototype : A new instance will be created every time the bean is requested.
+	request : This is same as prototype scope,however it's meant to be used for when applications.A new instance of bean will be created for each HTTP request.
+	request : This is same as prototype scope,however it's meant to be used for web applications.A new instance of the bean will be created for each HTTP request.
+	session : A new bean will be created for each HTTP session by the container.
+	global-session : This is used to create global session beans for Portlet applications.
+-What is Spring Bean life cycle?
+	Spring beans are initialized by Spring container and all the dependencies are also injected.Spring framework provides support for post-initialization and pre-destroy methods in spring beans by implementing InitializingBean and DisposableBean interfaces or using init-method and destroy-method attribute in spring bean configurations.
+	Spring-Bean life cycle:
+		Spring Context is also responsible for injection dependencies in the bean,either through setter or constructor methods or by spring auto wiring.
+		Spring framework provides ways through which we can provide post-initialization and pre-destroy methods in a spring bean life cycle.
+		1. By implementing InitilizingBean and DisposableBean interfaces-Both these interfaces declare a single method where we can initialize/close resources in the bean.For post-initialization, we can implement InitializingBean interface and provide implementation of afterPropertiesSet() method. For pre-destroy, we can implement DisposableBean interface and provide implementation of destroy() method. These methods are the callback methods and similar to servlet listener implementations.
+		2. Providing init-method and destroy-method attribute values for the bean in the spring bean configuration file. This is the recommended approach because of no direct dependency to spring framework and we can create our own methods.
+		
 -
 -
 -

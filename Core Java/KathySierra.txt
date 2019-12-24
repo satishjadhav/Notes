@@ -152,64 +152,54 @@ occurs.
 reference variables.
 -Method arguments are never actual objects (they can be references to
 objects).
--In practice, a primitive argument is a completely detached copy of the
-original primitive.
--In practice, a reference argument is another copy of a reference to the
-original object.
+-In practice, a primitive argument is a completely detached copy of the original primitive.
+-In practice, a reference argument is another copy of a reference to the original object.
 
 ->4 Flow Control,Exceptions, and Assertions
--the for loop is used when you know how many times you need to go through the
-loop. The while loop is used when you do not know how many times you want to
-go through, whereas the do-while is used when you need to go through at least once.
--In the for loop and the while loop, the expression will have to evaluate to true to
-get inside the block and will check after every iteration of the loop. The do-while
-loop does not check the condition until after it has gone through the loop once.
--The break and continue statements can be used in either a labeled or
-unlabelled fashion.
+-the for loop is used when you know how many times you need to go through theloop. The while loop is used when you do not know how many times you want to go through, whereas the do-while is used when you need to go through at least once.
+-In the for loop and the while loop, the expression will have to evaluate to true to get inside the block and will check after every iteration of the loop. The do-while loop does not check the condition until after it has gone through the loop once.
+-The break and continue statements can be used in either a labelled or unlabelled fashion.
 -Java
-also provides the finally keyword. This is used to define a block of code that is
-always executed, either immediately after a catch clause completes or immediately
-after the associated try block in the case that no exception was thrown (or there
-was a try but no catch).
--An exception object is an instance of class Exception or one of its subclasses. The
-catch clause takes, as a parameter, an instance of an object of a type derived from
-the Exception class. Java requires that each method either catch any checked exception
-it can throw or else declare that it throws the exception.
--Runtime exceptions are of type RuntimeException (or one of its subclasses). These
-exceptions are a special case because they do not need to be handled or declared, and
-thus are known as “unchecked” exceptions.
+also provides the finally keyword. This is used to define a block of code that is always executed, either immediately after a catch clause completes or immediately after the associated try block in the case that no exception was thrown (or there was a try but no catch).
+-An exception object is an instance of class Exception or one of its subclasses. The catch clause takes, as a parameter, an instance of an object of a type derived from the Exception class. Java requires that each method either catch any checked exception it can throw or else declare that it throws the exception.
+-Runtime exceptions are of type RuntimeException (or one of its subclasses). These exceptions are a special case because they do not need to be handled or declared, and thus are known as “unchecked” exceptions.
 -Errors are of type java.lang.Error or its
 subclasses, and like runtime exceptions, they do not need to be handled or declared.
--two minutes drill
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-Switch statements can evaluate only the byte,short,int and char data types.
+Case argument must be a literal or final variable.You cannot have a case that includes a non-final variable or a range of values.
+-The default block can be located anywhere in the switch block, so if no case matches, the default block will be entered, and if the default does not contain a break, then code will continue to execute (fall-through) to the end of the switch or until the break statement is encountered.
+-You can initialize more than one variable in the first part of the for loop declaration; each variable initialization must be separated by a comma.
+-Checked exceptions includes all subtypes of Exception,excluding classes that extend RuntimeException.
+-Checked exceptions are subject to the handle or declare rule; any method that might throw a checked exception (including methods that invoke methods that can throw a checked exception) must either declare the exception using the throws keyword, or handle the exception with an appropriate try/catch.
+-Subtypes of Error or RuntimeException are unchecked, so the compiler doesn't enforce the handle or declare rule.You are free to handle them and you're free to declare them but the compiler doesn't care one way or the other.
+-The only exception to the finally-will-always-be-called rule is that a finally will not be invoked if the JVM shuts down. That could happen if code from the try or catch blocks calls System.exit(), in which case the JVM will not start your finally block.
+-Uncaught exceptions propagate back through the call stack, starting from the method where the exception is thrown and ending with either the first
+method that has a corresponding catch for that exception type or a JVM shut-down (which happens if the exception gets to main(), and main()
+is “ducking” the exception by declaring it).
+
+->5 Object Orientation,Overloading and Overriding,Constructors,and Return Types
+-In OO, the concept of IS-A is based on inheritance.IS-A is way of saying, "this thing is a type of that thing"
+-HAS-A relationships are based on usage, rather than inheritance.In other words class A HAS-A B if code in class A has a reference to an instance of class B.
+-Overridden method occurs when a subclass inherits a method from a superclass,but the subclass redefines it to add more specialized behaviour.At runtime the JVM will invoke the subclass version on an instance of a subclass, and the superclass version on an instance of the superclass.
+-Overriding methods must keep the same argument list and return type as the overridden method, and that the access modifier can’t be more restrictive.
+-Overriding methods must keep the same argument list and return type as the overridden method, and that the access modifier can't be more restrictive.
+The overriding method also can't throw any new or broader checked exceptions that weren't declared in the overridden method.
+-The compiler-generated constructor is called the default constructor, and it is always a no-arg constructor with no-arg call to super().
+-A constructor can invoke another constructor of the same class using the keyword this(), as though the constructor were a method named this().We saw that every constructor must have either this() or super() as the first statement.
+-An overriding method must have the same return type as the overridden method of the superclass.
+-The goal of encapsulation is to hide implementation behind an interface (or API).
+-Methods can be overridden or overloaded; constructor can be overloaded but not overridden.
+-Abstract methods must be overridden by the first concrete (non abstract) subclass.
+-Final methods cannot be overridden.
+-Polymorphism applies to overriding, not to overloading.
+-Every class, even abstract classes, has at least one constructor.
+-Constructors can use any access modifier even private.
+-The compiler will create a default constructor if you don’t create any constructors in your class.
+-The default constructor is a no-arg constructor with a no-arg call to super().
+-Abstract classes have constructors that are called when a concrete subclass is instantiated.
+-this() and super() cannot be in the same constructor.You can have one or the other but never both.
+-Overloaded methods can change return types;override methods cannot.
+-Object reference return types can accept null as a return value.
 -
 -
 -

@@ -102,14 +102,61 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 		The pool containing all the relective data of the virtual machine itself,such as meta-data of classes,objects (e.g. pointers into the heap where objetcs are allocated) and method objects,classloader related data.
 	Code Cache (non-heap):
 		The HotSpot Java VM also includes a code cache,containing memory that is used for compilation and storage of native code.
-
--
--
--
--
--
--
--
+-Why We should never invoke GC pro grammatically from within your code ? || Garbage collector in java
+	Invoking System.gc() may have significant performance side effects on the application.
+	GC knows when to invoke partial or full collection.Whenever there is a need it tries to collect the space from Young Generation First (very low performance overhead),but when we force our JVM to invoke System.gc() JVM will do a Full GC which might pause your application for certain amount of time.
+-Scenario based java garbage collection interview question
+	Performing tuning GC may slow this problem to some extent.
+	This application creates lots of short lived objects - thus we would require a large young generation for lowering the frequency of minor garbage collection.
+	If our young generation is small, then the short lived objects will be promoted to Tenured Generation and thus casuing frequent major collection.This can be addressed by setting appropriate value for -XX:NewSize parameter at the JVM startup.
+	We also need to adjust the survivor ratio that the Eden space is large compared to survivor space, large value of Survivor ratio should help solve this problem.
+	e.g.
+	java -client -XX:SurvivorRatio=12 -XX:NewRatio=2 -XX:NewSize=50m -Xmx256m -Xms64m -XXMaxMetaspace=128m -XX:+PrintGCDetails -jar MyApp.jar
+-What are the available tools to give the visual view of the different memory spaces in a running JVM
+	JVisualVM,JConsole,JProfiler,YourKit
+-Tricky Interview questions
+	public class A {
+		public A() {
+			greeting();
+			prints();
+		}
+		void greeting() {
+			System.out.println("instance method from A");
+		}
+		static void prints() {
+			System.out.println("static method from A");
+		}
+	}
+	
+	public class B extends A {
+		public B() {
+			greeting();
+			prints();
+		}
+		void greeting() {
+			System.out.println("instance method from B");
+		}
+		static void prints() {
+			System.out.println("static method from B");
+		}
+	}
+	public class Test {
+		public static void main(String []args) {
+			new B();
+		}
+	}
+	o/p:
+	instance method from B
+	static method from A
+	instance method from B
+	static method from B
+-When should we choose Array, ArrayList, LinkedList over one another for a given Scenario and Why?
+	Array is a fixed size collection which can hold primitive or Objects.Array itself is a object and memory for array object is allocated on the Heap.
+	Array does not provide useful collections methods like add(),remove(),iterator() etc.
+	We should choose array only when the size of inputs is fixed and known in advance and underlying elements are of primitive type.
+	LinkedList provides constant-time (Big O(1)) methods for insertion and removal using Iterators.But the methods to find the elements have Big O(n) time complexity (Liner Time,proportional to the size of list) and thus are poor performing.
+	LinkedList has more memory overhead because it needs two nodes for each element which point to previous and next element in the LinkedList.If you are looking for random access of elements then ArrayList is the way to go for.
+-What are new Features added in Java 8 ?
 -
 -
 -

@@ -38,7 +38,7 @@ The most commonly used BeanFactory implementation is the XmlBeanFactory class.
 	• If there are any BeanPostProcessors associated with the bean, their postProcessAfterInitialization() methods
 	will be called.
 	• If the bean implements DisposableBean, it will call the destroy() method.
--There are two important bean life cycle methods. The first one is 'setup' which is called when the bean is loaded in to the container. The second method is the 'teardown' method which is called when the bean is unloaded from the container. The bean tag has two important attributes (init-method and destroy-method) with which you can define your own custom initialization and destroy methods. There are also the correspondive annotations(@PostConstruct and @PreDestroy).
+-There are two important bean life cycle methods. The first one is 'setup' which is called when the bean is loaded in to the container. The second method is the 'teardown' method which is called when the bean is unloaded from the container. The bean tag has two important attributes (init-method and destroy-method) with which you can define your own custom initialization and destroy methods. There are also the correspondence annotations(@PostConstruct and @PreDestroy).
 -Inner beans are always anonymous and they are always scoped as prototypes.
 -Spring offers the following types of collection configuration elements:
 	• The <list> type is used for injecting a list of values, in the case that duplicates are allowed.
@@ -87,7 +87,7 @@ Hibernate or JDO in a consistent way. This allows us to switch between the persi
 -Different types of AutoProxying
 	• BeanNameAutoProxyCreator
 	• DefaultAdvisorAutoProxyCreator
-	• Metadata autoproxying
+	• Meta data auto proxying
 -WebApplicationContext is an extension of the plain ApplicationContext that has some extra features necessary for web applications.
 -
 -
