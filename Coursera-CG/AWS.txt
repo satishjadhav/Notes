@@ -1,110 +1,18 @@
-https://www.youtube.com/watch?v=iKE9mjIVeik&list=PL6zKLAqTq5peLon71V2ZDTLuhKNlW4PYl
+https://www.coursera.org/learn/aws-fundamentals-going-cloud-native/home/welcome
 --------------------------------------------------------------------------------
--Basic English Grammer: Have,Has Had 
-	Their -> Group of people
-	There -> Indicates place
--Use of could (Past form of Can)
-	Shows -Possibility , Suggestion and Request also used for past ability (used to)
-	Possibility:
-		Rahul could be one who stole the money
-		You could have come earlier
-		Rahul could go to jail for stealing money
-	Suggestion:
-		You could have end up the conversation
-		You could give up your show
-	Request	
-		Could i help you?
-		Could i ask you a favour?
-		Could i have a cup of tea?
-		Could you please show me the way?
-	Use of Would (Past form of Will)
-	Shows -Past habits,wish,request,conditions
-	Past Habits
-		Gandhiji would always carry a lathi with him
-	Wish
-		I would like to say something.
-		I would love to come with you.
-	Request
-		Would you mide telling me your name
-		Would you like to favour me for a coffee
-		Would you be my date
-	Conditions
-		If he lost his job he would have no money
-		You would have passed the exams if you had worked hard.
--Basic English Grammar: Punctuation
-	Full stop (.) 
-		At the end of a sentence
-		I feel proud of you.
-	Question mark (?)
-		For interrogative sentence
-	Comma (,)
-		To take pause or to separate two words.
-		I met my friend , James.
-	Exclamation (!)
-		To show sudden expression
-	Colon (:)
-		To introduce something
-		Teacher has given there tips:
-	Apostrophe (')
-		To show possession
-		This is Ram's book
-	Brackets ()
-		To clarify more something
-	Slash (/)
-		When we provide choice or give equal importance
-	Hyphen (-)
-		Re-examine
-	Quotation mark ("  ")
-->Verb (Helping and Main Verb)
--short sentence contains verb
-	Helping verb
-		am is are was were do did has have had will shall does can should must
-	Main Verb
-		run walk eat finish go love play work laugh cry play swim cook
-->Pronoun
-	Is used at the place of noun
-	I						She			is followed by verb 
-	Me,Mine,My				He			is playing football
-	You,Your
-	He,Him,His				His			
-	She,Her					Her
-	They,Their
-	Them,Those,There
-->Use of have been and ahs been
-	Present Perfect continuous tense
-		She has doing this work since morning.
-		They/I/You have been searching for the key since morning.
-	Talking about past (visiting a place)
-		She has been to America
-		I have been there twice.
-		Have you been there?
-	In a passive form of Present Prefect
-		Active - I have done this work.
-		Passive - This work has been done by me
-		Active - I have informed them.
-		Passive - They have been informed by me.
-->Basic English Grammar: Simple Present Tense
-		Subject		+		Verb(First)		+		Object
-		Subject		+		Verb(First)+(s/es) + Object		->He /She /It
-	Negative Sentences
-		Subject		+		do not	 	+ Verb (First)		+	Object		->I/We/You/They
-		Subject		+		does not 	+ Verb (First)		+	Object		->He/She/It
--Present Perfect Tense
-	Event happens few minutes back but has finished now
-		Subject		+		have		+Verb (Third)		+	Object		->I/We/You/They
-		Subject		+		has			+Verb (Third)		+	Object		->He/She/It
--Present Continuous Tense
-		Shows something which is current movement and something which going on right now.
-		Subject		+(am/are)			+Verb(First) +(ing)	+	Object		->I/We/You/They
-		Subject		+(am/are)			+Verb(First) +(ing)	+	Object		->He/She/It
-		
--Present Perfect Tense
-		Have		+(Subject)			+Verb(Third) 		+	Object		->I/We/You/They
-		Has			+(Subject)			+Verb(Third) 		+	Object		->He/She/It
--Present Perfect Conditions
-		Shows about the actions which is started in past and which is still on going and have not finished till now.
-		Subject		+	(have been)		+Verb (First)(ing)	+ Object		->I/We/You/They
-		Subject		+	(has been)		+Verb (First)(ing)	+ Object		->He/She/It
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 -
 -
 -

@@ -157,12 +157,93 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 	LinkedList provides constant-time (Big O(1)) methods for insertion and removal using Iterators.But the methods to find the elements have Big O(n) time complexity (Liner Time,proportional to the size of list) and thus are poor performing.
 	LinkedList has more memory overhead because it needs two nodes for each element which point to previous and next element in the LinkedList.If you are looking for random access of elements then ArrayList is the way to go for.
 -What are new Features added in Java 8 ?
--
--
--
--
--
--
+	Default methods enable new functionality to be added to the interfaces of libraries and ensure binary compatibility with code written for older versions of those interfaces.
+	Optimistic Locking in Code using StampedLock provides very lightweight synchronization.
+	Concurrent Adders and Accumulators - DoubleAdder,DoubleAccumulator,LongAdder,LongAccumulator
+	Array Parallel Sorting API
+	Complete New Date API
+	Functional Interfaces and Lambda Expression (see java.util.function package)
+	Stream API in collections enables bulf operations such as sequential and parallel map-reduce functions.
+	Improvements in ConcurrentHashMap added methods for atomic and bulk operations.
+	New classes added to java.util.concurrent.atomic methods for atomic and bulk operations
+	New classes added to java.util.concurrent.atomic to support scalable up-datable variables
+	PermGen space removed,Metaspace added.
+-What all collections utilizes hashCode method? ||Hashing Data Structure in Java Interview Questions?
+	Only hashing data structures uses hashCode() method along with equals() method, though the equals() is used by almost every class.
+	hashCode is useful for creating hashing based data structures like HashMap,LinkedHashMap,CocurrentHashMap,HashSet.
+	HashCode is used to provide best case O(1) time complexity for searching the stored element.
+	TreeeMap,TreeSet uses Comparator/Comparable for comparing the elements against each other, so these data structures do not require hashCode() method.
+	The beast case time complexity offered by these data structures for lookup is logarithmic rather than constant.
+-What is Logarithm ? Why is it relevant in software Development?
+	A Logarithm tells what exponent (power) is needed to make a certain number.In a way it is opposite of exponentiation.
+	Logarithm converts big number values into smaller , human readable format.
+	Logarithm has the below mathematical properties
+		Sum of logs = log of product
+		log10(100) + log10(1000) = log10(100,000)
+		i.e.	2  + 3			 =	5
+		Subtraction of logs = log of division
+		log10(100) - log10(1000) = log10(100)
+		i.e.	3  - 1			 = 2
+	In divide and conquer algorithm (Binary Search,Data Partitioning,etc.) the problem set is halved in each iteration which results in logarithmic Big O(log n) time complexity.
+-What do you understand by Big O notation, why is it important in software development?
+	Big O Notation is a mechanism used to measure the relative efficiencies of Algorithm in terms of Space and Time.
+	Constant O(1) - a program whose running time's order of growth is constant , executes a fixed number of operations to finish the job thus its running time does not depends on N (N-input).
+	Liner O(N) - a program that spends a constant amount of time processing each piece of input data and thus running time is proportional to the N.
+	Logarithmic O (log n) -a program where on every subsequent iteration the the problem size is cut by half for example Binary Search.
+	O(1)-Constant Time-Searching from HashMap, check a number for even/odd
+	O(log n)-Logarithmic-Find an item sorted array using Binary Search
+	O(n)-Liner-Printing all elements from an array.
+	O(n log n)-Log linear-Sorting using Merge Sorting
+	O(n2)-Quadratic-Bubble sorting algorithm
+	We should always keep time efficiencies in mind while designing an algorithm for a data structures.
+	Base of Logarithm is irrelevant in Big O Notation
+		The base of algorithm is not relevant with respect to the order of growth, since all logarithms with a constant base are all related by a constant proportion so log N is used when referring to the order of growth regardless of the base of algorithm.
+	Time efficiency in Big O notation for few Java Collections
+		ArrayList(ignoring the time taken by array resize operation)
+			O(1) for add,size and get
+			O(n) for toString() method
+		HashMap & ConcurrentHashMap (with no collisions)
+			O(1) for get operation
+			O(1) for put operation
+		LinkedList	
+			O(1) for removal and O(1) for add and poll method
+			O(n) for toString() method
+-How would you determine the Time Complexity of a given algorithm are there any general guidelines?
+	1 Consecutive Statements (Add the Complexity)
+		We should add the time complexity of each statement to calculate the total time complexity.For example if we have 3 lines of code with O(1),O(log n) and O(n) complexity respectively then the total time complexity would be 
+		O(1) + O(log n) + O(n) = ~O(n)
+		In case of if-else condition we should include the time complexity of condition and if or else part,whichever is larger.
+	2 Iterations and Loops - for, while and do-while (Multiply the Complexity)
+		Total time complexity can be calculated by multiplying the Time Complexity of individual statement with the number of iterations.
+			for(int i=0;i<N;i++) {
+				PriorityQueue.offer(i); O(log k)
+			}
+		Time Complexity = O(log k) x O(n) = O(n log k)
+		In case of nested loops (Multiply the Complexity)
+	3 Logarithmic Time Complexities (Logarithmic Complexity)
+		In certain scenarios the problem size is cut by 1/2 on each subsequent iteration and the resulting time complexity is O(log n)
+-Explain working of a hashing data structure for example HashMap in Java
+	HashMap is a hashing data structure which utilizes object's hashcode to place that object inside map.It provides best case time complexity of O(1) for insertion and retrieval of an object.
+	HashMap is not thread safe so we should provide necessary synchronization if used in multi-threaded environment.
+	HashMap is basically an array of buckets where each bucket uses linked list to hold elements.
+	Initial Capacity : The default capacity of a hashmap is 16 (the number of bucket and it is always expressed in power of two 2,4,8,16 etc.)
+	bucket index =  hashcode % (number of buckets)
+	The actual method is implemented as
+	int indexFor(int hashCode,int length) {
+		return hashCode & (length -1);
+	}
+	get operation takes a key and then calculate the index of bucket using the method mention below.Then that bucket's List is searched for the given key using key's equals() method and finally the result is returned.
+	bucket index = hashcode % (number of buckets)
+	The actual method is implemented as 
+	int indexFor(int hashcode, int length) {
+		return hashcode & (length-1)
+	}
+	Load factor and Rehashing 
+	Rehashing occurs automatically by the map when the number of keys in the map reaches threshold value:
+		threshold = capacity*(load factor of 0.75)
+	After Rehashing a new array is created with more capacity and all the existing contents are copied over to it.
+-Concurrent HashMap interview Questions
+	https://www.youtube.com/watch?v=h06AxHF2E0Y&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvhGeJ&index=27
 -
 -
 -
