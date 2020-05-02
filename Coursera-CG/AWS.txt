@@ -1,11 +1,46 @@
 https://www.coursera.org/learn/aws-fundamentals-going-cloud-native/home/welcome
 --------------------------------------------------------------------------------
--
--
--
--
--
--
+-Welcome to AWS Fundamentals: Going Cloud-Native
+-Amazon Elastic Compute Cloud
+-AWS Overview
+	Cloud computing is the on-demand delivery of computer power,database storage,applications and other IT resources through a cloud services platform via the internet with pay-as-you-go pricing.
+	Six Advantages and Benefits of Cloud Computing
+		Trade capital expenses for variable expenses
+		Benefits from massive economics of scale
+		Stop guessing capacity
+		Increase speed and agility
+		Stop spending money on running and maintaining data centres.
+		Go global minutes.
+	What is cloud computing by AWS?
+		Cloud computing is the on-demand delivery of IT resources over internet with pay-as-you-go pricing.Instead of buying,owning and maintaining physical data centres and servers,you can access technology services such as computing power,storage and databases on as-needed basis from a cloud provider like Amazon Web Services (AWS).
+	Product and services
+		AWS offers a broad set of global cloud-based products, including compute,storage,databases,analytics,networking,mobile,developer tools,management tools,Internet of Things(IoT),security,and enterprise applications.
+-AWS Infrastructure Part 1
+	The AWS Cloud infrastructure is built around Regions and Availability Zones.AWS Regions provide multiple physically separated and isolated Availability Zones are connected with low latency,high throughput, and highly redundant networking.	
+-What is our Sample App?
+-Introduction to compute Services on AWS
+	Building and running your application start with compute,whether you are building enterprise,cloud-native or mobile applications;or running cluster to sequence the human genome.
+	Building and running your application starts with compute, whether you are building enterprise, cloud-native, or mobile applications; or running massive clusters to sequence the human genome.
+
+	AWS offers a comprehensive portfolio of compute services that allow you to develop, deploy, run, and scale your applications and workloads in the world’s most powerful, secure, and innovative compute cloud.
+
+	Details about the full range of AWS compute services can be found here .
+
+	Later in this module, you will learn about both Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Lightsail. See those sections for more details.
+
+	Both serverless computing and container services are beyond the scope of this class. We will cover these topics in subsequent courses, but the following descriptions provide an introduction to some of the key services for serverless computing and containers.
+	AWS Lambda
+
+	AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume--there is no charge when your code isn't running. Additional information about Lambda can be found at: https://aws.amazon.com/lambda
+	AWS Container Services
+
+	Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high-performance container orchestration service that supports Docker containers. It allows you to run and scale containerized applications on AWS. You can find more details at: https://aws.amazon.com/ecs/
+
+	Amazon Elastic Container Service for Kubernetes (Amazon EKS) makes it straightforward to deploy, manage, and scale containerized applications that use Kubernetes on AWS. Details can be found at: https://aws.amazon.com/eks/
+
+	AWS Fargate is a compute engine for Amazon ECS and Amazon EKS that allows you to run containers without having to manage servers or clusters. You can find more information at: https://aws.amazon.com/fargate/
+
+	Note that before you use any of these services, you should check whether they are eligible for the AWS Free Tier: https://aws.amazon.com/free
 -
 -
 -
