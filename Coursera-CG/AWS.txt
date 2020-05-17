@@ -41,15 +41,38 @@ https://www.coursera.org/learn/aws-fundamentals-going-cloud-native/home/welcome
 	AWS Fargate is a compute engine for Amazon ECS and Amazon EKS that allows you to run containers without having to manage servers or clusters. You can find more information at: https://aws.amazon.com/fargate/
 
 	Note that before you use any of these services, you should check whether they are eligible for the AWS Free Tier: https://aws.amazon.com/free
--
--
--
--
--
--
--
--
--
+-Amazon Elastic Compute Cloud (EC2)
+	Amazon Elastic Compute Cloud or what we will call EC2 from here on out is a compute service that allows you to provision virtual servers on demand.
+	Each virtual server you provision is called an EC2 instance.
+	Amazon Elastic Compute Cloud is a web service that provides secure and resizeable compute capacity in the cloud.Its designed to make web-scale cloud computing easier for developers.
+	Amazon EC2 presents a true virtual computing environment and it allows you ti use web service interfaces to launch instances with a verity of operating systems, load them with your custom application environment manage your networks access permissions and run your image by using as many or few systems as you want.
+-Introduction to Amazon Lightsail (Amazon computing server)
+	Amazon Lightsail is the easiest way to get started with AWS for developers small business,students and other users who need a simple virtual private server (VPS) solution.
+	Lightsail provides developers compute, storage, and networking capacity, and it also provides capabilities to deploy and manage websites and web applications in the cloud.
+-week 2 Introduction to Module 2 Networking and Storage
+	Amazon Elastic Block Store (Amazon EBS) provides persistent block storage volumes for use with Amazon EC2 instances in the AWS cloud.Each Amazon EBS volume is automatically replicated inside an Availability Zone to protect you form component failure which offers high availability and durability.
+	Amazon EBS volumes offer the consistent and low-latency performance that you need to run your workloads.
+	Amazon Simple Storage Service (Amazon S3) stores data as objects within resources that are called buckets.
+	CIDR Notation
+	An important concepts that's used in networking on AWS is CIDR or Classless Inter-Domain Routing.CIDR network addresses are allocated in a virtual private cloud (VPC) and in subnet by using CIDR notation.
+	A /16 block provides 65,536 IPv4 addresses. A /24 block provides 256 addresses. See this article for more information about CIDR.
+	Amazon Virtual Private Cloud
+		Amazon Virtual Private Cloud lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.
+-Introduction to Storage on AWS
+-Amazon Elastic Block Store (Amazon EBS)
+	Amazon Elastic Block Store provides persistent block storage volumes for use with Amazon EC2 instance in the AWS Cloud.Each Amazon EBS volume is automatically replicated inside an availability zone to protect you from component failure, which offer high availability and durability.
+	EBS volumes offer the consistent and low-latency performance that you need to run your workloads.
+-Amazon Simple Storage Service (Amazon S3)
+	Stores data as objects within resources that are called buckets.You can store as many objects as you want within a bucket and you can write, read and delete objects in your bucket.Objects can be up to 5 TB in size.
+-Amazon Elastic File System (Amazon EFS)
+	It provides simple scalable elastic file storage for use with AWS Cloud services and on-premises resources.
+	It's designed to provide massively parallel shared access to thousands of Amazon EC2 instances.This enables your applications to achieve high levels of aggregate throughput and IOPS that scale as a file system grows with consistent low latencies.
+-Amazon Relational Data Base Services (RDS)
+	Amazon Relational Database Service (Amazon RDS) makes it straightforward to set up,operate and scale a relational database in the cloud.
+	It provides cost-efficient and resizeable capacity while automating time-consuming administration tasks such as provisioning hardware, setting up the database,patching and making backups.
+	You can use the AWS Database Migration Service (AWS DMS) to quickly and securely migrate your database to AWS.
+-Amazon DynamoDB
+	Amazon DynamoDB is a fast and flexible NoQL database service for application that need consistent,simple-digit millisecond latency at any scale.Its fully managed cloud database and it supports both documents and key-value store models.Its flexible data model, reliable performance, and automatic scaling of throughput capacity make it a great fit for mobile,web,gaming, advertising(ad tech),Internet Of Things(Iot), and many other applications.
 -
 -
 -
