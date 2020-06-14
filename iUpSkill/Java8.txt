@@ -1,2469 +1,469 @@
-
+https://app.pluralsight.com/player?course=java-8-whats-new&author=jose-paumard&name=java-8-whats-new-m1&clip=0&mode=live
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+	The most useful new parts of Java 8
+	Lambda expressions
+	The Stream API and Collectors
+	And many bits and pieces
+	Java FX
+	Nashorn
+-Introduction to the Lambda expressions
+-The lambda syntax
+-Functional interfaces
+-Method references
+-Constructor references
+-How to process data from the Collection API?
+-Let's implement this interface
+	public class JavaFileFilter implements FileFilter {
+		public boolean accept(File file) {
+			return file.getName().endsWith(".java");
+		}
+	}
+-And use it:
+	JavaFileFilter fileFilter = new JavaFileFilter();
+	File dir = new File("d:/tmp");
+	File[] javaFiles = dir.listFiles(fileFilter);
+-Let's use an anonymous class
+	FileFilter fileFilter = new FileFilter() {
+		@Override
+		public boolean accept(File file) {
+			return file.getName().endsWith(".java");
+		}
+	};
+	File dir = new File("d:/tmp");
+	File[] javaFiles = dir.listFiles(fileFilter);
+-What is a Lambda Expression for?
+	To make instances of anonymous classes easier to write and read.
+	FileFilter filter = (File file) -> file.getName().endsWith(".java");
+	Another way of writing instances of anonymous classes.
+	
+	Comparator<String> comp = new Comparator<String>() {
+		
+		@Override
+		public int compare(String s1,String s2) {
+			return Integer.compare(s1.length(),s2.length());
+		}
+	}
+	
+	Comparator<String> compLambda = (String s1,String s2) -> Integer.compare(s1.length(),s2.length());
+	Runnable r = () -> {
+		for(int i = 0;i < 5;i++) {
+			System.out.println("Hello world!!");
+		}
+	}
+-A functional interface can be annotated 
+	@FunctionalInterface
+	public interface MyFunctionalInterface {
+		something();
+		equals(Object o);
+	}
+	It is just here for convenience the compiler can tell me whether the interface is functional or not.
+-Yes we can put Lambda Expression in a Variable
+	Comparator<String> c = (String s1,String s2) -> Integer.compare(s1.length(),s2.length());
+-Is a lambda expression an object?
+	The answer is complex but no
+	Exact answer : a lambda is an object without an identity.
+-Package
+	java.util.function
+	Supplier
+		@FunctionalInterface
+		public interface Supplier<T> {
+			T get();
+		}
+	Consumer
+		@FunctionalInterface
+		public interface Consumer<T> {
+			void accept(T t);
+		}
+	Consumer / BiConsumer
+		@FunctionalInterface
+		public interface Consumer<T> {
+			void accept(T t);
+		}
+		
+		@FunctionalInterface
+		public interface BiConsumer<T,U> {
+			void accept(T t,U u);
+		}
+	Predicate / BiPredicate
+		@FunctionalInterface
+		public interface Predicate<T> {
+			boolean test(T t);
+		}
+		
+		@FunctionalInterface
+		public interface BiPredicate<T , U> {
+			boolean test(T t,U u);
+		}
+	Function / BiFunction
+		@FunctionalInterface
+		public interface Function<T , R> {
+			R apply(T t);
+		}
+		
+		@FunctionalInterface
+		public interface BiFunction<T,U,R> {
+			R apply(T t,U u);
+		}
+	Function / UnaryOperator
+		@FunctionalInterface
+		public interface UnaryOperator<T> extends Function<T,T> {
+		}
+-Method Reference
+	List<Customer> list = ...;
+	list.forEach(customer -> System.out.println(customer));
+	OR
+	List<Customer> list = ...;
+	list.forEach(System.out::println);
+-How to add methods to Iterable?
+	If we cant put the implementation in ArrayList, then...
+	public interface Iterable<E> {
+		default void forEach(Consumer<E> consumer) {
+			for(E e : this) {
+				consumer.accept(e);
+			}
+		}
+	}
+-Examples of New Patterns
+	Predicates
+		Predicate<String> p1 = s -> s.length() < 20;
+		Predicate<String> p2 = s -> s.length() > 10;
+		
+		Predicate<String> p3 = p1.and(p2);
+	
+	@FunctionalInterface
+	public interface Predicate<T> {
+		
+		boolean test(T t);
+		
+		default Predicate<T> and(Predicate<? super T> other) {
+			Objects.requireNonNull(other);
+			return (t) -> test(t) && other.test(t);
+		}
+	}
+-A Stream is a java typed interface
+	public interface Stream<T> extends BaseStream<T, Stream<T>> {
+		//...
+	}
+-In parallel to leverage the computing power of multi-core CPUs.
+-Pipelined to avoid unnecessary intermediary computations 
+-What is a stream?
+	An object on which one can define operations
+	An object that does not hold any data
+	An object that should not change the data it processes.
+	An object able to process data in << one pass >>
+	An object optimized from the algorithm point of view and able to process data in parallel.
+-Interface Consumer<T>
+	@FunctionalInterface
+	public interface Consumer<T> {
+		void accept(T t);
+	}
+	Can be implemented by a lambda expression
+	Consumer<T> c = p -> System.out.println(p);
+-Only one way to have several consumers on a single stream	
+	List<String> result = new ArrayList<>();
+	List<Person> persons = ...;
+	
+	Consumer<String> c1 = result::add;
+	Consumer<String> c2 = System.out::println;
+	persons.stream().forEach(c1.andThen(c2));
+-A Second Operation : Filter
+	Predicate<String> p = Predicate.isEqual("two");
+	Stream<String> stream1 = Stream.of("one" , "two","three");
+	Stream<String> stream2 = stream1.filter(p);
+-e.g
+	public class FirstPredicates {
+		
+		public static void main(String []args) {
+			Stream<String> stream = Stream.of("one","two","three","four","five");
+			Predicate<String> p1 = s -> s.length() > 3;
+			Predicate<String> p2 = Predicate.isEqual("two");
+			Predicate<String> p3 = Predicate.isEqual("three");
+			
+			stream.filter(p2.or(p3)).forEach(s -> System.out.println(s));
+			
+			stream.peek(System.out::println).filter(p1.or(p2)).forEach(list::add);
+			
+		}
+	}
+-The call to the filter method is lazy.
+	And all the methods of Stream that returns another Stream are lazy
+	Another way of saying it : 
+	an operation on a stream that returns a Stream is called an intermediary operation.
+-The Stream API defines intermediary operations
+	forEach(Consumer)
+	peek(Consumer)
+	filter(Predicate)
+-Mapping Operation
+	List<Person> list = ...;
+	Stream<Person> stream = list.stream();
+	Stream<String> names = stream.map(person -> person.getName());
+	map() returns a stream so it is an intermediary operation.
+-A mapper is modelled by the Function interface
+	@FunctionalInterface
+	public interface Function<T , R> {
+		R apply(T t);
+		
+		default <V> Function<V, R> compose(Function<? super V , ? extends T> before);
+		default <V> Function<T, V> andThen(Function<? super V , ? extends T> after);
+	}
+-Flatmapping Operation
+	<R> Stream<R> flatMap(Function<T, Stream<R>> flatMapper);
+	<R> Stream<R> map(Function<T, R> mapper);
+	If the flatMap was a regular map it world return a Stream<Stream<R>>
+-e.g.
+	public static void main(String []args) {
+		
+		List<Integer> list1 = Arrays.asList(1,2,3,4,5,6,7);
+		List<Integer> list2 = Arrays.asList(2,4,6);
+		List<Integer> list3 = Arrays.asList(3,5,7);
+		
+		List<List<Integer>> list = Array.asList(list1,list2,list3);
+		
+		System.out.println(list);
+		
+		Function<List<?>, Integer> size = List::size;
+		Function<List<Integer>, Stream<Integer>> flatMapper = l -> l.stream();
+		
+		list.stream().flatMap(flatMapper).forEach(System.out::println);
+	}
+-Binary Operator
+	@FunctionalInterface
+	public interface BiFunction<T, U, R> {
+		R apply(T t, U u);
+	}
+	
+	@FunctionalInterface
+	public interface BinaryOperator<T> extends BiFunction<T, T, T> {
+		T apply(T t1, T t2);
+	}
+-Optionals
+	Optional<String> opt = ...;
+	if(opt.isPresent()) {
+		String s = opt.get();
+	} else {
+		...
+	}
+	The method isPresent() returns true if there is something in the optional
+	The me thod get() returns the value held by this optional
+	String s  = opt.orElse(""); //defines a default value
+	String s = opt.orElseThrow(MyException::new);
+-Reductions
+	Available reductions:
+		max(),min()
+		count()
+	Boolean Reductions
+		allMatch(),noneMatch(),anyMatch()
+	Reductions that return an optional
+		findFirst(),findAny()
+	Reductions are terminal operations
+	They trigger the processing of the data
+	Terminal Operation
+	List<Person> persons = ...;
+	Optional<Integer> minAge = persons.stream()
+						.map(person -> person.getAge())
+						.filter(age -> age > 20)
+						.min(Comparator.naturalOrder());
+	persons.stream().map(person -> person.getLastName())
+					.allMatch(length < 20);
+	The map/filter/reduce operations are evaluated in one pass over the data.
+-Reduction Examples
+	public static void main(String []args) {
+		
+		List<Integer> list = Arrays.asList(-10, -10);
+		Optional<Integer> red = list.stream().reduce(Integer::max);
+		System.out.println("red = "+ red);
+	}
+-Collectors
+	There is another type of a reductions
+	Called <<mutable>> reductions
+	Instead of aggregating elements, this reduction put them in a <<container>>
+	List<Person> persons = ...;
+	String result = persons.stream()
+						.filter(person -> person.getAge() > 20)
+						.map(Person::getLastName)
+						.collect(Collectors.joinning(","));
+	Result is a String with all the names of the people in persons older than 20 separated by a comma.
+-Collecting in Map
+	List<Person> persons = ...;
+	Map<Integer, Long> result =
+			persons.stream()
+					.filter(person -> person.getAge() > 20)
+					.collect(Collectors.groupingBy(
+						Person::getAge,Collectors.counting()
+					));
+	Collectors.counting() just counts the number of people of each age
+-Summary
+	Quick explanation of the map /filter/reduce
+	What is a Stream
+	The difference between intermediary and final operations
+	The <<consuming>> operations : forEach() and peek()
+	The <<mapping>> operations: map() and flatMap()
+	The <<filter>> operation : filter()
+	The <<reduction>> operations:
+		Aggregations : reduce(),max(),min(),...
+		Mutable reductions:collect,Collectors
+-Java 8 Data API
+	How can I create a date for the 2014/2/10
+	I must use the Calender class
+	Calender cal = Calender.getInstance();
+	cal.set(2014, 1, 10);
+	Date feb10th = cal.getTime();
+	How can i add 7 days to feb 10 th?
+	cal.add(Calender.DAY_OF_MONTH, 7);
+	Date oneWeekLater = cal.getTime();
+-The Date class is mutable what does it mean?
+	Here is an example
+	public class Customer {
+		private Date creationDate;
+		
+		public Date getCreationDate() {
+			returns this.creationDate;
+		}
+	}
+	Use defencive copy
+	public class Customer {
+		private Date createDate;
+		
+		public Date getCreationDate() {
+			return new Date(this.creationDate.getTime());
+		}
+	}
+	Overheads : new Object to create on each call, overhead for the garbage collector.
+	Having a mutable Date class has a cost!
+	New API, package is java.time
+	New key concepts.
+	Interoperation with the legacy API
+	And Instant is a point on the time line.
+	An Instant is immutable.
+	How can i use Instant?
+	Instant start = Instant.now();
+	
+	//some long computations
+	Instant end = Instant.now();
+	
+	New Concept : Duration
+	Duration elapsed  = Duration.between(start, end);
+	long millis = elapased.toMillis();
+-Concept of LocalDate
+	We need another concept for those <<dates>>
+	New concept : LocalDate 
+	How to create a LocalDate?
+	LocalDate now = LocalDate.now();
+	LocalDate dateOfBirth = LocalDate.of(1564, Month.APRIL, 23);
+-Concept : Period
+	A Period is the amount of time between two LocalDate
+	Same concept as Duration same kind of methods
+	When was Shakespeare born?
+	Period p = dateOfBirth.until(now);
+	System.out.println("# years = "+p.getYears());
+	
+	long days = dateOfBirth.util(now , ChronoUnit.DAYS);
+	System.out.println("# days = "+days);
+-Concept : Zoned Time
+	System.out.println(
+			ZonedDateTime.of(
+				1564, Month.APRIL.getValue(), 23,
+				10, 0, 0, 0,
+				ZoneId.of("Europe/London")
+			));
+	// prints 1564-04-23T10:00:01:15[Europe/London]
+-Bridges between the APIs
+	How to interoperate with the legacy Date API
+	Instant & Date
+		Date date  = Date.from(instant);
+		Instant instant = date.toInstant();
+	Instant & TimeStamp
+		TimeStamp time = TimeStamp.from(instant);
+		Instant instant = time.toInstant();
+	LocalDate & Date
+		Date date = Date.from(localDate);
+		LocalDate localDate = date.toLocalDate();
+	LocalTime * Time
+		Time time = Time.from(localTime);
+		LocalTime localTime = time.toLocalTime();
+-String IO and Other Bits and Pieces
+		StringJoiner can also be built with a separated,a prefix and a postfix
+		StringJoiner sj = new StringJoiner(",", "{", "}");
+		sj.add("one").add("two").add("three");
+		String s = sj.toString();
+		System.out.println(s);
+-Reading Text File
+	Path path = Path.get("d:", "tmp", "debug.log");
+	try(Stream<String> stream = Files.lines(path)) {
+		stream.filter(line-> line.contains("ERROR"))
+			.findFirst()
+			.ifPresent(System.out::println);
+	} catch(IOException ioe) {
+		// handle the exception
+	}
+-New way to write a comparator
+	Comparator<Person> compareLastNameThenFirstName = 
+		Comparator.comparing(Person::getLastName)
+					.thenComapring(Person::getFirstName);
+	thenComapring() is a default method of the interface Comparator
+-Other useful utilities
+	Comparator<String> c = Comparator.nullFirst(Comparator.naturalOrder());
+	And of cource...
+	Comparator<String> c = Comparator.nullslast(Comparator.naturalOrder());
+-New methods on the number Types
+		long max = Long.max(1L, 2L);
+-Useful to create reduction operation
+		BinaryOperator<Long> sum = (l1, l2) -. l1 +l2;
+								 = Long :: sum;
+-Map
+	Map<String, Person> map = ...;
+	map.forEach((key, person) -> System.out.println(key + " " + person));
+-Method get()
+	Map<String, Person> map = ...;
+	Person defaultPerson = Person.DEFAULT_PERSON;
+	Person p = map.getOrDefault(key, defaultPerson);
+	Returns the default value passed as a parameter if there is no value in the map.
+-Method compute(), computeIfPresent(), computeIfAbsent()
+	Map<String, Person> map = ...;
+	map.computeIfPresent(key, person, (key, oldPerson) -> newPerson);
+	Returns the computed value
+-Annotations
+	Java 8 brings the concept of << multiple annotations >>
+	@TestCase(param=1, expected=false)
+	@TestCase(param=2, expected=true)
+	public boolean even(int param) {
+		return param % 2 == 0;
+	}
+	To declare that a variable should not be null
+		private @NonNull List<Person> persons = ...;
+	To declare that a list should not be null, and should not contain null values
+		private @NonNull List<@NonNull Person> persons = ...;
+-String class , StringJoiner
+-Easy ways to create streams on text files
+-Simple ways to visit directories
+-New methods on Iterable,Collection and List
+-New patterns to create Comparator
+-Useful methods on the number wrapper classes
+-New methods on Map
+-How to use and create repeatable annotations
+-Introduction to Java FX 8
+-Nashorn : a JavaScriptEngine on the JVM
+-REPL : Java in JavaScript
+-ScriptEngine : java in javascript
+-REPL : Read Eval Print Loop
+-Running JavaScript in a Java Application
+	Java has been supporting script engines since Java  6 (2006)
+	Many languages are available : Groovy and JRuby
+	One needs to get a script engine by its name	
+		ScriptEngineManager manager = new ScriptEngineManager();
+		ScriptEngine engine = manager.getEngineByName("nashorn");
+	This object is used to interact with the JavaScript interpreter
+		Object result = engine.eval("/* JavaScript code here */");
+	One can aslo pass JavaScript code through a file
+		Object result  = engine.eval(Files.newBufferReader(path));
+-Course Summary
+	Lambda Expression
+		Anonymous class, functional interfaces, method references, collection API
+	Stream & Collectors
+		Map / filter / reduce, patterns to build a stream, operation on a stream
+	Java Dare & TIme API
+		Instance / Duration , LocalDate / Period, LocalTime, ZonedTime
+	String, I/O, and other Bits & Pieces
+		String, I/O, Collection, Comparators, Numbers, Maps, Annotations
+	Java FX
+	Nashorn and JavaScript

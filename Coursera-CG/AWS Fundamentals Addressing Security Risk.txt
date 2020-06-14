@@ -1,42 +1,21 @@
-https://app.pluralsight.com/library/courses/spring-framework-spring-fundamentals/table-of-contents
+https://www.coursera.org/learn/aws-fundamentals-addressing-security-risk/home/welcome
 --------------------------------------------------------------------------------
--What is SPRING?
-	Inversion of Control Container
-	Dependency Injection
-	Java without Enterprise JavaBeans(EJBs)
--Dependency Injection
--Testability , Maintainability , Scalability , Complexity , Business Focus
--Spring Architecture
--Spring Configuration Using Java
-	No applicationContext.xml
--@Configuration
-	@Configuration
-	public class AppConfig {
-		
-		@Bean(name = "customerRepository")
-		public CustomerRepository getCustomerRepository() {
-			return new HIbernateCustomerRepositoryImpl();
-		}
-	}
-	
-	@Configuration applicationContext.xml replaced by @Configuration
-	@Configuration at class level
-	@Bean method level
--Demo
-	ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
-	SpeakerService service = appContext.getBean(s: "speakerService", SpeakerService.class);
-	System.out.println(service.findAll().get(0).getFirstName());
--Constructor injection
-	Just like setter injection
--Spring Scopes and Autowiring
-	Singleton
-	Prototype
--Singleton
-	One instantiation
-	Default bean scope
-	Single instance per Spring container
-	
-	@Scope(value= BeanDefinition.SCOPE_SINGLETON)
+-https://www.coursera.org/learn/aws-fundamentals-addressing-security-risk/home/welcome
+-Shared Responsibility
+	AWS operates,manges and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates.
+-AWS responsibility "Security of the cloud"
+	AWS is responsible for protecting the infrastructure that runs all of the services offered in the AWS Cloud.The infrastructure composed of the hardware,software,networking and facilities that run AWS CLoud services.
+-Customer responsibility "Security in the cloud"
+	Customer responsibility will be determined by the AWS Cloud services that a customer selects. This determines the amount of configuration work the customer must perform as part of their security responsibilities. For example, a service such as Amazon Elastic Compute Cloud (Amazon EC2) is categorized as Infrastructure as a Service (IaaS) and, as such, requires the customer to perform all of the necessary security configuration and management tasks. Customers that deploy an Amazon EC2 instance are responsible for management of the guest operating system (including updates and security patches), any application software or utilities installed by the customer on the instances, and the configuration of the AWS-provided firewall (called a security group) on each instance. For abstracted services, such as Amazon S3 and Amazon DynamoDB, AWS operates the infrastructure layer, the operating system, and platforms, and customers access the endpoints to store and retrieve data. Customers are responsible for managing their data (including encryption options), classifying their assets, and using IAM tools to apply the appropriate permissions.	
+-Create Account
+	AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+	IAM is a feature of your AWS account offered at no additional charge. You will be charged only for use of other AWS services by your users.
+	To get started using IAM, or if you have already registered with AWS, go to the AWS Management Console and get started with these IAM Best Practices.
+-
+-
+-
+-
+-
 -
 -
 -
