@@ -1,9 +1,19 @@
-
+http://www.pluralsight.com/courses/java-fundamentals-language
 --------------------------------------------------------------------------------
+-JRE vs JDK
+-Java Runtime Enviorment
+	Required to run Java Apps
+	End user normally require only the JRE
+-Java Development Kit(JDK)
+	Provides tools required to create Java Apps
+	Developers normally require the JDK
+	JDK installation includes JRE
+
+
+-satishjadhav2890		-->bitbucket
 -
--
--
--
+	satishjadhav
+	14367366+satishjadhav@users.noreply.github.com
 -
 -
 -

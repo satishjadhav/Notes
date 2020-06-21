@@ -1,15 +1,73 @@
-
+https://app.pluralsight.com/player?course=springmvc-intro&author=bryan-hansen&name=springmvc-m1-intro&clip=0&mode=live
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
+-Introduction to Spring MVC
+-What is Spring MVC?
+	A web framework built around the principles of Spring
+	POJO based and Interface driven
+	Based on a Dispatcher Servlet/Front Controller pattern
+		MVC stands for Model-View-Controller
+	Very lightweight and unobtrusive compared to ohter frameworks
+	Built from the shortcomming of struts 1
+	Support for:
+		Themes
+		Locales
+		Restful Services
+		Annotation based configuration
+		Seamless integration with other Spring Services/Beans
+-Vocabulary
+	DispatcherServlet - The entry / configuration point for the Application
+	Controller - Command pattern object that handles the request and determines which view to route to
+	RequestMapping - The url and request type that a method is tied to 
+	ViewResolver - Used to locate JSP pages or whatever view we are using
+	Servlet-config	- Configuration file per DispatcherServlet
+	POJO - Plain Old Java Object
+	Bean - A Spring configured POJO
+-Servlet-config
+	<servlet>
+		<servlet-name>fitTrackerServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/config/servlet-config.xml</param-value>
+		</init-param>
+	</servlet>
+-JSP configuration
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp"/>
+		<property name="sufficx" value=".jsp"/>
+	</bean>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+		p:prefix="/WEB-INF/jsp/" p:sufficx=".jsp" />
+	<servlet-mapping>
+		<servlet-name>fitTrackServlet</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+-Tiered Architectures
+	Separation of concerns
+-Controller
+	Handles incoming request and building the response
+	Business logic should not be handled here
+	Works with the Service and Repository tier for business logic  and data gathering
+	Annotated with @Controller
+	Handles Exceptions and routes the review accordingly
+-Service
+	Annotated with @Service
+	The Service tier describes the verbs (actions) of a system
+	Where the business logic resides
+	Ensures that the business object is in a valid state
+	Where transactions often begin (two phase commits)
+	Often has the same methods as the Repository , but differnt focus
+-Repository
+	Annotated with @Repository
+	The Repository tier describes the nounes (data) of a system
+	Focused on persisting and interacting with the database
+	One-to-one mapping with an Object
+	Often a one-to-one mapping with a database table
+-Controller
+	Interpret user input and transform to input to a model
+	Provide access to business logic
+	Determines view based off a logic
+	Interprets Exceptions from the busines logic/service tier
 -
 -
 -
