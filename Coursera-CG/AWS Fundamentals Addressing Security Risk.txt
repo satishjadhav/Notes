@@ -11,9 +11,21 @@ https://www.coursera.org/learn/aws-fundamentals-addressing-security-risk/home/we
 	AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
 	IAM is a feature of your AWS account offered at no additional charge. You will be charged only for use of other AWS services by your users.
 	To get started using IAM, or if you have already registered with AWS, go to the AWS Management Console and get started with these IAM Best Practices.
--
--
--
+-AWS Organizations
+	Automate account creation and management
+	Create groups of account to reflect business needs
+	Govern access to AWS services resources region by policies
+	Set up single payment method for all AWS accounts with consolidatd billing
+	Share resources across accounts
+-Creating a new orgnizations
+	Plan ahead for the structure of your orgnization
+	Keep the Master Account free of any operational AWS resouces
+	Use AWS CloudTrail
+	Apply Least Privilege practice
+	Assign policies to Organizational Units
+	Test new and modified policies
+	Use the APIs and AWS CloudFormation
+-IAM roles and resources-based policies delegate access accounts only within a single partition.
 -
 -
 -

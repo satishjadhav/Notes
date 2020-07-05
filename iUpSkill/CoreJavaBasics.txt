@@ -8,67 +8,272 @@ http://www.pluralsight.com/courses/java-fundamentals-language
 	Provides tools required to create Java Apps
 	Developers normally require the JDK
 	JDK installation includes JRE
-
-
--satishjadhav2890		-->bitbucket
--
-	satishjadhav
-	14367366+satishjadhav@users.noreply.github.com
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-Character and Boolean Types
+	The char type stores a single Unicode charater
+	Literal values placed between single quotes
+	For Unicode code points use \u followed by 4-digit hex value
+	The boolean type stores true/false values
+-Primitive Types Are Stored By-Value
+-Implicit Type Conversion
+	Widening conversions are automatic
+	Mixed integer sizes
+		Uses largest interger in eqaution
+	Mixed floting point sizes
+		Uses double
+	Mixed interger and floting point
+		Uses largest floting point equation
+-Explicit Type Conversion
+	Can performing widening and narrowing
+	Floting point to integer drops fraction
+	Use caution with narrowing conversions
+	Interger to floting point can lose precision
+-Summary
+	Variables are strongly typed in Java
+	Primitive types
+		Interger types,floting point types,char type,boolean type
+	Math operators
+		Basic operators,postfix/prefix operators,compound assignment operators
+	Math operators follow a well-defined order of precedence
+	Type conversions
+		Compiler can automaticallt apply widening type conversions
+		Use type casting to explicitly perform type conversions
+->Conditional Logic,Looping, and Arrays
+	Greater than				>
+	Greater than or equal to	>=
+	Less than					<
+	Less than or equal to		<=
+	Equal to					==
+	Not equal to				!=
+-If-else statement
+-Block Statement and Variable Scope
+	A variable declared within a block is not visible outside of the block.
+		A variable's range of visibility is known as the variable's scope.
+-Logical Operators  
+-Conditional Logical Operators
+	Conditional and 	&&			true && true
+	Conditional or		||			false || true 		true || ----
+	Resolve following conceptually similar rules as non-conditional and/or
+	Only execute the right-side if needed to determine the result
+		-&& only executes right-side if left-side is true
+		-|| only executes right-side if left-side is false
+->Representing Complex Types with Classes
+-Using classes use the new keyword to create a class instance
+	Allocates the memory described by the class
+	Returns a reference to the allocated memory
+-Encapsulation and Access Modifiers
+	The internal representation of an object is generally hidden
+	This concept is known as encapsulation
+	Java uses access modifiers to achive encapsulation
+-Method Basics
+	Executable code that manipulates state and performs operationa
+		Name
+			Same rules and conventions as variable
+			Should be a verb or action
+		Return type
+			Use void when no value returned
+		Typed paramerter list
+			Can be empty
+		Body contained with brackets
+-Method Return Values
+	A method returns a single value
+		A primitive value
+		A reference to an object
+		A reference to an array
+			Arrays are objects
+-Summary
+	A class is a template for creating an object
+		Declared with class keyword
+		Class instances allocated with new keyword
+	Classes are reference types
+	Use access modifiers to control encapsulation
+	Methods manipulates state and perform operations
+		Use return keyword to exit and/or return value.
+	Fileds store object state
+		Interaction normally controlled through accessors and mutators
+-Class Initializer and Constructors
+	Establishing initial state
+	Field Initializer
+	Constructors
+	Constructor chainning & Visibility
+	Initialization blocks
+	Initialization and Constructor order
+-Java provides 3 mechanisms for establishing initial state
+	Field 	Constructor		Initialization blocks
+-Constructor is Executable code used during object creation to set the initial state
+	Have no return type
+	Every class has at least one constructor
+		If no explicit constructors, Java provides one
+	A class can have multiple constructors
+		Each with a diffent paramerter list
+-Initialization Blocks
+	Initialization blocks shared all constructors
+	Executed as if the code were placed at the start of each constructor
+	Enclose statements in brackets outside of any method or constructor
+-Summary
+	Objects should be created in some useful state
+	Filed initializer provide an initial value as part of the declaration
+	Every class has at least one constructor
+		If no explicit constructor Java provides one with no arguments
+		You can provide multiple constructors with differing argument lists
+	One constructor can call another
+		Call must be first line
+	Initialization blocks share code access constructors
+	Keep the initialization and construction order in mind
+->Closer look at Parameters
+-Parameter Immutability: Primitive Types
+-Parameter Immutability: Classes
+-Parameters are passed by making a copy of the value known as passing "by-value"
+	Chages made to passed value are not visible outside of method
+	Changes made to members of passed class instance are visible outside of method
+-Summary
+	Parameters are immutable
+		Changes made to passed value are not visible outside of method
+		Chages made to members of passed class instance are visible outside of method
+	A class may have multiple versions of its constructor or methods
+		Each must have a unique signature
+		Signature includes name,number of paramerters,type of each paramerter
+	A method can be declared to accept varying number of paramerter values
+		Values received as an array
+		Must be last paramerter
+-Class Ingeritance
+		A class can be declared to inherit from another class use the keyword extends
+		Derived class has characteristics of base class
+			Fields hide base class fields with same name
+			Can be assigned to base class type references
+			Method override base class methods with same signature
+-Object class methods
+	clone		Create a new object instance that duplicates the current instance
+	hashCode	Get a hash code for the current instance
+	getClass	Return type information for the current instance
+	finalize	Handle special resource cleanup scenarios
+	toString	Return string of characters representing the currnent instance
+	equals		Compare another object to the current instance for equality
+-Equality
+	Need to override equal method
+-Special Reference: super
+	Similar to this super is an implicit reference to the current object
+		super treats the object as if it is an intance of its base class
+		Useful for accessing base class members that have been overriden
+-Controlling Inheritance and Overriding
+	By default all classes can be extended and derived classes have the option to use or overrides inherited methods.A class can change these defaults
+	Use final to prevent inheriting and or overriding.
+	Use abstract to require inheriting and/or overriding.
+-Inheritance and Constructors
+	Constrcutors are not inherited
+	A base class constructor must always be called
+	By default base class's no-argument constructor is called
+	Can explicitly call a base class constructor using super keyword followed by parameter list
+-Summary
+	Inheritnace allows a new class to be defined with the characteristics of another 
+		Use the extends keyword
+	Derived class can override base class methods
+		Optionally use @Override annotation
+	All classes derive from Object class either directly or indirectly
+	By default object references are only equal when referencing the same instance
+		Can override Object.equals to provide new beahavior
+	Super accesses current object as if instance of base class
+	Final and abstract provide control over class inheritance and method overriding
+	Constrcutors are not inherited
+-More about data types
+	String class
+	StringBuilder class
+	Primitive wrapper classes
+	Final fields
+	Enumeration types
+-Sting class methods
+	Operation					Methods
+	Length						length
+	String for non-string		valueOf
+	Create new String			concat,replace,toLowerCase,toUpperCase,trim,split
+	Formatting					format
+	Extract substring			charAt,substring
+	Test substring				contains,ends
+-String equality
+-StringBuilder provides mutable string buffer
+	For best performace pre-size buffer
+		Will grow automcatically if needed
+	Most common methods : append and insert
+-All wrapper class instances are immutable
+-Warpper Class Members
+	Byte,Short,Intger,Long
+		MIN_VALUE,MAX_VALUE,bitCount,toBinaryString
+	Float,Double,Charater
+		MIN_VALUE,MAX_VALUE,isInfinite,isNaN
+	Character,Boolean
+		TRUE,FALSE
+-Boxing conversions tha always return the same wrapper class instance
+-Final Fields
+	Marking a field as final prevents it from being changed once assigned
+	Simpler final field must be set during creation of an object instance
+	Can be set with field initializer,initiaklization block or constructor
+-Enumeration types useful for defining a type with a finite list of valid values
+	Declare with enum keyword
+	Provide a comma-separaed value list
+-022-24134560 Sanjay Kadam
+-Summary
+	String class stores an immutable sequence of Unicode charaters
+		Implement toString method to provide conversion to a String
+	StringBuilder class provides an efficient way to manipulate string values.
+	Primitive wrapper classes bring class capabilities to primitive values
+		Wrapper classes much less efficient than primitive types
+	Final fields prevent a value from being changed once assigned
+		Simple final fields must be set during object instance creation
+		Static final fields act as named constants
+	Enumeration types useful for defining a type with a finite list of values
+-Error Handling with Exceptions
+	Error handling needs to be implicit in application development
+	The traditional approach of checking error codes/flags is too intrusive
+	Exceptions provide a non-intrusive way to signal errors
+	try/catch/finally provides a structure way to handle exceptions
+-Exceptions and Methods
+	Exceptions propogate up the call stack
+	Can cross method boundaries
+	Exceptions are part of methods's contract
+		Method is responsible for any checked exceptions that might occur
+		Catch the exception 
+		Document that the exception might occur
+			Use the throws clause
+-Exceptions and Method Overriding
+	The throws clause of an overriding method must be compatible with the throws clause of the overridden method.
+-Summary
+	Exceptions provide a non-intrusive way to signal errors
+	try/catch/finally provide a structure way to handle exceptions
+	Exceptions are caught by type
+		Can have separate catch statement for differing exceptions types
+		Catch from most specific type to least specific
+	Raise exceptions using throw
+	Methods must declare any unhandled checked exceptions using throws
+	Can create custom exceptions types
+		Normally inherit from Exception
+-Working with package
+	A package is a group of related types
+		Create a namaspace
+		Provide an access boundary
+		Act as a unit of distribution
+-Creating Abstract Relationship with Interfaces
+	An interface defined a contract
+		Provides no implementation
+		Can include methods and constants
+	Classes implement interfaces
+		Classes are able to implement multiple interfaces
+	Interfaces are able to extend interface implicitly implements the base
+-Static Members,Nested Types and Anonymous Classes
+-Static Initialization Blocks
+	Static initiaklization blocks perform one-time type initiaklization
+	Executed before type's frist used
+	Statement enclosed in brackets outside of any method or constructor
+		Precede with static keyword
+	Cannot access instance members
+	Must handle all checked exceptions
+-Inner classes
+	Each instance of the nested class is associated with an instance of the enclosing class
+	Non-static nested within classes
+-Anonymous Classes
+	Anonymous classes are declared as part of their creation
+	Useful for simple interface implementation or class extensions
+	Anonymous classes are inner classes
+	Anonymous instance associated with the containing class instance
+	Create as if you are constrcuting an instance of the interface or base class
 -
 -
 -
