@@ -15,11 +15,11 @@ https://www.coursera.org/learn/aws-fundamentals-addressing-security-risk/home/we
 	Automate account creation and management
 	Create groups of account to reflect business needs
 	Govern access to AWS services resources region by policies
-	Set up single payment method for all AWS accounts with consolidatd billing
+	Set up single payment method for all AWS accounts with consolidated billing
 	Share resources across accounts
--Creating a new orgnizations
-	Plan ahead for the structure of your orgnization
-	Keep the Master Account free of any operational AWS resouces
+-Creating a new organizations
+	Plan ahead for the structure of your organization
+	Keep the Master Account free of any operational AWS resources
 	Use AWS CloudTrail
 	Apply Least Privilege practice
 	Assign policies to Organizational Units

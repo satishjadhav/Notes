@@ -1,18 +1,135 @@
-https://app.pluralsight.com/library/courses/responsive-websites-bootstrap3/table-of-contents
+https://degreed.com/pathway/o844kgv584?path=angular#/pathway
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
--
--
--
+https://jcoop.io/angular-practice-exercises/
+
+-Angular 2
+-Lession 1 Getting Started with TypeScript
+-Course Overview
+	Architecture
+	Angular Components
+	Reusable Services
+	Forms and Validation
+	API calls
+	Unit test
+	Package everything together
+	
+	basic node and npm
+		http://app.pluralsight.com/courses/npm-playbook
+		
+	ES2015
+		http://app.pluralsight.com/courses/javascript-fundamentals-es6
+		
+	TypeScript
+		http://app.pluralsight.com/courses/typescript
+		
+-TypeScript Overview
+	Javascript	--->	Transpiled	--->	JavaScript
+	ECMASCRIPT --->
+		ES1--1997,ES2--1998,ES3--1999,ES5--2009,ES6--2015
+		TypeScript
+			Transpiles	ES2015 to ES5
+		TypeScript main goal is fully support ES6 standards.Current version supports only 57% of ES6 features.
+	Datatype:	
+		array,boolean,number,string,enum,any,void,generic
+		https://www.typescriptlang.org/play/index.html
+	
+	function buildString(firstArg: string,secondArg?: string, thirdArg : string="THree",...others :string[]){
+		others[0];
+		others[1];
+	}
+	buildString("One","Two","Three");
+	buildString("One","Two");
+	buildString("One");
+	buildString("One","Two","Three","Four","Five");
+	//var declaration
+	(function letCheck() {
+		var data = 1;//scope of this variable is for the entire function
+		if(true) {
+			var data = 2; //assigning 2 to the same data variable
+			console.log("Inside the block: "+data);
+		}
+		console.log("Ooutside the block: "+data);
+	}
+	)();
+	//let declaration
+	(function letCheck() {
+		let data = 1; //declares variables that are limited in scope to the block
+		if(true) {
+			let data =2; //data variable with a different scope
+			console.log("Inside the block: "+data);
+		}
+		console.log("Outside the block: "+data);
+	}	
+	)();
+	
+	let fullName = '${firstName} ${lastName}'
+	-Arrow function expression are a compact form of function expressions,that have a scope of "this".
+	-Arrow functions allows us to write more complex function expression as callbacks and inline functions easily.
+	-We can define an arrow function expression by ommiting function keyword and using the lambda systax with => operator.
+	
+	let squareExp = (n)=> console.log('Result = ${n*n}');
+	
+-TypeScript Features
+	Static Typing
+	Intefaces
+	Class Properties
+	Public/Private Accessibility
+-Static Typing
+	let name : string
+	let age : number
+	let birthDate : date
+-Intefaces
+	interface ICat {
+		name : string
+		age : number
+	}
+	let fluffy : ICat  
+-Class Properties
+	class Cat {
+		name : string
+		color : string 
+		constructor (name){ 
+			this.name = name;  
+		}
+	}
+-Public and Private Accessibility
+	class Cat {
+		private name : string
+		private speak() {
+			console.log('My name is :' +this.name)
+		}
+	}
+	
+	let fluffy = new Cat()
+	console.log(fluffy.name); //compile-time error
+	fluffy.speak() //compile-time error
+	
+	class Cat {
+		private name : string
+		private color : string
+		constructor(name,color) {
+			this.name = name
+			this.color = color
+		}
+	}
+	
+	class Cat {
+		constructor(private name,private color) {
+		}
+	}
+	
+	let fluffy = new Cat('Fluffy','White')
+-AngularJS vs Angular
+-Angular Component Hierarchy
+-Creating project using CLI
+	npm install -g @angular/cli@7.1.2
+	ng new ng-fundamentals
+-Module-3 Creating and Communicating Between Angular Components
+	Inline Templates and Data-Binding
+	Using External Templates
+	Inter-Component Communication
+	Styling Components
+	Style Encapsulation
 -
 -
 -

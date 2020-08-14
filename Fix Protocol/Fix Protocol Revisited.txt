@@ -1,0 +1,12 @@
+Trade Details	35=X
+Test Request Message 35=1
+Heartbeat Message	35=0
+Reject Message 35=3
+LogOn Message	35=A
+LogOut Message	35=5
+
+What is the difference between OrdStatus and ExecType in FIX4.4?
+OrdStatus (39) indicates the current status of the order. ExecType (150) was introduced in 4.2 to indicate the type of execution report received. For example, if you replace an order that is already partially filled, the order status is Partially Filled but the ExecType for the replace confirmation is Replaced (FIX 4.2).
+
+2. What is the minimum length of ClOrdID?
+ClOrdID is a mandatory string field so the minimum length is 1. Obviously, one character doesn't make much sense because of limited flexibility. Length is determined by the combination of the executing party / vendor / exchange.

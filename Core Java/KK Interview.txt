@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 		}
 	}
 -Can we override main in java?
-	No becouse main is satic method and in java static method is bounded during complie time.
+	No because main is static method and in java static method is bounded during compile time.
 -Can we make main final in java?
 	yes
 -Can we make main synchronized in java? YES
@@ -36,14 +36,14 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 	You can make the main method synchronized
 	You cannot call a non-static method from main method directly but you can call it by using object reference.
 -Can we define a class without main method? Yes using static block by using java 6 and prior
--Can we declare main() method with differnt access modifier other than public? Yes it will compile but will throw runtime exception.
--Java has inbuilt support for multi-threading and concurrency, it's easy to write scaable applications in java that can utilize multi-core processors,clusters of machines,distributed RAM etc.There is in built support for Threads,non-blocking algorithm using CAS,Strean API,Parallel Streams,CompletableFuture,Parallel Array Operations,Atomic Values etc.  
--Memory management is automic by use of garbage collector like G1,Concurrent Mark Sweep,parallel garbage collector.
+-Can we declare main() method with different access modifier other than public? Yes it will compile but will throw runtime exception.
+-Java has inbuilt support for multi-threading and concurrency, it's easy to write scale able applications in java that can utilize multi-core processors,clusters of machines,distributed RAM etc.There is in built support for Threads,non-blocking algorithm using CAS,Stream API,Parallel Streams,CompletableFuture,Parallel Array Operations,Atomic Values etc.  
+-Memory management is atomic by use of garbage collector like G1,Concurrent Mark Sweep,parallel garbage collector.
 -What are the key paradigms for developing the clean object oriented code?
 	Program to an interface (or the Super Type) not the implementation.
 	Interacting classes should be loosely coupled among themselves.
-	Code should implement tight encapsulation.Use of public and static variables should be aovoided because they introduce coupling and make testing of classed tough.Avoid the singleton Dsign pattern wherver possible.
-	Always resue the code using Inheritance,Composition and Utility Methods.Stricly follow the Do Not Repeat Yourself(DRY)priciple.
+	Code should implement tight encapsulation.Use of public and static variables should be avoided because they introduce coupling and make testing of classed tough.Avoid the singleton Design pattern wherever possible.
+	Always reuse the code using Inheritance,Composition and Utility Methods.Strictly follow the Do Not Repeat Yourself(DRY)principle.
 	Has-A relationship is better than Is-A relationship because it offer more flexibility(Decorator Design Pattern).
 	In case of multi-threaded applications,use immutable objects to represent the state.
 -How can we maintain immutability of a class with a mutable reference?
@@ -66,16 +66,16 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 			}
 		}
 	}
--What is aggregation,how is it differnt from composition ?
-	Aggregation and Composition are special type of associaton and differ only in weight of relationship.
+-What is aggregation,how is it different from composition ?
+	Aggregation and Composition are special type of association and differ only in weight of relationship.
 	Composition is stronger form of "is part of" relationship compared to aggregation "has a".
 	In composition, the member object can not exits outside the enclosing class while same is not true for aggregation.
--What is difference between stack and Heap area of JMV memeory?
+-What is difference between stack and Heap area of JMV memory?
 	Stack:Memory of Stack section is bound to method context and is destroyed once a thread returns from the function i.e. the Stack objects exists within the scope of the function they are created in.
 	Stack section of memory contains methods,local variables and reference variables and all these are cleared when a thread returns from the method call.
 	Heap:objects exits outside the method scope and are available till GC recollects the memory.
-	Java stores all objects in Heap wether they are created from within a method or class.
-	All class level variables and references are also stored in heap so that they can be accessed from anywhere.Metadata of classe, methods also reside in Heap's PermGen space.
+	Java stores all objects in Heap weather they are created from within a method or class.
+	All class level variables and references are also stored in heap so that they can be accessed from anywhere.Metadata of classes, methods also reside in Heap's PermGen space.
 -Why prime number are given much importance in writing certain algorithms like hashcode,RSA algorithms,random number generators etc.
 	Prime numbers are always unique and can not be divided by any other number except1.The product of prime number with any other number has the best chances of being unique.
 	This property makes them very suitable for use in hashing function to obtain fair distribution in its hashcode output and thus achieving low collisions.
@@ -86,20 +86,20 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 	All that changes is the amount of addressable memory (good) and the amount of memory per Object (not that good)
 	The size of the reference variable doubles from 32 bits to 64 bits, thus all the reference variable will take double the size when running on 64 bits JVM.
 	There are no class file differences between code complied with 32 bit and 64 bits versions of the same revision of java.
-	For 32 bits JMV tha maximum memory is limited to 4 GB, the memory limit for 64 bits JVM is very high.
+	For 32 bits JMV the maximum memory is limited to 4 GB, the memory limit for 64 bits JVM is very high.
 	64 bits JVM requires more memory compared to 32 bits JVM for the same application because now each reference starts consuming 64 bits instead of 32 bits.
--Java memory model inteview questions and answers?
+-Java memory model interview questions and answers?
 	Memory taken up by the JVM is divided into Stack, Heap and Non Heap memory areas.
 	Stacks are taken up by individual thread for running the method code while heap is used to hold all class instances and arrays created using new operation.
-	Non heap memory includes a method area shared among all threads and is logically part of the heap but,depending upon the implementaion, a java VM may not invoke GC on this part.
+	Non heap memory includes a method area shared among all threads and is logically part of the heap but,depending upon the implementation, a java VM may not invoke GC on this part.
 	Eden Space (heap):
 		The pool from which memory is initially allocated for most objects.
 	Survivor Space (heap):
 		The pool containing objects that have survived the garbage collection of the Eden space.
 	Tenured/Old Generation (heap):
-		The pool containing objects that have existed for some time in the survior space.
+		The pool containing objects that have existed for some time in the survivor space.
 	Metaspace (non-heap):
-		The pool containing all the relective data of the virtual machine itself,such as meta-data of classes,objects (e.g. pointers into the heap where objetcs are allocated) and method objects,classloader related data.
+		The pool containing all the relative data of the virtual machine itself,such as meta-data of classes,objects (e.g. pointers into the heap where objects are allocated) and method objects,class loader related data.
 	Code Cache (non-heap):
 		The HotSpot Java VM also includes a code cache,containing memory that is used for compilation and storage of native code.
 -Why We should never invoke GC pro grammatically from within your code ? || Garbage collector in java
@@ -108,7 +108,7 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 -Scenario based java garbage collection interview question
 	Performing tuning GC may slow this problem to some extent.
 	This application creates lots of short lived objects - thus we would require a large young generation for lowering the frequency of minor garbage collection.
-	If our young generation is small, then the short lived objects will be promoted to Tenured Generation and thus casuing frequent major collection.This can be addressed by setting appropriate value for -XX:NewSize parameter at the JVM startup.
+	If our young generation is small, then the short lived objects will be promoted to Tenured Generation and thus causing frequent major collection.This can be addressed by setting appropriate value for -XX:NewSize parameter at the JVM startup.
 	We also need to adjust the survivor ratio that the Eden space is large compared to survivor space, large value of Survivor ratio should help solve this problem.
 	e.g.
 	java -client -XX:SurvivorRatio=12 -XX:NewRatio=2 -XX:NewSize=50m -Xmx256m -Xms64m -XXMaxMetaspace=128m -XX:+PrintGCDetails -jar MyApp.jar
@@ -167,7 +167,7 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 	Improvements in ConcurrentHashMap added methods for atomic and bulk operations.
 	New classes added to java.util.concurrent.atomic methods for atomic and bulk operations
 	New classes added to java.util.concurrent.atomic to support scalable up-datable variables
-	PermGen space removed,Metaspace added.
+	PermGen space removed,Meta space added.
 -What all collections utilizes hashCode method? ||Hashing Data Structure in Java Interview Questions?
 	Only hashing data structures uses hashCode() method along with equals() method, though the equals() is used by almost every class.
 	hashCode is useful for creating hashing based data structures like HashMap,LinkedHashMap,CocurrentHashMap,HashSet.
@@ -243,9 +243,37 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 		threshold = capacity*(load factor of 0.75)
 	After Rehashing a new array is created with more capacity and all the existing contents are copied over to it.
 -Concurrent HashMap interview Questions
-	https://www.youtube.com/watch?v=h06AxHF2E0Y&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvhGeJ&index=27
--
--
+	ConcurrentHashMap is similar in implementation to that of HashMap with re-sizable array of hash buckets each consisting of List of HashEntry elements.Instead of a single collection lock,ConcurrentHashMap uses a fixed pool of locks that form a partition over the collection of buckets.
+	CocurrentHashMap is a hashmap supporting full concurrency of retrieval via volatile reads of segments and tables without locking entire map object.
+	All the operations in this class are thread-safe, although the retrieval operations does not depend on locking mechanism.
+	Here is the code snippet showing HashEntry class
+		static final class HashEntry<K,V> {
+			final int hash;
+			final K key;
+			volatile V value;
+			volatile HashEntry<K,V> next;
+		}
+	HashEntry class takes advantage of final and volatile variable to reflect the chances to other threads without acquiring the expensive lock for read operations.
+	The table inside ConcurrentHashMap is divided among Segments (which extends Re entrant Lock), each of which itself is a concurrently readable hash table.Each segment requires uses single lock to consistently update its elements flushing all the changes to main memory.
+	put() method in ConcurrentHashMap holds the bucket lock for the duration of its execution and doesn't necessarily block other threads from calling get() operations on the map.If firstly searches the appropriate hash chain  for the given key and if found, then it simply updates the volatile value field.Otherwise it creates a new HashEntry object and inserts it at the head of the list.
+	Iterator returned by the ConcurrentHashMap is fail-safe but weekly consistent.keyset().iterator() returns the iterator for the set of hash keys backed by the original map.The iterator is a weekly consistent iterator that will never throw ConcurrentModificationException, and guarantees to traverse elements as they existed upon construction of the iterator and may reflect any modifications subsequent to construction.
+	Re-sizing happens dynamically inside the map whenever required in order to maintain an upper bound on hash collision.Increase in number of buckets leads to rehashing the existing the values.This is achieved by recursively lock over each bucket and then rehashing the elements from each bucket to new larger hash table.
+	Few new methods related tp concurrency has been added in CHM in JAVA 8
+		putIfAbsent()
+		compute()
+		computeIfAbsent()
+		computeIfPresent()
+		search()
+		reduce(key,value)
+		forEach()
+-Implementation and uses of TreeSet
+	TreeSet is a navigable set implementation based on TreeMap.All the elements are ordered using their Natural ordering or by Comparator provided  at TreeSet construction time.
+	Methods like first(),last(),floor(),ceiling(),headSet(),tailSet() which can be used to search neighboring elements based on element's ordering.
+	TreeMap is Red-Black Search Tree which guarantees logarithmic time for insertion, removal and searching of an element.
+	SortedSet s = Collections.synchronizedSortedSet(new TreeSet());
+	If we are looking for high throughput in a multi-threaded application then we can prefer ConcurrentSkipListSet which is scalable concurrent implementation of NavigableSet.
+	TreeSet provides guaranteed Big O(log n) time complexity for add(),remove() and contains() method.
+-https://www.youtube.com/watch?v=VbcJYCoG6vk&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvhGeJ&index=29
 -
 -
 -
