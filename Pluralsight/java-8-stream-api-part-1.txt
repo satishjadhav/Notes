@@ -1,13 +1,7 @@
-https://app.pluralsight.com/library/courses/responsive-websites-bootstrap3/table-of-contents
+https://app.pluralsight.com/guides/java-8-stream-api-part-1
 --------------------------------------------------------------------------------
--Course Introduction
-	Introduction
-	Responsive Patterns
-	Navigation
-	Responsive Images and Video
-	Scrolling Features
-	Animated Elements
--https://www.lukew.com/
+-
+-
 -
 -
 -

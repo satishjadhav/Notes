@@ -130,7 +130,12 @@ https://jcoop.io/angular-practice-exercises/
 	Inter-Component Communication
 	Styling Components
 	Style Encapsulation
--
+-Creating and Communicating Between Angular Components
+	Inline Templates and Data-Binding
+	Using External Templates
+	Inter-Component Communication
+	Styling Components
+	Style Encapsulation
 -
 -
 -

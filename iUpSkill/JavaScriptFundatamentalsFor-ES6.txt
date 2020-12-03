@@ -13,9 +13,32 @@ https://app.pluralsight.com/library/courses/javascript-fundamentals-es6/table-of
 	p.a =1;
 	p.b =undefined;
 ->Variables and Parameters
--
--
--
+->Scaling your node application
+-Creating child processes
+	The "chile_process" module provides several ways to invoke a processes
+	1. spawn(command, [args],[options])
+		Launches a new processes with "command" and "args"
+		Returns a ChileProcess object that...
+			is an EventEmitter and emits "exit" and "close" events
+			has streams for stdin,stdout and stderr that can be piped to/from
+	2.exec(command, [options],callback)
+		Runs "command" string in a shell
+		Callback is invoked on process completion with error, stdout,stderr
+	3.execFile(file,[args],[options],callback)
+		Similar to "exec",except "file" is executed directly rather than in subshell
+	4.fork(modulePath, [args], [options])
+		A special version of "spawn" especially for creating Node processes
+		Adds a "send" function and "message" event to ChileProcess
+-child-exec.js
+	var exec = require('chile_process').exec;
+	var child = exec('uptime', function(err, stdout,stderr) {
+		if(err) {
+			console.log('Error: '+stderr);
+		} else {
+			console.log('Output is: '+stdout);
+		}
+	});
+	console.log("PID is" + chile.pid);
 -
 -
 -

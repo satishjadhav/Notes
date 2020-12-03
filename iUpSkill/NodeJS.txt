@@ -1,2432 +1,299 @@
-
+https://app.pluralsight.com/player?course=node-intro&author=paul-ofallon&name=node-intro-m1-intro&clip=0&mode=live
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-An overview of Node.js
+-Building and installing Node.js
+-Developing for Node with Cloud9 IDE
+-An introduction to Node's event loop
+-Writing code with callbacks
+-Node.js Building Blocks
+	libuv:	A high performance, cross-platform evented I/O library
+	V8 : Google's JavaScript engine (also used in Chrome)
+	js,c++
+-Cloud99 IDE 
+	https://c9.io
+-Node's event loop
+-Writing asynchronous code is different
+	A typical approach
+		var conn = getDbConnection(connectionString);
+		var stmt = conn.createStatement();
+		var results = stmt.executeQuery(sqlQuery);
+		for(var i=0; i<results.length; i++) {
+			//print results[i];
+		}
+	An asynchronous, "non-blocking"	 approach
+		getDbConnection(connectionString, function(err, conn) {
+			conn.createStatement(function(err, stmt) {
+				var results = stmt.executeQuery(sqlQuery);
+				results.on('row', function(result) {
+					//print result
+				});
+			});
+		});
+-Writing Asynchronous code
+	var maxTime = 1000;
+	var evenDoubler = function(v, callback) {
+		var waitTime = Math.floor(Math.random() * (maxTime+1));
+		if(v%2) {
+			setTimeout(function() {
+				callback(new Error("Odd input"));
+			},waitTime);
+		} else {
+			setTimeout(function() {
+				callback(null, v*2, waitTime);
+			});
+		}
+	};
+->Modules , require() and NPM
+-A sample built in modules include:
+	fs,http,crypto,os
+-built-ins.js
+	var os = require('os');
+	var toMb = function(f) {
+		return(Math.round((f/1024/1024)*100)/100);
+	}
+	console.log('Host: '+os.hostname);
+	console.log('15 min. load average: '+os.loadavg()[2]);
+	console.log(toMb(os.freemem()) + ' of '+ toMb(os.totalmem()) + 'Mb free');
+->Three sources of node modules
+	Each .js file is its own modules
+	A grate way to modularize your application code
+	Each file is require()'d with file system-like semantics:
+		var data = require('./data');
+			data.js in the same directory
+		var foo = require('./other/foo');
+			foo.js in the 'other' sub directory
+		var bar = require('./lib/bar');
+			bar.js in the 'lib' directory up and over from this script's directory
+	Single variable require() still valid
+		var justOne = require('./data').justOne;	
+-#2 Your Project's files
+	Variables are marked for export via "module.exports"
+	one.js
+		var count =2;
+		var doIt = function(i, callback) {
+			//do something invoke callback
+		}
+		module.export.doIt = doIt;
+		module.export.foo = 'bar';
+	two.js
+		var one = require('./one');
+		one.doIt(23, function(err, result){
+			console.log(result);
+		});
+-Accessing Application File
+-#3 Third party modules via Node package manager (NPM) registry
+	Installed via "npm install module_name" into "node_modules" folder
+	Are required()'d via simple string identifiers, similar to built-ins
+		var request = require('request');
+	Can require() indivisual files from within a module but be careful!
+		var blobResult = require('azure/lib/services/blob/models/blobresult');
+	Some modules provide command line utilities as well
+	Install these modules with "npm install -g module_name"
+		Example include: express,mocha,azure-cli
+	Demo:
+		var request = require('request');
+		request('http://www.pluralsight.com/',function(error,response,body) {
+			if(!error && response.statusCode === 200){
+				console.log(body);
+			}
+		});
+-Publishing your own module 
+->Events and Streams
+	Callbacks vs. Events
+	Node's EventEmitter class
+	Patterns for using EventEmitters
+	Readable and Writable Streams
+	Piping between Streams
+-Non-blocking doesn't always mean callbacks
+	getThem(param, function(err, items)) {
+		//check for error
+		//operate on array of items
+	}
+-Node's "EventEmitter" class
+	The publisher
+		emitter.emit(event, [args]);
+	The subscriber
+		emitter.on(event, listener);
+		The "event" can be any string
+		An event can be emitted with zero or more arguments
+		The set of events and their arguments constitute a "interface" exposed to the subscriber by the publisher (emitter).
+	Two common patterns for EventEmitter
+		As a return value from a function call
+		Objects that extend EventEmitter to emit events themselves
+-Readable and Writable Streams
+	Streams are instances of (and extensions to) EventEmitter with an agreed upon "interface"
+	A unified abstraction for managing data flow, including :
+		Network traffic (http requests and responses, tcp sockets),File I/O,stdin/stdout/stderr
+	A stream is an instance of either
+		ReadableStream
+		WritableStream
+		or both
+	A ReadableStream can be pipe()'d to a WritableStream
+		Applies "back pressure"
+-Piping Streams
+	ReadableStream
+		readable [boolean]
+		event:'data'
+		event:'end'
+		event:'error'
+		event:'close'
+		pause()
+		resume()
+		destroy()
+		pipe()
+	WritableStream
+		writable [boolean]
+		event: 'drain'
+		event: 'close'
+		event: 'pipe'
+		write()
+		end()
+		destroy()
+		destroySoon()
+-
+	var request = require('request');
+	var s = request('http://www.pluralsight.com/');
+	s.on('data', function(chunk) {
+		console.log(">>>Data>>>" + chunk);
+	});
+	
+	s.on('end', function() {
+		console.log(">>>Done!>>>");
+	});
+-Pipe.js	
+	var request = require('request');
+	var fs = require('fs');
+	
+	request('http://www.pluralsight.com/').pipe(fs.createWriteStream('pluralsight.html'));
+->Accessing the local System	
+-The "process" object
+	A collection of streams
+		process.stdin
+		process.stdout
+		process.stderr
+	Attributes of the current process
+		process.env
+		process.argv
+		process.pid
+		process.title
+		process.uptime()
+		process.memoryUsage()
+		process.cwd();
+	Process-related actions
+		process.abort()
+		process.chdir()
+		process.kill()
+		process.setgid()
+		process.setuid()
+-process-streams
+	process.stdin.resume();
+	process.stdin.setEncoding('utd8');
+	
+	process.stdin.on('data', function(chunk) {
+		process.stdout.write('Data! ->' +chunk);
+	});
+	
+	process.stdin.on('end', function() {
+		process.stderr.write('End!\n');
+	});
+->Interacting with file system
+->What is buffer?
+	JavaScript has difficulty dealing with binary data
+	However networking and the file system require it
+	The buffer class provides a raw memory allocation for dealing with binary data directly
+	Buffers cab be converted to/from strings by providing an encoding
+		ascii,utf8(default),utf16le,ucs2,base64,binary,hex
+	Provides a handy way to convert strings to/from base64
+-The OS module
+	Provides information about the currently running system
+		os.tmpDir()			os.uptime()
+		os.hostname()		os.loadavg()
+		os.type()			os.totalmem()
+		os.platform()		os.freemem()
+		os.arch()			os.cpus()
+		os.release()		os.networkInterfaces()	os.EOL
+->Interacting with the WEB
+	Making web request in Node
+	var http = require('http');
+	var req = http.request(options, function(res){
+		//process callback
+	});
+	"options" can be one of the following:
+		A URL string
+		An object specifying values for host,port,method,path,headers,auth etc
+	The returned ClientRequet can be written/piped to for POST requests
+	The ClientResponse object is provided via either callback or as a "response" event on the request object.
+	http.get() available as a simplified interface for GET request. 
+-Building a Web Server in Node
+	var http = require('http');
+	var server = http.createServer(function(req, res) {
+		//process request
+	});
+	server.listen(port, [host]);
+	Each request is provided via either callback (shown above) or as a "request" event on the server object
+	The ServerRequest can be read from (or piped) for POST uploads
+	The ServerResponse can be piped to when returning stream-oriented data in a response
+	SSL support is provided by a similar https.createServer()
+-iosockets.js
+	var http = require("http");
+	var socketsio = require("sockets.io");
+	var fs = require("fs");
+	
+	var handler = function(req, res) {
+		fs.readFile(_dirName +'/index.html', function() {
+			if(err) {
+				res.writeHead(500);
+				return res.end('Error loading index.html');
+			} else {
+				res.writeHead(200);
+				res.end(data);
+			}
+		});
+	};
+	
+	io.sockets.on('connection', function(sockets) {
+		setInterval(function() {
+			var timestamp = Date.now();
+			console.log('Emitted: '+timestamp);
+			sockets.emit('timer', timestamp);
+		}, 2000);
+		sockets.on('submit', function(data) {
+			console.log('Submitted: '+data);
+		});
+	});
+	
+	app.listen(8080);
+	console.log('Server running!');
+->Testing and Debugging
+	Basic testing with Node's built-in "assert" module
+	More advanced testing with mocha and should.js
+	Debugging Node.js app in Cloude9 IDE
+-assert-test.js
+	var assert = require('assert');
+	var fun =  require('/.mathfun');
+	
+	assert.equal(fun.evenDoublerSync(2), 4);
+	assert.throws(function(){
+		fun.evenDoublerSync(3);
+	}, /Odd/);
+	
+	fun.evenDoubler(2, function(err, results) {
+		assert.ifError(err);
+		assert.equal(results, 4, "evenDoubler failed on even number");		
+	});
+	
+	fun.evenDoubler(3, function(err, results) {
+		assert.notEqual(err, null);
+	});
+-Testing with Mocha
+	Runs tests serially (both sync and async tests)
+	Test cases are organized into test suites
+	Includes before(), after(), beforeEach() and afeterEach() hooks
+	Support for pending, exclusive and inclusive tests
+	Captures test duration, flagging test that are slow
+	Can watch a directory and re-run test on changes
+	Multiple "interfaces" for writing tests (BSD, TDD, Exports, QUnit)
+	Multiple "reporters" for rendering test results
 -
 -
 -

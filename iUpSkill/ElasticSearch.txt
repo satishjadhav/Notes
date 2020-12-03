@@ -1,2454 +1,437 @@
-
+https://app.pluralsight.com/player?course=elasticsearch-analyzing-data&author=janani-ravi&name=elasticsearch-analyzing-data-m0&clip=0&mode=live
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-Introduction to basic concepts in Elasticsearch download and install
+-Building an index adding documents to it both individually and in bulk
+-Search queries on an index using the Query DSL
+-Analysis of data on an index using aggregations
+-Most Relevant Document for Search Terms
+	Web crawler
+	Inverted Index
+	Scoring
+	Search
+-Searches Using Inverted Indices
+	Geo-hashes for geographical search
+	Algorithms such as Metaphone for phonetic matching
+	Did you mean? searches use a Levensthein automaton
+-An inverted index is at the heart of a search engine
+-Apache Lucene
+	The indexing and search library for a high performance, full-text search engine
+-Apache Solr
+	A search server with:distributed indexing, load balancing,replication , automated recover,centralized configuration 
+-Apache Nutch
+	Web crawling and index parsing
+-Apache CrateDB
+	open source, SQL distributed database
+-Elasticsearch
+	is a distributed search and analytics engine which runs on Lucene.
+-Elasticsearch features
+	Distributed : Scales to thousands of nodes
+	High availability : Multiple copies of data
+	RESTful API: CRUD, monitoring and other operation via simple JSON-based HTTP calls
+	Powerful Query DSL: Express complex queries simply
+	Schema less: Index data without an explicit schema
+-Product catalog Inventory Auto complete
+-Video clips Categories Tags
+-Courses Authors Topics
+-Mining log data for insights
+-Price alerting platform
+-Business analytics and intelligence
+-www.elastic.co/downloads/past-releases
+-Commands to start Elasticsearch node
+	 E:\Elasticsearch_7.9.0\elasticsearch-7.9.0> .\bin\elasticsearch
+	  .\bin\elasticsearch -Ecluster.name=pluralsight_es -Enode.name=my_first_node
+-Basic Concepts
+	Near Real time Search 
+		Very low latency ~1 seconds from the time a documents is indexed until it becomes searchable
+	Elasticsearch is distributed by nature
+	Node
+		Single server is called a Node
+		Performs indexing
+		Allows search
+		Has a unique id and name
+	Cluster
+		Collections of nodes
+		holds the entire indexed data
+		Has a unique name
+		Nodes join a cluster using the cluster name
+	Index
+		All of these types of documents make up an index
+		Collection of similar documents
+		Identified by name
+		Any number of indices in a cluster
+		Different indices for different logical groupings
+	Types
+		Logical partitioning of documents
+		User defined groupings semantics
+		Document with the same fields belongs to one type
+	Document
+		Basic unit of information to be indexed
+		Expressed in JSON
+		Resides within an index
+		Assigned to a type within an index
+	Documents in an Index
+		Too large to fit in the hard disk of one node
+		Too slow to serve all search requests from one node
+	Shards
+		Split the index across multiple nodes in the cluster
+	Replicas
+		Scale search volume/throughput by searching multiple replicas
+	Shards and Replicas
+		An index can be split into multiple shards
+		A shard can be replicated zero or more times
+		An index in Elasticsearch has 5 shards and 1 replica by default
+-Monitoring the Health of the Cluster
+	http://localhost:9200/
+	http://localhost:9200/_cat/health?v&pretty
+	http://localhost:9200/_cat/nodes?v&pretty
+->Executing CRUD Operations Using the Elasticsearch APIs
+-RESTful APIs
+	Elasticsearch uses REST APIs to administer the cluster, perform CRUD operations, search etc.
+	Data is sent to and received from the server in JSON form
+	cURL for Requests to REST APIs
+		cURL is a tool which allows you to transfer data from and to a server using a variety of protocols
+		HTTP,FTP,GOPHER,IMAP,LDAP etc.
+		https://curl.haxx.se/download.html
+		curl http://www.google.com/
+		
+		curl -XGET "localhost:9200/_cat/indices?v&pretty"
+		curl -XGET "localhost:9200/_cat/nodes?v&pretty"
+		
+		curl -XPUT "localhost:9200/products?&pretty"
+		
+		curl -XPUT "localhost:9200/orders?&pretty"
+		
+		curl -H "Content-Type: application/json" -XPUT "localhost:9200/products/mobiles/1?pretty" -d "{\"name\" : \"iphone 7\",\"camera\" : \"12MP\",\"storage\" : \"256GB\",\"display\" : \"4.7inch\",\"battery\" : \"1,960mAh\",\"reviews\" : [\"Incredibly happy after having it for one week\",\"Best iPhone so far\",\"Very expensive,still better than Android\"]}"
+		
+		curl -H "Content-Type: application/json" -XPUT "localhost:9200/products/mobiles/2?pretty" -d "{\"name\" : \"Samsung Galaxy\",\"camera\" : \"8MP\",\"storage\" : \"128GB\",\"display\" : \"5.2inch\",\"battery\" : \"1,500mAh\",	\"reviews\" : [\"Bset Android Phone\",\"I love it\"]}"
+		
+		curl -H "Content-Type: application/json" -XPUT "localhost:9200/products/mobiles/3?pretty" -d "{\"name\" : \"Xiaomi Note\",\"camera\" : \"10MP\",\"storage\" : \"128GB\",\"display\" : \"5.5inch\",\"battery\" : \"1,500mAh\",\"reviews\" : [\"Bset Android Phone\",\"Too large to use easily\"]}"
+		
+		curl -H "Content-Type: application/json" -XPUT "localhost:9200/products/laptops/1?pretty" -d "{\"name\" : \"Mac book Pro\",\"Storage\" : \"500GB\", \"Ram\" : \"6GB\", \"Display\" : \"13inch\", \"OS\" : \"El Captain\",\"reviews\" : [\"A little bulky but a great Mac laptop\", \"The larger storage capacity is great\"]}"
+		
+		curl -H "Content-Type: application/json" -XPOST "localhost:9200/products/laptops/2?pretty" -d "{\"name\" : \"Dell\",\"Storage\" : \"1TB\", \"Ram\" : \"8GB\", \"Display\" : \"15inch\", \"OS\" : \"Windows 10\",\"reviews\" : [\"Great work laptop\", \"Not too heavy\"]}"
+	
+-Auto generate Unique IDs
+		curl -H "Content-Type: application/json" -XPOST "localhost:9200/products/mobiles?pretty" -d "{\"name\" : \"iphone 6s\",\"camera\" : \"12MP\",\"storage\" : \"256GB\",\"display\" : \"4.7inch\",\"battery\" : \"1,960mAh\",\"reviews\" : [\"Incredibly happy after having it for one week\",\"Best iPhone so far\",\"Very expensive,still better than Android\"]}"
+		
+-Retrieving whole and partial documents
+		curl -XGET 'localhost:9200/products/mobiles/1?pretty'
+		curl -XGET 'localhost:9200/products/mobiles/1?pretty&_source=false'
+		curl -XGET 'localhost:9200/products/mobiles/1?pretty&_source=name,reviews'
+-Add new fields to existing documents
+		curl  -XPOST 'localhost:9200/products/mobiles/2/_update?pretty' -d "{
+			"doc": {
+				"color" : "black"
+			}
+		}"
+		curl -XGET 'localhost:9200/products/mobiles/2?pretty'
+		
+		curl -XGET 'localhost:9200/products/shoes/1?pretty'
+		curl -XPOST 'localhost:9200/products/shoes/1/_update?pretty' -d "
+			{
+				"script" : "ctx._source.size += 2"
+			}
+		"
+-Delete documents in an index 
+-Delete the entire index
+		curl -XDELETE 'localhost:9200/products/mobiles/2?pretty'
+-To request head
+	curl -i -XHEAD 'localhost:9200/products/mobiles/2?pretty'
+	curl -XDELETE 'localhost:9200/customers?pretty'
+-Bulk operations on documents
+	retrieve multiple documents
+	index multiple documents
+	multiple operations in one command
+	curl -XGET 'localhost:9200/_mget?pretty' -d 
+	"{
+		"docs" : {
+			{
+				"_index" : "products",
+				"_type"	: "laptops",
+				"_id" : "1"
+			},
+			{
+				"_index" : "products",
+				"_type" : "laptops",
+				"_id" : "2"
+			}
+		}
+	}"
+	curl -XGET 'localhost:9200/products/laptops/_mget?pretty' -d 
+	"{
+		"docs" : [
+			{
+				"_id" : "1"
+			},
+			{
+				"_id" : "2"
+			}
+		]
+	}"
+	curl -XPOST 'localhost:9200/products/shoes/_bulk?pretty' -d 
+	"{ "index" : {"_id" : "2"}}
+	{ "name" : "Puma","Size" : 9, "Color" : "black"}"
+	{ "index" : {"_id" : "4"}}
+	{ "name" : "New Balance", "Size" : 8}	
+-Bulk index documents from a JSON file
+	curl -H "Content-Type: application/x-ndjson" -XPOST 'localhost:9200/customers/personal/_bulk?pretty&refresh' data-binary @"customers.json"
+-Executing Search Requests Using Elasticsearch Query DSL
+	
+-Most relevant document for search terms
+	Know of the document's existence
+	Index the document for lookup
+	Know how relevant the document is
+	Retrieve ranked by relevance
+-Elasticsearch
+	Specify documents to index
+	Elasticsearch created the inverted index behind the scenes
+	Applies a scoring algorithm for each document for each term
+	Retrieves documents using a Query DSL
+-The Query DSL
+	A flexible expressive search language that Elasticsearch uses to expose most of the power of Lucene through a simple JSON interface.
+	It is what you should be using to write your queries in production.It makes your queries more flexible, more precise , easier to read and easier to debug.
+-Two Contexts of Search
+-Filter Context
+	Included or not: Yes/No determines whether included in the result
+	No scoring:  No additional relevance reanking in the search results
+	Structure data: Exact matches , range queries
+	Faster : Only determine inclusion in results no scoring to consider
+-www.json-generator.com
+-Two Context of search
+	Query Context
+	Filter Context
+-Search using the request body to specify parameters
+	curl -XGET 'localhost:9200/products/_search?pretty' -d 
+	"{
+		"query" : { "match_all": {} },
+		"size" : 3
+	}"
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d 
+	"{
+		"query" : { "match_all" : {} },
+		"sort" : { "age" : {"order" : "desc"}},
+		"size" : 20
+	}"
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d 
+	"{
+		"_source" : "st*",
+		"query" : {
+			"term" : { "state" : "washington" }
+		}
+	}"
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d 
+	"{
+		"_source" : {
+			"includes" : ["st*", "*n*"],
+			"excludes" : ["*der"]
+		},
+		"query" : {
+			"term" : { "state" : "washington" }
+		}
+	}"
+-Full text queries using:
+	match
+	match_phrase
+	match_phrase_prefix
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d
+	"{
+		"query" : {
+			"match" : {
+				"name" : "webster"
+			}
+		}
+	}"
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d
+	"{
+		"query" : {
+			"match" : {
+				"name" : {
+					"query" : "frank norris",
+					"operator" : "or"
+				}
+			}
+		}
+	}"
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d
+	"{
+		"query" : {
+			"match_phrase_prefix" : {
+				"name"  : "ma"
+			}
+		}
+	}"
+-The TF/IDF Algorithm for Relevance
+	Each document has a different relevance score based on the query clause
+	Term searches might look at the percentage of search terms that were found in the document.
+	Term Frequency/ Inverse Document Frequency
+	Term frequency : How often does the term appear in the field.
+	Inverse document frequency : How often does the term appear in the index?
+	Field-length norm : How long is the field which was searchable?
+-Boolean Query
+	Matches documents by combining multiple queries using boolean operators such as AND, OR
+	must : The clause must appear in matching documents
+	should: The clause may appear in matching documents but may not sometimes
+	must_not:The clause must not appear in the document results
+	filter : The clause must appear in results but results are not scored
+	curl -XGET 'localhost:9200/customers/search?pretty' -data
+	"{
+		"query" : {
+			"bool" : {
+				"must" : [
+					{ "must" : {"street" : "ditmas" }},
+					{ "match" : { "street" : "avenue" }}
+				]
+			}
+		}
+	}"
+	curl -XGET 'localhost:9200/customers/search?pretty' -data
+	"{
+		"query" : {
+			"bool" : {
+				"should" : [
+					{ "must" : {"street" : "ditmas" }},
+					{ "match" : { "street" : "avenue" }}
+				]
+			}
+		}
+	}"
+	curl -XGET 'localhost:9200/customers/search?pretty' -data
+	"{
+		"query" : {
+			"bool" : {
+				"must_not" : [
+					{ "must" : {"state" : "california texas" }},
+					{ "match" : { "street" : "lane street" }}
+				]
+			}
+		}
+	}"
+-Term Query
+	The exact term needds to be found in the inverted index for indexed documents
+-Filters
+	The documents in the result are not scored
+	Each document responds yes/no to wether it should be included in the result
+	curl -XGET 'localhost:9200/customers/_search?pretty' -d 
+	"{
+		"query" : {
+			"bool" : {
+				"must" : {
+					"match_all" : {} },
+					"filter" : {
+						"range" : {
+							"age" : {
+								"gte" : 20,
+								"lte" : 30
+							}
+						}
+					}
+			}
+		}
+	}"
+	curl -XGET 'localhost:9200/customers//_search?pretty' -H 'Content-Type: application/json' -d
+	{
+		"query" : {
+			"bool" : {
+				"must" : {
+					"match" : {
+						"state" : "alabama"
+					}
+				},
+				"filter" : [
+					{ "term" : { "gender" : "female"} },
+					{ "range" : { "age" : { "gte" : "50"}}}
+				]
+			}
+		}
+	}
+-Summary
+	Understood the query DSL that Elasticsearch uses for search queries
+	Worked with searches which need relevance and filters where relevance is not required
+	Worked with full text searches, term searchers, compound searches, filters
+	Understood the basics of the TF/ID algorithm for relevance
+	Implemented all queries using the Elasticsearch REST API
+->Executing Analytical Queries Through Aggregations	
+-Four types of Aggregations
+	Metric
+		Aggregations over a set of documents
+		All documents in a search result
+		Documents within a logical group
+	Bucketing
+		Logically group documents based on search query
+		A document falls into a bucket if the criteria matches
+		Each bucket associated with a key
+	Matrix
+		Operates on multiple fields and produces a matrix result
+		Experimental and may change in future releases
+	Pipeline
+		Aggregations that work on the output of the other aggregations
+		Experimental and may change in future releases
+-	curl -XPOST 'localhost:9200/customers/_search?&pretty' -d 
+	"{
+		"size" : 0,
+		"aggs" : {
+			"avg_age" : {
+				"avg" : {
+					"field" : "age"
+				}
+			}
+		}
+	}"
+	
+	curl -XPOST 'localhost:9200/customers/_search?&pretty' -data
+	{
+		"size" : 0,
+		"query" : {
+			"bool" : {
+				"filter" : {
+					"match" : { "state" : "minnesota"}
+				}
+			}
+		},
+		"aggs" {
+			"avg_age" : {
+				"avg" : {
+					"field" : "age"
+				}
+			}
+		}
+	}
+-The cardinality aggregations
+	Cardinality of a field the number of unique  value present in the field across documents
+	curl -XPOST 'localhost:9200/customers/_search?&pretty' -d
+	{
+		"size" : 0,
+		"aggs" : {
+			"age_count" : {
+				"cardinality" : {
+					"field" : "age"
+				}
+			}
+		}
+	}
+-Search vs Aggregations
+	Search
+		Inverted index of the terms present in documents
+		The terms themselves can be hashed and stored in the index
+		Which documents contain this term
+	Aggregation
+		Actual value of fields present in documents
+		Actual value of the terms are needed, hash values do not suffice
+		What is the value of this field for this document
+-Getting the value of a Text Field
+	Text field values are stored in an in-memory data structure called field data
+	fielddata is built on demand when a field is used for aggregations, sorting etc.
+	fielddata on text fields take up lots of heap space
+	fielddata is disabled by default on text fields
+	curl -XPUT 'localhost:9200/customers/_mapping/personal?pretty' -d
+	"{
+		"properties" : {
+			"gender" : {
+				"type" : "text",
+				"fielddata" : true
+			}
+		}
+	}"
 -
 -
 -
