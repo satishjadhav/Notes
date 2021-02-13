@@ -1,0 +1,392 @@
+Extensive use of Components 
+Re usability,Decoupling
+Reduces coding effort by using pattern implementations such as singleton,factory,service locator etc.
+-Bean Factory
+Bean factory is core of the spring framework and, its a lightweight container which loads bean definitions and manages your beans.
+Beans are configured using XML file and manage singleton defined bean.It is also responsible for life cycle methods and injects dependencies.It also removes adhoc singletons and factories.
+Various modules used in Spring Framework
+	APO module (Aspect Oriented Programming)
+	JDBS abstraction and DAO module
+	The core container module
+	MVC framework module
+	Application context module
+	O/R mapping integration module (Object/Relational)
+	Web module
+APO
+APO module is utilized for creating aspects for Spring applications.It also enables support for metadata programming in Spring.
+Spring Modules
+	-Data access/integration
+		JDBC,ORM,OXM,JMS,Transactions
+	-Web
+		WebSocket,Servlet,Web,Portlet
+	-AOP
+	-Aspects
+	-Instrumentation
+	-Messaging
+	-Core container
+		Beans,Core,Context,SpEL
+	_test
+Features of Spring-framework		
+What is Spring ICO container
+	creates the objects
+	wire them together
+	configure them
+	manager their complete life cycle from creation till destruction
+	Uses  dependency injections (DI) to manage the components that make up an application
+Dependency Injection
+	Constructor injections
+	Setter injections
+	Interface injection
+Constructor Injection
+	There is no partial injection
+	It doesn't overrides the setter property
+	It will create new instance if any modification is done
+	It is better for too many properties
+Setter Injection
+	There can be Partial Injection
+	It overrides the constructor property if both are defined
+	It won't create new instance if modification is done
+	It is better for new properties
+Bean Factory v/s Application Context
+Bean factory
+	Uses Lazy initialization
+	Explicitly provided a resource object using the syntax
+	Doesn't supports internationalization
+	Annotation based dependency Injection is not supported
+Application Context
+	Uses Eager/Aggressive initialization
+	Creates and manages resources objects on its own
+	Supports internationalization
+	Annotation based dependency Injection is supported
+@Required annotation mean?
+	This annotation simply indicates that the affected bean property must be populated at configuration time,through an explicit property value in bean definition or through autowiring.The container throws BeanInitializationException if the affected bean property has not been populated.
+@Qualifier
+		There may be a situation when you create more than one bean of the same type and want to wire only one of them with a property in such case you can use @Qualifier annotation along with @Autowire to remove the confusion by specifying which exact bean will be wired.
+What are the JSR-250 annotations?
+	@PostConstruct
+	This annotation can be used as an alternate of initialization callback.
+	@PreDestroy
+	This annotation can be used as an alternate of destruction callback.
+@Resource
+	This annotation can be used as fields or setter methods.The @Resource annotation takes a 'name' attribute which will be interpreted as the bean name to be injected.You can say it follows by-name autowiring semantics.
+@Configuration
+	It indicates that the class can be used by the spring IoC container as a source of bean
+Event Handling in spring?
+	Event handling in the ApplicationContext is provided through the ApplicationEvent class and ApplicationListener interface.So if a bean implements the ApplicationListener then every time ApplicationEvent gets published to the ApplicationContext that bean is notified.
+Describe some of the application context events:
+	ContextRefreshEvent:
+		This event is published when the ApplicationContext is either initialized or refreshed.
+		This can also be raised using the refresh() method on the ConfigurableApplicationContext interface.
+	ContextStartedEvent:
+		This event is published when the ApplicationContext is started using the start() method on the ConfigurableApplicationContext interface.You can poll your database or you can restart any stopped application after receiving event.
+	ContextStoppedEvent:
+		This event is published when the ApplicationContext is stopped using the stop() method on the ConfigurableApplicationContext interface.You can do required housekeeping work after receiving this event.
+	ContextClosedEvent:
+		This event is published when the ApplicationContext is closed using the close() method on the ConfigurableApplicationContext interface.A closed context reaches its end of life it can not be refreshed or restarted.
+	RequestHandledEvent:
+		This is a web-specific event telling all beans an HTTP request as been serviced.
+Joint Point
+	This represents a point in your application where you can plugin AOP aspect.YOu can also say it is the actual place in the application where an action will be taken using Spring AOP framework.
+Advice
+	This is the actual action to be taken either before or after the method execution.This is actual piece of code that is invoked during program execution by Spring AOP framework.
+Pointcut
+	This is a set of one or more joint points where an advice should be executed.YOu can specify pointcuts using expressions or patterns as we will see in our APO examples.
+@AspectJ
+	It refers to a style of declaring aspects as regular JAva classes annotated with Java 5 annotations.
+Spring JdbcTemplate
+	JdbcTemplate provides many convenience methods for doing things such as converting database data into primitives or objects,executing prepared and callable statements and providing custom database error handling.
+DispatcherServlet
+	The Spring Web MVC framework is designed around a DispatcherServlet that handles all the HTTP request and responses.
+WebApplicationContext
+	Is an extension of the plain ApplicationContext that has some extra features necessary for web applications.If differs from a normal ApplicationContext in that it is capable of resolving themes and that it knows which Servlet it is associated with.
+@Controller
+		The @Controller annotation indicates that a particular class serves role of a controller.Spring does not require you to extend any controller base class or reference the Servlet API.
+@RequestMapping
+	Annotation is used to map a URL to either an entire class or a particular handler method.
+There are two ways to access hibernate using spring-
+	Inversion of Control with a Hibernate Template and Callback.
+	Extending HibernateDAOSupport and Applying an AOP Interceptor node.
+What is serialization and Deserialization?	
+	Serialization is the process of converting an object's state (including its references) to a sequence of bytes.
+	Deserialization the process of rebuilding those bytes into a live object at some future time.
+Marker Interface
+	Interfaces that have no method declared in them Serializable and Cloneable.
+	These are used to signal to compiler or JVM that the objects if the class implementing this interface must be treated in special way.
+	java.io.serializable
+What are the important interfaces in the Collection Hierarchy?
+The most important interfaces and their relationships are highlighted below?
+	
+	interface Collection<E> extends Iterable<E> {
+	}
+	
+	interface Set<E> extends Collection<E> {
+	}
+	
+	interface List<E> extends Collection<E> {
+	}
+	
+	interface Queue<E> extends Collection<E> {
+	}
+	
+	interface Map<K,V> {
+	}
+	
+	interface SortedSet<E> extends Set<E> {
+	}
+	
+	interface NavigableSet<E> extends SortedSet<E> {
+	}
+	
+	interface SortedMap<K,V> extends Map<K,V>	{
+	}
+	
+	interface NavigableMap<K,V> extends SortedMap<K,V> {
+	}
+	
+	interface Queue<E> extends Collection<E> {
+	}
+	
+	interface Deque<E> extends Queue<E {
+	}
+	
+	interface BlockingQueue<E extends Queue<E {
+		Queue with wait feature
+		You can wait until an element is available
+	}
+	
+	class PriorityQueue implements Queue {
+		The elements of the priority queue are ordered according to their natural ordering.
+	}
+	
+	class ArrayDeque implements Deque {
+	}
+	
+	class ArrayBlockingQueue implements BlockingQueue {
+	}
+	
+	class LinkedBlcckingQueue implements BlockingQueue {
+	
+	}
+Java 8
+New feature of JAVA 8
+	Default and static methods in interfaces.
+	Lambda Expressions
+	@Functional Interface
+	forEach() method
+	Stream API
+	LocalDate, LocalTime,LocalDateTime	
+Why default method introduced in interfaces?
+	This helps in achieving addition of a new method in interfaces without need to change existing classes.	
+Why static method introduced in interfaces?
+	If you want to provide default implementation which can not be change.
+	Static methods cannot be overridden.
+	Access via Interface name or object of class implementing interface.
+What are the features of JAVA 8 you used in your project?
+	LocalDatem,Stream API,Lambda Expression,forEach(),@FunctionalInterface
+How to iterate the list and print each element?
+	arrayList.forEach(element->{System.out.println(element)});
+	void forEach(Consumer<? super T> action)
+	-->Consumer implementation
+	Consumer<Integer> printElem = new Consumer<Integer>() {
+		public void accept(Integer element) {
+			System.out.println(element);
+		}
+	}
+What is lambada expression?
+	Lambda expressions are, basically functions with no name and identifiers.
+	Promotes functional programming.
+	It helps in expressing instances of single-method class more compactly.
+Do you know what are the various forms of writing lambada expressions?
+	()->expression
+	(parameters)->expression
+	(parameters)->{multiple statements}
+What do you understand by @Functional Interface annotation in java 8?
+	@Functional interface if used will force the compiler to check whether the given interface has single-abstract method or not.
+	If not compiler will throw error "Unexpected @FunctionalInterface annotation"
+How do you create a custom annotation in java?
+		@Retention(RetentionPolicy.RUNTIME)
+		@Target(ElementType.Type)
+		public @interface ByteProgramming {
+			String userName() default "ByteProgramming";
+		}
+		
+		Use: @ByteProgramming(userName="Byte")
+How to avoid NullPointer exception in Java 8?
+	Java 8 provides concept of Optional
+	Optionals can be used to avoid NullPointer Exception
+	Ex. String value = null;
+	Optional<String> value = Optional.empty();
+What do you mean by stream?
+	Streams are just sequence of data from a source.
+Can you tell me differences between Collection API and Stream API?
+	Collection API:
+		Elements are not computed on demand basis.
+		Indexed Access possible.
+		Iteration was external.
+		Access of elements was sequential.
+	Stream API:
+		Elements are computed on demand basis.
+		Indexed access not possible.
+		Iteration is internal.
+		Access of elements could be sequential as well as parallel.
+		Stream does not store data.
+		An operation on stream does not change its original source.
+		Stream does not have a fixed size.
+SQL
+	DDL (Data Definition Language) : CREATE,ALTER and DROP
+	DML (Data Manipulation Language) : INSERT, UPDATE and DELETE
+		SELECT statement is used as a partial DML statement used to select all or relevant records in the table.
+	DCL (Data Control Language) : GRANT,REVOKE
+	
+What are the different clauses in SQL?
+	SELECT --> FROM --> WHERE --> ORDER BY --> GROUP BY --> HAVING
+	SELECT --> FROM --> JOIN --> USING (Column Name) OR ON
+	
+	Constraints are used to set the rules for all records in the table.If any constraints get violated then it can abort the action that caused it.
+	Constraints are defined while creating the database itself with CREATE TABLE statement or even after the table is created once with the alter table statement.
+	
+    -Atomicity: Ensures the completeness of all transactions performed. Checks whether every transaction is completed successfully or not. If not, then the transaction is aborted at the failure point and the previous transaction is rolled back to its initial state as changes are undone.
+    -Consistency: Ensures that all changes made through successful transactions are reflected properly on the database.
+    -Isolation: Ensures that all transactions are performed independently and changes made by one transaction are not reflected on others.
+    -Durability: Ensures that the changes made in the database with committed transactions persist as it is even after a system failure.
+-What are Scalar functions in SQL?
+Answer: Scalar functions are used to return a single value based on the input values.
+Scalar Functions are as follows:
+    UCASE(): Converts the specified field in the upper case.
+    LCASE(): Converts the specified field in lower case.
+    MID(): Extracts and returns character from the text field.
+    FORMAT(): Specifies the display format.
+    LEN(): Specifies the length of the text field.
+    ROUND(): Rounds up the decimal field value to a number.
+-What are triggers?
+Answer: Triggers in SQL is kind of stored procedures used to create a response to a specific action performed on the table such as INSERT, UPDATE or DELETE. You can invoke triggers explicitly on the table in the database.
+Action and Event are two main components of SQL triggers. When certain actions are performed, the event occurs in response to that action.
+-How many types of Privileges are available in SQL?
+	Answer: There are two types of privileges used in SQL, such as
+    System privilege: System privilege deals with the object of a particular type and provides users the right to perform one or more actions on it. These actions include performing administrative tasks, ALTER ANY INDEX, ALTER ANY CACHE GROUP CREATE/ALTER/DELETE TABLE, CREATE/ALTER/DELETE VIEW etc.
+    Object privilege: This allows to perform actions on an object or object of another user(s) viz. table, view, indexes etc. Some of the object privileges are EXECUTE, INSERT, UPDATE, DELETE, SELECT, FLUSH, LOAD, INDEX, REFERENCES etc.
+-What is the difference between clustered and non-clustered indexes?
+	One table can have only one clustered index but multiple non-clustered indexes.
+    Clustered indexes can be read rapidly rather than non-clustered indexes.
+    Clustered indexes store data physically in the table or view whereas, non-clustered indexes do not store data in the table as it has separate structure from the data row.
+Exceptions:
+	Throwable is the highest level of Error Handling classes.
+	Below class definitions show the pre-defined exception hierarchy in Java.
+	class Error extends Throwable {}
+	class Exception extends Throwable {}
+	class RuntimeException extends Exception {}
+	
+	Programmer defined exception in JAVA
+	class CheckedException1 extends Exception {}
+	class CheckedException2 extends CheckedException1 {}
+	
+	class UncheckedException extends RuntimeException {}
+	class UncheckedException2 extends UncheckedException {}
+	
+	try-with-resources is available to any class that implements the AutoCloseable interface.
+	public interface AutoCloseable {
+		void close() throws Exception;
+	}
+What are the collections view provided by HashMap?
+		Map<String,String> hm  = new HashMap<String,String>();
+		
+		hm.enrtySet(); //Set<Entry<String,String>> java.util.Map.entrySet()
+		hm.keySet();  //Set<String> java.util.Map.keySet()
+		hm.values(); //Collection<String> java.util.Map.values()
+How can I make hashmap read only?
+	Collection.unmodifiableMap(hashMapObject);
+	Collection.unmodifiableCollection(Collection<? extends T> c):Collection<T>;
+How to iterate over hashmap?
+	Map<String,String> hm = new HashMap<String,String>();
+	1.Iterator
+		Iterator<Entry<String,String>> itr = hashMap.entrySet().iterator();
+	2.Map.entrySet() + for-each loop
+		for(Entry<String,String> entry : hashMap.entrySet) {
+			System.out.println(entry.getKey() + entry.getValue());
+		}
+	3.Java 8 forEach(action)
+		hashMap.forEach((K,V) -> System.out.println("Key - "+K+ " Value - "+V));
+	4.Using keySet() and values()
+		for(String key : hashMap.keySet()) {
+			System.out.println(key);
+		}
+		for(String value:hashMap.values()) {
+			System.out.println(value);
+		}
+If we store an existing key in HashMap it will override the old value with the new one and return from put() method will be old value.
+		hashMap.put("1", "Byte Programming");
+		String putValue = hashMap.put("1", "Byte");
+		System.out.println(putValue); //will print "Byte Programming"
+	
+JSON
+	JSON (JavaScript Object Notation) is a data storage and communication format based on key-value pair of JavaScript object literals.
+	Its lightweight text-based open standard designed for human-readable data interchange which is derived from the JavaScript programming language for representing simple data structures and associate arrays, called objects.In JSON.
+	All property names are surrounded by double quotes.
+	Values are restricted to simple data : no function calls, variables, comments or computations.
+	JSON is used for communication between java script and server side technologies.
+	$.parseJSON() takes a well-formed JSON string and returns the resulting JavaScript value.
+	What are natively supported JSON types?
+	integer,float,double,string,boolean,array,objects,null.
+	BSON
+		is the super set of JSON which used by MongoDB.BSON supports the embedding of documents and arrays within other documents and arrays.
+		BSON also contains extensions that allow representation of data types that are not part of the JSON spec.
+	Structured data : JSON used a map data structure rather than XML's tree.In some situations, key/value paires can limit what you can do but you get a predictable and easy-to-understand data model.
+	let person = { name: "Mary", age:23, City: ["Banglore", "Delhi", "Kolkata"]};
+	console.log(person.City);
+	
+	public class ThreadSafeSingleton {
+	
+		private static ThreadSafeSingleton instance;
+		
+		private ThreadSafeSingleton() {}
+		
+		public static synchronized ThreadSafeSingleton getInstance() {
+			if(instance == null) {
+				instance = new ThreadSafeSingleton();
+			}
+			return instance;
+		}
+	}
+	
+	public static ThreadSafeSingleton getInstanceUsingDoubleLocking() {
+		if(instance == null) {
+			synchronized(ThreadSafeSingleton.class) {
+				if(instance == null) {
+					instance = new ThreadSafeSingleton();
+				}
+			}
+		}
+		return instance;
+	}
+	How to get current directory?
+		pwd
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

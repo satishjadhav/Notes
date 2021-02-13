@@ -1,0 +1,215 @@
+{
+	obj: {
+		"data1",
+		"data2",
+		"data3"
+	},
+	array []: {
+		val2
+	}
+}
+
+class A
+{	
+	prop1;
+	prop2,
+	listClass<ClassA>
+} 
+
+
+{
+	classA: {
+		prop1: "",
+		pro2: "",
+		list[] {
+			objA1,
+			objA2
+		}
+	}
+}
+
+HtppServerlet
+
+
+ExecuterService ex  = Executers.newFixedTheradPoolExecuterService();
+ex.submit(new Runnable() {
+	public 
+});
+
+
+submit(Runnable runnable);
+
+ex.execute();
+
+ex.()
+
+Future<ClassObje> f = 
+
+
+Clinet ---> (Syn) (WBE) LEXIS --> (FIX) (
+
+	
+	Future<Response> data = CompletableFuture.as(new Callable<Request> () {})).get(); {} ---> funn ANNA_DSB
+
+
+class Test implements Runnable {
+	public void run()
+	{	
+		System.out.println("Run");
+	}
+} 
+
+class Myclass {
+	public static void main(String[] args)
+	{
+		Thread t1 = new Thread();
+		t1.start();
+		t1.join();
+				
+		Thread t2 = new Test();
+		t2.start();		
+		t2.join();
+		
+		Runnable t3  = new Thread(new Test(), "TEST_THREAD");
+		t3.start();
+		System.out.println();
+		t3.join();
+		
+		System.out.println("Main");
+	}
+}
+
+newCacheThread
+
+16
+ 
+--> 32
+
+ArrayList
+
+class A {
+	
+	String name;
+	int mark;
+
+	A(String name , int mark) {
+				
+	}	
+	
+}
+
+
+public static void main(String []args) {
+		
+		List<A> arrayList = new ArrayList<>();
+		
+		Arrays.sort(arrayList, new CustomCoparator() {
+			public int comapar(A a1, A a2) {
+				if(a1.mark > a2.mark) {
+					return 1;
+				} else if(a1.makrk < a2.mark) {
+					return -1;
+				} else if(a1.makrk == a2.mark) {
+					return 0;
+				}
+			}
+		});
+}
+
+class A {
+	int i, j;
+	
+	public A(int i, int j) 
+	{ this.i = i; this.j = j; }
+	
+	public A(int i) 
+	{ this.i = i; }
+}
+	List<A> l = new ArrayList<A>();
+	l.add(new A(6, 5));
+	l.add(l.get(0));
+	
+	l.add(new A(7, 0));
+	l.add(new A(6, 5));
+	
+	l.add(new A(7));
+	l.add(new A(7));
+	
+	Class A = l.get(l.size());
+	l.add(l.get(),0);
+
+Set<A> s = new HashSet<A>();
+	s.addAll(l);
+
+System.out.print("l = " + l.size() + " s = " + s.size());
+
+5 , 2
+
+class CustomExcept extends Exception {
+	
+}
+
+RuntimeException
+
+public class priorityQueue
+{
+	public static void main(String[] args)
+	{
+		PriorityQueue<Integer> queue = new PriorityQueue<>();
+		queue.add(11);
+		queue.add(10);
+		queue.add(22);
+		queue.add(5);
+		queue.add(12);
+		queue.add(2);
+		
+		while (queue.isEmpty() == false) {
+			System.out.printf("%d ", queue.remove());
+		}
+			
+		System.out.println("\n");
+	}
+}
+
+
+    
+string str="abcd,,,,,,,";
+​  
+ String []arr = str.split(",", 2);
+ 
+ abcd
+ ,,,,,,
+
+String[] split(Char char, int index) {
+	
+}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

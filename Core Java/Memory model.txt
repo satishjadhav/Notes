@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=Z4hMFBvCDV4
 						L2 Cache ->
 						L3 Cache
 						RAM
--JMM java memory model is a specification which guarantees visibility of fields (aka happens before) amidst reordering of instructions.
+-JMM java memory model is a specification which guarantees visibility of fields (aka happens before) a midst reordering of instructions.
 -Not only synchronized also
 		Synchronized
 		Locks
@@ -25,8 +25,8 @@ https://www.youtube.com/watch?v=Z4hMFBvCDV4
 		Is used to store immutable objects
 		String class,String pools
 		Run time by JVM memory managers
--Permanant Generation
-	Metadate of classes/Methods
+-Permanent Generation
+	Metadata of classes/Methods
 	Not part of heap memory
 	Will be generated at the run time
 		Method area,Class Structure,Static variables,Constants
@@ -38,7 +38,7 @@ https://www.youtube.com/watch?v=Z4hMFBvCDV4
 	Used to execute threads
 	Method specific values
 	Local variables
-	Obejct refernces which are refering some objects on heap memory
+	Object references which are referring some objects on heap memory
 	Test t = new Test();
 	LIFO Last In First Out
 	Stack memory size is very less as compared to heap memory

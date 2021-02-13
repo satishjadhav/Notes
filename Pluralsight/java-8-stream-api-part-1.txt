@@ -1,39 +1,230 @@
 https://app.pluralsight.com/guides/java-8-stream-api-part-1
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+-Lambada expressions make code more functional and less object-oriented thus shortening its length.
+	e.g.
+	List<Toy> usedToys = findToys(toys, Toy toy -> toy.getType().equals(toyTypes.USED));
+-List of parameters
+	()-> System.out.println("Hi");
+	(String s)->System.out.println(s);
+	(String s1,String s2) -> System.out.println(s1 + s2);
+-The type of the parameters can be declared explicitly or it can be inferred from the context.
+	(s) -> System.out.println(s);
+-If there is a single parameter the type is inferred and is not mandatory to use parenthesis:
+	s -> System.out.println(s);
+-A body
+	If the body has more than one statement,curly brackets are required and if the expression returns a value, it must be returned with a return statement.
+	()-> {
+		System.out.println("Hi");
+	}
+	(int a) -> {
+		System.out.println(a);
+		retrun a*6;
+	}
+-The signature of the abstract method of a functional interface provides the signature of a lambada expression (this signature is called a functional descriptor).This means that to use a lambada expression you first need a functional interface, which is just a fancy name for an interface with one method.
+	interface Searchable {
+		boolean test(Car car);
+	}
+-Local variables (variables or parameters defined in a method) can only be used if they are declared final or are effectively final.
+-You can access instance or static variables of the enclosing class.
+-They must not throw more exceptions than specified in the throws clause of the functional interface method. Only the same type or a super type.
+-Some significant differences between lambdas and anonymous classes:
+	For an anonymous class, the this keyword resolves to the anonymous class itself. For a lambda expression, this resolves to the enclosing class where the lambda is written.
+	Default methods of functional interface cannot be accessed from within lambada expressions.Anonymous classes can.
+	Anonymous classes are complied into inner classes,while lambada expressions are converted into private, static (in invokedynamic) instruction (added in java 7) they are bound dynamically.Simply put since there's no need to load another class,lambada expressions are more efficient than anonymous classes.
+-What is a Stream?
+	A simple definition is that streams are wrappers for collections and arrays.They wrap an existing collection (or another data source) to support operations expressed with lambadas, so you specify what you want to do not how to do it.
+-Characteristics of streams
+	Streams work perfectly with lambdas.
+	Streams don't store their elements.
+	Streams are immutable.
+	Streams are not reusable.
+	Streams don't support indexed access to their elements.
+	Streams are easily parallelizable.
+	Stream operations are lazy when possible.
+-Creating Streams
+	A stream is represented by the java.util.stream.Stream<T> interface.This works with objects only.
+	There are also specilizations to work with primitive types such as IntStream,LongStream, and DoubleStrem.Also ther are many ways to create a stream.
+-The first one is creating a stream from a java.util.Collection implementation using the stream() method:
+	List<String> words = Arrays.asList(new String[]{"hello", "hola","hallo","ciao"});
+	StreamM<Sting> stream = words.stream();
+-The second one is creating a stream from individual values
+	Stream<String> stream = Stream.of("hello", "hola","hallo","ciao");
+	String[] words = {"hello", "hola","hallo","ciao"};
+	Stream<String> stream = Stream.of(words);
+-Intermediate Operations
+	Stream<String> s = Stream.of("m", "k", "c", "t").sorted().limit(3);
+-Intermediate operations are further divide into stateless and stateful operations.
+-Stateless operations retain no state from previous elements when processing a new element so each can be processed independently of operations on other elements.
+-Stateless operations retain no state from previous elements when processing a new element so each can be processed independently of operations on other elements.
+	Stream<T> filter(Predicate<? super T> predicate)
+		Returns a stream of elements that match the given predicate.
+	<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)
+		Returns a stream with the content produced by applying the provided mapping function to each element. There are versions for int, long and double also.
+	<R> Stream<R> map(Function<? super T, ? extends R> mapper)
+		Returns a stream consisting of the results of applying the given function to the elements of this stream. There are versions for int, long and double also.
+	Stream<T> peek(Consumer<? super T> action)
+		Returns a stream with the elements of this stream,performing the provided action on each element.
+-Stateful operations,such as distinct and sorted may incorporate state from previously seem elements when processing new elements.
+	Stream<T> distinct(). 
+		Returns a stream consisting of the distinct elements.
+	Stream<T> limit(long maxSize). 
+		Returns a stream truncated to be no longer than maxSize in length.
+	Stream<T> skip(long n). 
+		Returns a stream with the remaining elements of this stream after discarding the first n elements.
+	Stream<T> sorted(). 
+		Returns a stream sorted according to the natural order of its elements.
+	Stream<T> sorted(Comparator<? super T> comparator). 
+		Returns a stream with the sorted according to the provided Comparator
+-Terminal Operations
+	You can easily identify terminal operations because they always return something other than a stream.
+	After the terminal operation is performed the stream pipline is consumed and can't be used anymore.
+	int[] digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	long n = IntStream.of(digits).count();
+	System.out.println(IntStream.of(digits).findFirst());
+	The following methods represents terminal operations:
+		boolean allMatch(Predicate<? super T> predicate)
+		boolean anyMatch(Predicate<? super T> predicate)
+		boolean noneMatch(Predicate<? super T> predicate)
+		Optional<T> findAny()
+		Optional<T> findFirst()
+		<R,A> R collect(Collector<? super T,A,R> collector)
+			Performs a mutable reduction operation on the elements of this stream using a Collector.
+		void forEach(Consumer<? super T> action)
+		void forEachOrdered(Consumer<? super T> action)
+		Optional<T> max(Comparator<? super T> comparator)
+		Optional<T> min(Comparator<? super T> comparator)
+		T reduce(T identify,BinaryOperator<T> accumulator)
+		<A> A[] toArray(IntFunction<A[]> generator)
+			Returns an array containing the elements of this stream,using the provided generator function to allocate the returned array.
+		Spliterator<T> spliterator()
+-Operations on Collections
+	List<String> words = ...;
+	for(Iterator<String> it = words.iterator();it.hasNext();) {
+		System.out.println(it.next());
+	}
+	
+	Stream<String> stream = words.stream();
+	stream.forEach((new Consumer<String>() {
+		public void accept(String t) {
+			System.out.println(t);
+		}
+	}));
+	stream.forEach(t -> System.out.println(t));
+	Stream.of(wordList).forEach(t-> System.out.println(t.length()));
+	Stream.of(wordList).forEach(System.out::println);
+
+	For filtering we can use filte method of the Stream interface:
+	Stream<T> filter(Predicate<? super T> predicate)
+		This returns a new stream consisting of the elements that satisfy the given predicate
+	List<String> words = Arrays.asList("hello", null, "");
+	words.stream()
+			.filter(t -> t!=null)
+			.filter(t ->!t.isEmpty())
+			.forEach(System.out::println);
+-Data Search
+	The Stream API has two types of operation for searching
+		Optional<T> findAny();
+		Optional<T> findFirst();
+	The other way to search is through methods ending with Match:
+		boolean allMatch(Predicate<? super T> predicate)
+		boolean anyMatch(Predicate<? super T> predicate)
+		boolean noneMatch(Predicate<? super T> predicate)
+	IntStream stream = IntStream.of(1,2,3,4,5,6,7);
+	stream.findFirst().ifPresent(System.out::println);
+	
+	IntStream stream2 = IntStream.of(1,2,3,4,5,6,7);
+	stream2.findAny().ifPresent(System.out::println);
+	
+	noneMatch() is the opposite of allMatch() it returns true if the none of the elements in the stream match the given predicate:
+	IntStream stream = IntStream.of(1,2,3,4,5,6,7);
+	System.out.println(stream.noneMatch(i->i>0));
+-Sorting a Stream
+		Stream<T> sorted();
+		Method above returns a stream with the elements sorted according to their natural order.
+		List<Integer> list = Arrays.asList(57, 38, 37, 54, 2);
+		list.stream().sorted().forEach(System.out::println);
+		The only requirement is that the elements of the stream implement java.lang.Comparable,otherwise a ClassCastException may be thrown.
+	Stream<T> sorted(Comparator<< super T> comparator)
+	e.g.
+	List<String> strings = Arrays.asList("Stream","Operations","On","Collections");
+	strings.stream().sorted((s1, s2) -> s2.length()- s1.length()
+					.forEach(System.out::println));
+-Data and Calculation Methods
+	The Stream interface provides the following data and Calculation methods:
+	long count()
+	Optional<T> max(Comparator<? super T> comparator);
+	Optional<T> min(Comparator<? super T> comparator);
+	
+	System.out.println(IntStream.of(28, 4, 91, 30).sum());
+	average() returns the average of the elements in the stream wrapped in an OptionalDouble or an empty one if the stream is empty:
+		System.out.println(IntStream.of(28,4,91,30).average());
+-JAVA 8 STREAM API - II
+-Map map() is used to transform the value or the type of the elements of stream.
+	<R> Stream<R> map(Function<? super T, ? extends R> mapper);
+	IntStream mapToInt(ToIntFunction<? super T> mapper)
+	LongStream mapToLong(ToLongFunction<? super T> mapper);
+	DoubleStrem mapToDouble(ToDoubleFunction<? supper T> mapper)
+-FlatMap
+	flatMap() is used to flatten (or combine) the elements of a stream into one (new) stream:
+	<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)
+	DoubleStrem flatMapToDouble(Function<? super T, ? extends DoubleStrem> mapper)
+	IntStream flatMapToInt(Function<? super T,?extends IntStream mapper>)
+	LongStream flatMapToLong(Function<? super T,? extends LongStream> mapper)
+	From its signature and the signature of the primitive versions we can see that in contrast to map() which returns a single value,flatMap() must return a Stream.If flatMap() masps to null, the return value will be an empty stream, not null itself.
+-	stream.map(c->(int)c);
+	stream.flatMap(l->l.stream())
+		  .map(c->(int)c)
+		  .forEach(i->System.out.format("%d", i));
+	flatMap() returns a stream while map() returns an element.
+-Reduction
+	A reduction is an operation that makes many elements and combines them to reduce into a single value or object.Reduction is done by applying an operation multiple times.
+	collect() helps us implement a type of reduction called mutable reduction, where  a container (like Collection) is used to accumulate the result of the operation.
+	collect() and reduce() we can implement reductions with both of these methods but collect() help us implement a type of reduction called mutable reduction, where a container (like a Collection) is used to accumulate the result of the operation.
+	
+	Optional<T> reduce(BinaryOperator<T> accumulator)
+	T reduce(T identity,BinaryOperator<T> accumulator)
+	<U U reduce(U identity,BiFunction<U, ? super T,U> accumulator,BinaryOperator<U> combiner)
+	e.g.
+	OptionalInt total = IntStream.of(1,2,3,4,5,6).reduce((sum, n) -> sum + n);
+	Remember that collect() performs a mutable reduction on the elements of a stream, which means that it uses a mutable object for accumulating like a Collection or a StringBuilder.
+	In contrast reduce() combines two elements to produce a new one and represents an immutable reduction.
+	List<Integer> list = Stream.of(1,2,3,4,5).collect(
+				() -> new ArrayList<>(), //Creating the container
+				(l, i) -> l.add(i) //Adding an element
+				(l1, l2) -> l1.addAll(l2) //Combining elements);
+-Collectors
+	The previous version of collect() is useful to learn how collectors work, but in practice, it's better to use the other version.
+
+	Some common collectors of the Collectors class are:
+
+	toList Accumulates elements into a List.
+	toSet Accumulates elements into a Set.
+	toCollection Accumulates elements into a Collection implementation.
+	toMap Accumulates elements into a Map.
+	joining Concatenates elements into a String.
+	groupingBy Groups elements of type T in lists according to a classification function, into a map with keys of type K.
+	partitioningBy Partitions elements of type T in lists according to a predicate, into a map.
+	Since calculation methods can be implemented as reductions, the Collectors class also provides them as collectors:
+
+	averagingInt/averagingLong/averagingDouble Methods return the average of the input elements.
+	counting Counts the elements of input elements.
+	maxBy Returns the maximum element according to a given Comparator.
+	minBy Returns the minimum element according to a given Comparator.
+	summingInt/summingLong/summingDouble Returns the sum of the input elements.
+-	e.g.
+	import static java.util.stream.Collectors.*;
+	...
+	List<Integer> list =  Stream.of(1,2,3,4,5).collect(toList());
+-	String Stream with prefix and suffix:
+	String s = Stream.of("a", "simple", "string").collect(
+					joining(" ","This is ","."));
+-	double avg = Stream.of(1, 2, 3).collect(averagingInt(i -> i*2));
+	long count = Stream.of(1, 2, ,3).collect(counting());
+	
+	Stream.of(1, 2, 3).collect(maxBy(Comparator.naturalOrder()))
+	.ifPresent(System.out::println);
+	
+	Integer sum = Stream.of(1, 2, 3).collect(summingInt(i -> i));
 -
 -
 -

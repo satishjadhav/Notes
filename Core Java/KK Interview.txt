@@ -273,13 +273,39 @@ https://www.youtube.com/watch?v=BUaGXxUJ7Zg&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvh
 	SortedSet s = Collections.synchronizedSortedSet(new TreeSet());
 	If we are looking for high throughput in a multi-threaded application then we can prefer ConcurrentSkipListSet which is scalable concurrent implementation of NavigableSet.
 	TreeSet provides guaranteed Big O(log n) time complexity for add(),remove() and contains() method.
--https://www.youtube.com/watch?v=VbcJYCoG6vk&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvhGeJ&index=29
--
--
--
--
--
--
+-Why to prefer Binary Tree over any other liner data structure
+	Binary trees are a very good candidate for storing data when faster search/retrieval is required.
+	Offering low time complexity for retrieval operations compared to any other liner data structure.
+	Red-Black tree (TreeMap) and binary heap (PriorityQueue) implementation of Binary Tree is provided by Java collection framework, both of which are thoroughly tested and easy to use.
+-InputStream and OutputStream operates at byte level (also called byte streams) while Reader and Writer classes operates at the character level (char streams). Reader class is essentially a wrapper over InputStream where it delegates the I/O related work to the byte stream and performs the translation of byte to character using the given character encoding and character set.Reader class provides a easy mechanism to the developer to deal with the character stream with an option to deal with different Character Sets.
+	FileInputStrem fis = new FileInputStrem("test.txt");
+	InputStreamReader isr = new InputStreamReader(fis, "UTF8");
+	
+	FileOutputStream fos = new FileOutputStream("test.txt");
+	Writer out = new OutputStreamWriter(fos, "UTF8");
+	out.write(str);
+	out.close();
+-Rules for Overriding
+	The argument list must exactly match that of the overridden method.If they don't then overloading will be the result instead of overriding.
+	The return type must be of covariant type (same class or sub-class) i.e. we can narrow down the return type.
+	Only throw the same or narrowed checked exception i.e. we can narrow down exception.
+	Access level can be less restrictive i.e. we can broaden the visibility of methods
+	Free to throw any kine of runtime exception.
+	Private and final methods can't be overridden.
+	Static methods can't be overridden.
+	No inheritance no overriding.
+-Rules for Overloading
+	Method name must be the same
+	Argument list must change in overloaded method.
+	Overloaded method can be change the return type.
+	Access modifier of overloaded method can change.
+	New or broader exceptions can be thrown by overloaded method.
+	Inherited method from the super class (non private) can be overloaded in the subclass.
+	Reference type determines which overloaded version is selected based on argument types at compile time.
+-Iteration and Recursion
+	In simple terms, an iterative function is one that loops to repeat some part of the code and a recursive function is one that calls itself again to repeat the code.
+	
+-https://www.youtube.com/watch?v=gfYg0pnEs9I&list=PLzS3AYzXBoj84LfxRFAuM-eDlPRWvhGeJ&index=38&ab_channel=KKJavaTutorials
 -
 -
 -

@@ -1,10 +1,26 @@
 https://www.youtube.com/playlist?list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6
 ----------------------------------------------------------------------------------------------------
 =>Concurrency Vs Parallelism
+	incrementAndGet
+	decrementAndGet
+	addAndGet(int delta)
+	compareAndSet(int expectedValue, int newValue)
+	-----------------------------------------------
+	Type					UseCase
+	----------------------------------------------
+	volatile				Flags
 	
--Schedular of OS schedules the thread execution.
+	AtomicInteger
+	AtomicLong				Counters
+	
+	AtomicReference			Caches (building new cache in background and replacing aromatically)
+							Used by some internal classes
+							Non-blocking algorithms
+	-----------------------------------------------
+	
+-Scheduler of OS schedules the thread execution.
 -Parallelism is about doing lot of things at once.
--Parallelism using java threadpool:
+-Parallelism using java thread pool:
 	public static void main(String args[]){
 		ExecutorService es = Executors.newFixedThreadPool(nThreads:4);
 		es.submit(()->processTx(user1));
@@ -28,31 +44,54 @@ https://www.youtube.com/playlist?list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6
 	-CountdownLatch/Phaser/CyclicBarrier/Semaphore etc
 
 =>Java memory Model
--Out of order execution
--Field visibility
-	CPU core -> registers -> L1 cache -> L2 cache -> L3 cache -> RAM
--Java memory model is a specification which guarantees visibility of fields (aka happenda before amidst reordering of instructions).
--Volatile -> synchronized -> Lock (ReentrantLock)
+	-Out of order execution
+	-Field visibility
+		CPU core -> registers -> L1 cache -> L2 cache -> L3 cache -> RAM
+	-Java memory model is a specification which guarantees visibility of fields (aka happens before amid st reordering of instructions).
+	-Volatile -> synchronized -> Lock (ReentrantLock)
 
-=>Using volatile vs AtomicInteger in Java concurrency
--AtomicInterger
-	incrementAndGet
-	decrementAndGet
-	addAndGet(int delta)
-	compareAndSet(int expectedValue,int newValue)
--Visibility problem use Volatile
--Compound Operations use Atomic Variables
+	=>Using volatile vs AtomicInteger in Java concurrency
+		-AtomicInterger
+			incrementAndGet
+			decrementAndGet
+			addAndGet(int delta)
+			compareAndSet(int expectedValue,int newValue)
+		-Visibility problem use Volatile
+		-Compound Operations use Atomic Variables
 
-Type				UseCase
-----------------------------------------
-Volatile			Flags
+	Type				UseCase
+	----------------------------------------
+	Volatile			Flags
 
-AtomicInteger			Counters
-AtomicLong			
+	AtomicInteger			Counters
+	AtomicLong			
 
-AtomicReference			Caches (building new cache in background and replacing atomically)
-				Used by some internal classes
-				Non-blocking algorithms
+	AtomicReference			Caches (building new cache in background and replacing atomically)
+					Used by some internal classes
+					Non-blocking algorithms
+	public class LockVisibility {
+		int a =0, b =0, c =0, x =0;
+		Lock lock = new ReentrantLoack();
+		
+		public void writerThread() {
+			lock.lock();
+			a = 1;
+			b = 1;
+			c = 1;
+			x = 1;
+			lock.unlock();
+		}
+		
+		public void readerThread() {
+			lock.lock();
+			int r2 = x;
+			int d1 = a;
+			int d2 = b;
+			int d3 = c;
+			lock.unlock();
+			
+		}
+	}				
 
 =>Adder and Accumulator classes in Java 8
 public static void main(String []args) throws InterruptedException {
@@ -198,10 +237,10 @@ public static void main(String []args) thorws InterruptedException {
 
 	latch.wait();
 
-	System.out.println("All dependant services initialized");
+	System.out.println("All dependent services initialized");
 }
 
-public static class DependentService impelements Runnable {
+public static class DependentService implements Runnable {
 	private CountDownLatch latch;
 
 	public DependentService(CountDownLatch latch) {
@@ -244,7 +283,7 @@ public static class Service implements Runnable {
 
 
 Java Asynchronous Programming
-Non-blocking IO and Asyschronous API 
+Non-blocking IO and Asynchronous API 
 	for(Integer id: employeeIds) {
 		CompletableFuture.supplyAsync(() -> fecthEmployee(id)
 			.thenApplyAsync(employee -> fetchTaxRate(employee))
@@ -868,35 +907,169 @@ Race Condition
 				.thenAccept(order -> sendEmail(order));
 		);
 	}
+-----------------
+public static void main(String []args) {
+	
+	int coreCount = Runtime.getRuntime().avilableProcessors();
+	ExecutorService service = Executers.newFixedThradPool(coreCount);
+	
+	for(int i = 0;i < 100; i++) {
+		service.execute(new CupIntensiveTask());
+	}
+}
+
+static class CpuIntensiveTask implements Runnable {
+	public void run() {
+		System.out.println("Starting task");
+	}
+}
 
 
+public static void main(String []args) {
+	
+	//for scheduling of task
+	ScheduledExecuterService service = Executers.newScheduledThreadPool(corePoolSize: 10);
+	
+	//task to run after 10 second delay
+	service.schedule(new Task(), delay: 10, SECONDS);
+	
+	//task to run repeatedly every 10 seconds
+	service.scheduleAtFixedRate(new Task(), initialDelay: 15, period: 10, SECONDS);
+	
+	//task to run repeatedly 10 seconds after previous task completes
+	service.scheduleWithFixedDelay(new Task(), initialDelay:15, delay:10, TimeUnit.SECONDS);
+}
 
 
+Executer service constructor parameters
+
+Parameter					Type						Meaning
+corePoolSize				int							Minimum/Base size of the pool
+maxPoolSize					int 						Maximum size of the pool
+keepAlive Time +unit		long						Time to keep an idle thread alive (after which it's killed)
+workQueue					BlockingQueue				Queue to store the task from which threads fetch them
+threadFactory				ThreadFactory				The factory to use to create new threads
+handler						RejectedExecutionHandler	Callback to use when tasks submitted are rejected.
 
 
+Core pool size		Current pool size			Max pool size
+Core pool threads are never killed unless allowCoreThreadTimeOut(boolean value) is set to true.
 
 
+FixedThreadPool,SingleThreadExecutor			LinkedBlockingQueue				Threads are limited thus unbounded queue to store all tasks.
+																				Note. Since queue can never become full, new threads are never created.
+CachedThreadPool								SynchronousQueue				Thread are unbounded, thus no need to store the tasks.SynchronousQueue is a queue with single slot.
+ScheduledThreadPool								DelayedWorkQueue				Special queue that deals with schedules/time-delays.
+Custom 											ArrayBlockingQueue				Bounded queue to store the tasks.If quque gets full, new thread is created (as long as count is less than maxPoolSize) 		
 
+Policy						What it means?
+AbortPolicy					-Submitting new task throws RejectedExecutionHandler (Runtime exception)
+DiscardPolicy				-Submitting new tasks silently discards it
+DiscardOldestPolicy			-Submitting new tasks drops existing oldest task, and new task is added to the queue
+CallerRunsPolicy			-Submitting new task will execute the task on the caller thread itself.This can create feedback loop where caller thread is busy executing the task and cannot submit new task 						 at fast pace.
 
+ExecutorService service = new ThreadPoolExecutor(corePoolSize:10,maxiMumPoolSize:100,keepAliveTime:120,TimeUnit.SECONDS,
+							new ArrayBlockingQueue<>(capacity:300), new CustomRejectionHandler());
+		try {
+			service.execute(new Task());
+		} catch(RejectedExecutionHandler e) {
+			System.err.println("Task rejected "+e.getMessage());
+		}					
+	private static CustomRejectionHandler implements RejectedExecutionHandler {
+		@Override
+		public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+			//logging
+		}
+	}
+	
+	//initiate shutdown
+	service.shutdown();
+	
+	//will return true since shutdown has begun
+	service.isShutdown();
+	
+	//will return true if all tasks are completed
+	service.isTerminated();
+	
+	//will return true since shutdown has begun
+	service.awaitTermination(timeout:10, TimeUnit.SECONDS);
+	
+	List<Runnable> runables = service.shutdownNow();
 
+--------------------------
+	ExecutorService service =  Executors.newFixedThradPool(nThreads:10);
+	
+	List<Future> allFutures = new ArrayList<>();
+	for(int i=0;i<100;i++) {
+		Future<Integer> future = service.submit();
+	}
 
+Java Asynchronous Programming
+	Asynchronous API callbacks
+	for(Integer id : employeeIds) {
+		CompletableFuture.supplyAsync( ()-> fetEmployee())
+				.thenApplyAsync(employee -> fetchTaxRate(employee))
+				.thenApplyAsync(taxRate -> calculateTax(taxRate))
+				.thenApplyAsync(taxValue -> sendEmail(taxValue));
+	}
+	Callback chaining (similar to JS)
+--------------------------
+Introduction to CompletableFuture in Java 8
+	Perform possible asynchronous (non-blocking) computations which could be also be asynchronous.
 
+	private static ReentrantLock lock = new ReentrantLoack();
 
+	private static void accessResource() {
+		lock.lock();
+		try {
+			//access the resource
+		} finally {
+			lock.lock();
+		}
+	}
+	
+	public static void main(String[] args) {
+		Thread t1 = new Thread(() -> accessResource());t1.start();
+		Thread t2 = new Thread(() -> accessResource());t2.start();
+		Thread t3 = new Thread(() -> accessResource());t3.start();
+		Thread t4 = new Thread(() -> accessResource());t4.start();
+	}
 
+ReentrantLoack : One thread at a time
+ReadWriteLock : One writer thread at a time OR Multiple reader threads at a time.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Implement scatter and gather pattern
+	
+	ExecuterService service = Executers.newFixedThradPool(4);
+	private Set<Integer> getPrices(int productId) throws InteruptedException {
+		Set<Integer> prices = Collections.synchronizedSet(new HashSet());
+		
+		CountDownLatch latch = new CountDownLatch();
+		
+		threadPool.submit(new Task(url1, productId, prices, latch));
+		threadPool.submit(new Task(url2, productId, prices, latch));
+		threadPool.submit(new Task(url3, productId, prices, latch));
+		
+		latch.await(3, TimeUnit.SECONDS);
+		
+		return prices;
+	}
+	
+	private class Task implements Runnable 	{
+		
+		private Set<Integer> prices;
+		private CountDownLatch latch;
+		
+		@Override
+		public void run() {
+			prices.add(price);
+			latch.countDown();
+		}
+	}
+	
+	1. Futures/Callable
+	2. Conditions & Locks
+	3. Phaser
 
 
 

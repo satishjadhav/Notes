@@ -1,17 +1,17 @@
 https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-questions-answers.html
 -1)What is thread in java?
-	Thread is a independant path of execution.Its way to take advantage of multiple CPU available in a machine.
-	During its life time thread remains on various Thread states like NEW,RUNNABLE,BLOCKED,WAITING,TIME_WAITING which describe what thread is doing.NEW means thread is just created but not yet stated RUNNABLE menas thread is started but waiting for CPU to be assigned by thread scheduler.BLOCKED,WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished,class or object lock or any other thread etc.
-	Java will give your Thrad default name like "Thread-bumber" if Thread id created using java.lang.Thread or "pool-number-thread-number" if Thread is created using ThreadFactory.In java higher priority thread get preference in execution over lower priority thread.
+	Thread is a independent path of execution.Its way to take advantage of multiple CPU available in a machine.
+	During its life time thread remains on various Thread states like NEW,RUNNABLE,BLOCKED,WAITING,TIME_WAITING which describe what thread is doing.NEW means thread is just created but not yet stated RUNNABLE means thread is started but waiting for CPU to be assigned by thread scheduler.BLOCKED,WAITING and TIMED_WAITING means thread is not doing anything instead its been blocked and waiting for IO to finished,class or object lock or any other thread etc.
+	Java will give your Thread default name like "Thread-number" if Thread id created using java.lang.Thread or "pool-number-thread-number" if Thread is created using ThreadFactory.In java higher priority thread get preference in execution over lower priority thread.
 	In web application server manages this thread pool because each request is processed in its own thread.
-	Thread.sleep() method is used to pause thread for specifed duration.Thread..jion() is used to wait for another thread to complete its task before running and yield() method is used to relinquish CPU so other thread can acquire it.
+	Thread.sleep() method is used to pause thread for specified duration.Thread.join() is used to wait for another thread to complete its task before running and yield() method is used to relinquish CPU so other thread can acquire it.
 	wait() and notify() methods are used to communicate between two threads i.e. for inter thread communication in java.
 	Always check condition of wait() method in loop and call them from synchronized context.wait() is method which is defined in object class, and puts the current thread on hold and also releases the monitor (lock) held by this thread, while notify() and notifyAll() methods notifies all thread waiting on that monitor.
 	Thread scheduling is done by Thread Scheduler which is platform dependent and stays inside JVM.
 	Thread.isActive() method is used to check whether a thread is active or not.
 	Thread.holdLock() method is used to check if a thread holds a lock or not.
 	Every thread in java has its own stack, which is used to store local variables and method calls.Size of this stack can be controlled using -XX:ThradStackSize JVM option e.g. -XX:ThreadStackSize=512.
-	Java provides interrupt() method to interrupt a thread in java.You can interrupt a running thread,waiting thread or sleep thread.This is the control java provides to prevent a blocked or hanged thread.Once you interrupt a thread, it will also throw InterruptedException which is a cheched exception to ensure that your code should take handle interrupts.
+	Java provides interrupt() method to interrupt a thread in java.You can interrupt a running thread,waiting thread or sleep thread.This is the control java provides to prevent a blocked or hanged thread.Once you interrupt a thread, it will also throw InterruptedException which is a checked exception to ensure that your code should take handle interrupts.
 	Java provides two ways to achieve mutual exclusion in your code, either by using synchronized keyword or by using java.util.concurrent.lock implementations.You can use synchronized keyword to either make an entire method mutual exclusive or only critical section by declaring a synchronized block.
 	Any thread needs to hold monitor or lock,required by that critical section in order to enter into synchronized block or method,they release that lock, once they exit, either normally or abruptly due to any error.
 	In fact thread is started when you call start() method of java.lang.Thread class e.g. t.start() will start the thread.It puts your thread in RUNNABLE state and when thread scheduler assign CPU to this thread,it executes run() method.
@@ -20,8 +20,8 @@ https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-
 	If you run a Java program in UNIX based system e.g. Linux and if that program creates 10 Threads, it still one process and you can find that by using 'ps -ef | grep identifier' command which is one of most popular use of grep command in UNIX, Where 'identifier' is unix text which can be used as regular expression to find that Java process.
 	Every process has its own memory space,executable code and a unique process identifier (PID) while  every thread has its own stack in java but it uses process main memory and share it with other threads.
 -3)What is Thread in Java?
-	Thread is an independant path of execution.
-	Main problem with using multiple threads and writing multi-threaded code is issues related to concurrency e.g. deadlock,livelock,race conditions etc.
+	Thread is an independent path of execution.
+	Main problem with using multiple threads and writing multi-threaded code is issues related to concurrency e.g. deadlock,live lock,race conditions etc.
 	thread1.start();
 	thread1.start(); //IllegalThreadStateException
 	Thread will be said to go on dead state once execution of run() method finished and you can not start that thread again.
@@ -52,14 +52,14 @@ https://javarevisited.blogspot.com/2014/07/top-50-java-multithreading-interview-
 	By making a variable volatile using the Volatile keyword in Java,application programmer ensures that its value should always be read from main memory and thread should not use cached value of that variable from their own stack.
 	volatile variable also guarantees "happens-before" relationship, which means not only another thread has visibility of latest value of volatile variable but also all the variable is seen by the thread which has updated value of volatile variable before these threads sees it.
 	Any variable which is shared between multiple threads should be made variable, in order to ensure that all thread must see latest value of the volatile variable.
-	A signal to complier and JIT to ensure that compiler does not change ordering or volatile variable and moves them out of synchronized context.
+	A signal to compiler and JIT to ensure that compiler does not change ordering or volatile variable and moves them out of synchronized context.
 	You want to save the cost of synchronized as volatile variable are less expensive than synchronized.
 -11) What is thread-safety? is Vector a thread-safe class?
 	Thread-safety is a property of an object or code which guarantees that if executed or used by multiple threads in any manner e.g. read vs write it will behaves as expected.
 	First and foremost difference between Vector and ArrayList is that Vector is synchronized and ArrayList is not, what it means is that all the method which structurally modifies Vector e.g. add () or remove () are synchronized which makes it thread-safe and allows it to be used safely in a multi-threaded and concurrent environment.
 	Vector can return enumeration of items it hold by calling elements() method which is not fail-fast as opposed to Iterator and ListIterator returned by ArrayList.
 -12) What is race condition in Java? Given one example?
-	A race condition occurs due to race between multiple threads, if a thread which is supposed to execute first lost the race and executed second, behaviour of code changes, which surface as non-deterministic bugs.
+	A race condition occurs due to race between multiple threads, if a thread which is supposed to execute first lost the race and executed second, behavior of code changes, which surface as non-deterministic bugs.
 	Race conditions occurs when two thread operate on same object without proper synchronization and there operation interleaves on each other.
 	Namely "check and act" and "read modify write" can suffer race condition if not synchronized properly. both cases rely on natural assumption that a single line of code will be atomic and execute in one shot which is wrong e.g. ++ is not atomic.
 	Read-modify-update pattern also comes due to improper synchronization of non-atomic operations or combination of two individual atomic operations which is not atomic together e.g. put if absent scenario. 
