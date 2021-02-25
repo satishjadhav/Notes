@@ -1071,14 +1071,43 @@ Implement scatter and gather pattern
 	2. Conditions & Locks
 	3. Phaser
 
+Phaser:
+		newPhaser(partyCount)		Set count of participating parties
+		register					Allow party to register itself
+		bulkRegister(partyCount)	Bulk register extra parties post constructor
+		
+		arrive						Parties can arrive (and continue)
+		arriveAndWaitAdvance		Parties can arrive and await for all parties
+		arriveAndDeregister			Parties can arrive , de register (and continue)
+SynchronousQueue
+	It has no size at all..
+	There is a direct hand off between Producer and Consumer thread.
 
-
-
-
-
-
-
-
+Data race
+	Multiple threads access shared variable without synchronization.At least one thread is writing to the variable.
+Race Condition
+	Multiple threads access shared variable.Value of variable depends on execution of threads.
+Singleton
+	public class Resource {
+	
+		private static volatile Resource instance = null;
+		
+		private Resource() {
+		}
+		
+		public static Resource getInstance() {
+			if(instance == null) {
+				synchronized(this) {
+					if(instance == null) {
+						instance = new Resource();
+					}
+				}
+			}
+		}
+	}
+	JVM flag (pre-java 8)
+	--XX: -UseSpinning		//enables spinning for locks
+	--XX:PreBlockSping		//try 12 times if still not available go into wait state
 
 
 

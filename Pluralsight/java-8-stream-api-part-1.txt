@@ -64,7 +64,7 @@ https://app.pluralsight.com/guides/java-8-stream-api-part-1
 		Returns a stream consisting of the results of applying the given function to the elements of this stream. There are versions for int, long and double also.
 	Stream<T> peek(Consumer<? super T> action)
 		Returns a stream with the elements of this stream,performing the provided action on each element.
--Stateful operations,such as distinct and sorted may incorporate state from previously seem elements when processing new elements.
+-Statefull operations,such as distinct and sorted may incorporate state from previously seem elements when processing new elements.
 	Stream<T> distinct(). 
 		Returns a stream consisting of the distinct elements.
 	Stream<T> limit(long maxSize). 
