@@ -78,17 +78,46 @@ https://www.youtube.com/watch?v=ZLO1ekWs3Lg&list=PLzS3AYzXBoj9vt4_e1TSYlOTC5DiPq
 -SQL Query to get information about Employees where Employees are not assigned to the department?
 	SELECT * FROM emp where deptno IS NULL;
 -How to fetch all the records from Employee whose joining year or month or day is given?
-	https://www.youtube.com/watch?v=twlnjztHBuo&list=PLzS3AYzXBoj9vt4_e1TSYlOTC5DiPqIvn&index=17&ab_channel=KKJavaTutorials
--
--
--
--
--
--
--
--
--
--C:\Program Files (x86)\gdiview\gdiview\
+	SELECT * from emp where to_char(hiredate, 'MM') = '04';
+	SELECT * from emp where to_char(hiredate, 'DD') = '23';
+-SQL Query to find all Employees with its managers Using Self Join ? || Self Join in SQL
+	SELECT e.ename "EMPLOYEE_NAME",m.ename "MANAGER_NAME" from emp e,emp m
+	where e.mgr = m.empno;
+-How to display Numbers from 1 to given limit with a SQL query?
+	DEFINE LIMIT = 25;
+	SELECT level from dual connect by level < &LIMIT;
+	SELECT ROWNUM FROM DUAL connect by ROWNUM <= 100;
+-SQL Query to list deptno, dept name for all the departments in which there are no employees?
+	SELECT deptno,dname
+	from dept d 
+	where NOT EXISTS (select deptno from emp e where e.deptno = d.deptno);
+	
+	select deptno,dname
+	from dept where deptno NOT IN (SELECT deptno from emp);
+-How to write SQL query to get total salary from salary and commission?
+	SELECT ename,sal + NVL(comm, 0) from emp;
+-SQL Query to Find the Joining date of Employee in YYYY-MON-DD format ?
+	select ename,to_char(hiredate, 'YYYY-MON-DD') "HIREDATE" FROM emp;
+-Write a SQL Query to find the maximum salary of each department ?
+	select e.deptno,d.dname,max(sal)
+	from emp e inner join dept d ON e.deptno = d.deptno
+	group by e.deptno,d.dname
+	order by MAX(sal);
+-Write SQL Query to get Total Salary department wise where more than 5 employees exist?
+	select deptno,sum(sal) "Total_Salary"
+	from emp
+	group by deptno HAVING COUNT(*) > 5;
+-SQL query to increase salary by 20 percent for all employees in department number 10 and 20?
+	
+-SQL Query to find the Nth minimum salary of employee?
+	DEFINE N = 4;
+	SELECT * 
+	FROM emp e1
+	WHERE &N = (
+			SELECT COUNT(DISTINCT e2.sal)
+			FROM emp e2
+			WHERE e2.sal <= e1.sal
+	);
 -
 -
 -

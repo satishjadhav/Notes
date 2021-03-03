@@ -1,8 +1,12 @@
 https://www.youtube.com/watch?v=mTGdtC9f4EU&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=1&ab_channel=JakobJenkov
 --------------------------------------------------------------------------------
--
--
--
+-One CPU computer can run Multiple programs (process) at a time - by switching between executing one program at a time for a little time and then switch to the next.
+-Java Happens Before Guarantee - Java Memory Model - Part 2
+	End of synchronized block happens before entry into subsequent synchronized block which is synchronized on the same monitor object.
+	Thread.start() happens before its Runnable.run() method is called.
+	Several happens before guarantees in java.util.concurrent APIs
+	A set of restrictions on instruction reordering to avoid instruction reordering breaking the java visibility guarantees
+-https://www.youtube.com/watch?v=eKWjfZ-TUdo&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=5&ab_channel=JakobJenkov
 -
 -
 -

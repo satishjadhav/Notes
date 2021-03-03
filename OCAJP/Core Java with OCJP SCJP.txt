@@ -1,17 +1,10 @@
-https://www.youtube.com/watch?v=q4RdJugvRYo&list=PLzS3AYzXBoj8o0_BDG9cFR9j1O4Zejiz2&ab_channel=KKJavaTutorials
+https://www.youtube.com/playlist?list=PLMLTWHVL4J_RLfkv1GEvsedDyhBiNxX1N
 --------------------------------------------------------------------------------
--Generics in java enable you to specify type parameters when defining classes, interfaces and methods.Here type parameter is the type of data(class or interface) which these classes,interfaces and methods will operate soon.
--Generic class format
-	A generic class is defined with the following format
-	class name<T1,T2,...,Tn> {
-	}
--Benefits of Generics in Java
-	Stronger type checks at compile time
-	Casting is not required.
-	Enabling programmers to implement generic algorithms.
--The most commonly used typed parameter names are:
-	E - Element,K-KeymN-Number,T-Type,V-Value,S,U,V - 2nd, 3rd, 4th types
--https://www.youtube.com/watch?v=UqFlBU7eHcM&list=PLzS3AYzXBoj8o0_BDG9cFR9j1O4Zejiz2&index=2&ab_channel=KKJavaTutorials
+-
+-
+-
+-
+-
 -
 -
 -
