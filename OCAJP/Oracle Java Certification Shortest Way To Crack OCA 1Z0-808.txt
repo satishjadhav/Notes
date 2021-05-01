@@ -1,25 +1,61 @@
 https://www.youtube.com/playlist?list=PLd3UqWTnYXOl_KwGTt4BZe2k3q2Yu3y1f
 --------------------------------------------------------------------------------
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+28-
+-OCJA 1.8 Java SE 8 Programmer - I (1Z0 - 808 ) By Durga sir Demo On 29-12-2017
+-durgaadvjava@gmail.com
+-OCJA 1.8 Java SE 8 Programmer - I (1Z0 - 808 ) By Durga sir Demo On 02-01-2018
+-Simple
+-Secure
+	Test.java ==> Test.class(compiler)==>Byte-code==>Machine code (JVM)
+	Inside JVM: ByteCode Verifies + Security Manager
+		Sandbox Checking
+-Object Oriented
+	Encapsulation=>Security
+	Inheritance=>Re-usability
+	Polymorphism=>Flexibility
+-Robust:
+	The chance of failing is very very rare...
+	Type checking : Strongly Typed PL
+	Garbage Collector--> Memory related problem
+	Exception Handling:
+	try {
+	}catch(Exception e) {
+	}
+-Multi Threaded
+-Compiled and Interpreted
+-High Performance
+-Distributed
+-Dynamic
+-JDK	VS	JRE	VS 	JVM
+	JDK: To develop and run java applications
+	JRE: To run java applications
+	JVM: Is an interpreter to run program line by line
+-Java is platform independent but JVM is platform dependent.
+-Java byte code is platform independent but JVM is platform dependent.
+-Java byte code can run on any platform that has the Java Runtime Environment (JRE)
+-Java is strongly  typed PL.
+-Data Types and Literals
+	Numbers:
+		1.Integrals Types:
+			10,20,100,100000
+			byte,short,int,long
+		2.Floating Point Types
+			10.0,12.123,65.78
+			float and double
+			Non-numeric data types
+		3: char and boolean
+			'a' '@'
+			true,false ==>  boolean
+-Integrals Data Type
+	decimal
+	int x = 10;
+	octal
+	int x = 010;
+	hexadecimal
+	int x = 0X10;
+	
+	int x = 0B1111;
+-OCJA 1.8 Java SE 8 Programmer - I (1Z0 - 808) By Durga Sir Demo On 10 - 01 - 2018
 -
 -
 -

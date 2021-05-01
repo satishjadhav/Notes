@@ -6,11 +6,10 @@ https://www.youtube.com/watch?v=mTGdtC9f4EU&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP
 	Thread.start() happens before its Runnable.run() method is called.
 	Several happens before guarantees in java.util.concurrent APIs
 	A set of restrictions on instruction reordering to avoid instruction reordering breaking the java visibility guarantees
--https://www.youtube.com/watch?v=eKWjfZ-TUdo&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=5&ab_channel=JakobJenkov
--
--
--
--
+-Only one thread can enter a synchronized block at a time.
+-There is no guarantees about the sequence in which waiting threads gets access to the synchronized block.
+-https://www.youtube.com/watch?v=nhYIEqt-jvY&list=PLL8woMHwr36EDxjUoCzboZjedsnhLP1j4&index=6
+- 
 -
 -
 -
